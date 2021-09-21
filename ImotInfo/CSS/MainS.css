@@ -1,0 +1,100 @@
+body {
+   background-color: gray;
+    padding: 20px;
+    font-family: Arial;
+    background-image:url(../Pictures/BackGrond.jpg);
+    background-position: center; 
+    background-repeat:no-repeat;
+      }
+ 
+header {
+ 
+    
+    }
+
+footer {
+    padding: 20px;
+    text-align:right;
+    background: #ddd;
+    margin-top: 20px;
+    opacity: 0.4;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+        text-align: center;
+     }
+a {
+    color: black;
+    text-decoration: none;
+    
+  }
+
+.nav    {
+    overflow: hidden;
+    background-color: #66d9ff;
+    border-style: inset;
+    float: right;
+    }
+.nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 12px 85px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.nav a:hover {
+    background-color:   #787878;
+    border-style: inset;
+    border-color: #FBFBFB;
+    color: white;
+}
+
+.nav button {
+    float:left;
+    padding: 3px 3px;
+    margin:10px;
+}
+
+.logo {
+  display: block;
+  margin-left: 20px;
+  margin-right: auto;
+  width: 40%;
+  height: 230px;
+}
+
+.MainI {
+    background-color: #ccf2ff;
+    height: 600px;
+    margin-top: 10px;
+}  
+
+.LeftCol{
+    background-color: gray;
+    float: left;
+    width: 65%;
+}
+
+.RightCol{
+    background-color: red;
+    float: right;
+    width: 35%;
+
+}
+
+.ImotCard{
+    background-color: white;
+    height: 225px;
+    width: 700px;
+    border-style: outset;
+    border-radius: 2px;
+    margin-left: 25px;
+}
+    
