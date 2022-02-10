@@ -1,0 +1,410 @@
+
+html{
+    max-width: 100%;
+     /* overflow-x: hidden; */
+}
+ 
+body {
+   background-color: gray;
+    padding: 20px;
+    height: 100%;
+    font-family: Arial;
+    background-image:url(../Pictures/BackGrond.jpg);
+    background-position: center; 
+    background-repeat: repeat;
+    background-attachment: scroll;
+    max-width: 100%;
+    /* overflow-x: hidden; */
+      }
+ 
+footer {
+    padding: 20px;
+    text-align:right;
+    background: #ddd;
+    margin-top: 20px;
+    opacity: 0.4;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+h1,h2 {
+        text-align: center;
+     }
+a {
+    color: black;
+    text-decoration: none;
+    
+  }
+
+
+input[readonly] {
+    background-color: lightgray;
+    cursor: not-allowed;
+
+}
+
+input[type=submit][disabled] {
+    background-color: #037c50;
+}
+input[type=submit][disabled]:hover {
+    background-color: #2e6b31;
+}
+
+
+.nav    {
+    overflow: hidden;
+    background-color: #66d9ff;
+    border-style: inset;
+    float: right;
+    }
+.nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 12px 85px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.nav a:hover {
+    background-color:   #787878;
+    border-style: inset;
+    border-color: #FBFBFB;
+    color: white;
+}
+
+.nav button {
+    float:left;
+    padding: 3px 3px;
+    margin:10px;
+}
+
+.logo {
+  display: block;
+  position: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: 100px;
+}
+
+.MainI {
+    background-color: #ccf2ff;
+    height: 11in;
+    margin-top: 10px;
+    margin-left: 10px;
+    transition: margin-left .5s;
+    padding: 20px;
+    border-radius: 50px;
+
+}  
+
+.ProfilMain{
+    background-color: gray;
+    float: left;
+    width: 100%;
+
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #009999;
+  position: relative;
+  float: center;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 14px 16px;
+  transition: 0.3s;
+  left: 43%;
+  position: relative;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #00e6e6;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #00cccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+.imoterinfo {
+    padding: 15px;
+    float: left;
+    width: 30%;
+    position: absolute; 
+    border-radius: 10px;
+    border: 2px solid;
+    display: none;
+
+}
+
+.imgvata {
+    float: right;
+    padding: 22px;
+    width: 70%;
+    position: inherit;
+
+}
+
+.norminfo {
+    padding: 10px;
+    margin-top: 10px;
+    float: left;
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+
+}
+
+.normform {  
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+}
+
+.hidform {
+    width: 100%;
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  resize: vertical;
+}
+
+.normformb {
+    background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.normformb:hover {
+    background-color: #06e090;
+}
+
+.hidformb {
+    background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+.inp {
+    width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+.inps{
+    background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  position: relative;
+}
+
+.container1 {
+  background-color:;
+  padding: 20px;
+
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cookie-banner {
+  position: fixed;
+  bottom: 40px;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  padding: 5px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eee;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+
+
+
+
+
+
+#primg {
+    border-radius: 8px 8px 8px 8px;
+    float: right;
+    width: 240px;
+    height: 260px;
+    margin: 20px;
+}
+
+#myBtn:hover {
+    opacity: 0.7;
+}
+
+
+#editbtn[disabled] {
+    cursor: not-allowed;
+    opacity: 0.6;
+
+}
+
+#savebtn[readonly] {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+#addim {
+    left: 70%;
+    position: relative;
+}
+
+#addim:hover {
+    opacity: 0.7;
+}
+
+
+/* Style the links inside the sidenav */
+#mySidenav a {
+  position: absolute; /* Position them relative to the browser window */
+  right: -80px; /* Position them outside of the screen */
+  transition: 0.3s; /* Add transition on hover */
+  padding: 15px; /* 15px padding */
+  width: 100px; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 20px; /* Increase font size */
+  color: white; /* White text color */
+  border-radius: 5px 0 0 5px; /* Rounded corners on the top right and bottom right side */
+}
+
+#mySidenav a:hover {
+  right: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+/* The about link: 20px from the top with a green background */
+#about {
+  top: 130px;
+  background-color: #04AA6D;
+}
+
+#blog {
+  top: 190px;
+  background-color: #2196F3; /* Blue */
+}
+
+#projects {
+  top: 250px;
+  background-color: #f44336; /* Red */
+}
+
+#profile{
+    top: 310px;
+  background-color: #00ff00 ; /* Green */
+}
+
+#contact {
+  top: 370px;
+  background-color: #555 /* Light Black */
+}
+
+#field {
+    background-color: lightgray;
+    border-style: outset;
+    border-radius: 3px;
+}

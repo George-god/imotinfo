@@ -1,0 +1,277 @@
+
+html{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+ 
+body {
+   background-color: gray;
+    padding: 20px;
+    height: 100%;
+    font-family: Arial;
+    background-image:url(../Pictures/BackGrond.jpg);
+    background-position: center; 
+    background-repeat:no-repeat;
+    background-attachment: scroll;
+    max-width: 100%;
+    overflow-x: hidden;
+
+
+      }
+ 
+footer {
+    padding: 20px;
+    text-align:right;
+    background: #ddd;
+    margin-top: 20px;
+    opacity: 0.4;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+h1 {
+        text-align: center;
+     }
+a {
+    color: black;
+    text-decoration: none;
+    
+  }
+
+.nav    {
+    overflow: hidden;
+    background-color: #66d9ff;
+    border-style: inset;
+    float: right;
+    }
+.nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 12px 85px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.nav a:hover {
+    background-color:   #787878;
+    border-style: inset;
+    border-color: #FBFBFB;
+    color: white;
+}
+
+.nav button {
+    float:left;
+    padding: 3px 3px;
+    margin:10px;
+}
+
+.logo {
+  display: block;
+  position: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: 100px;
+}
+
+.FinanceMain {
+    background-color: #ccf2ff;
+    height: 8.4in;
+    margin-top: 10px;
+    margin-left: 10px;
+    transition: margin-left .5s;
+    padding: 20px;
+    border-radius: 50px;
+
+}
+
+.cookie-banner {
+  position: fixed;
+  bottom: 40px;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  padding: 5px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eee;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.filterfinance {
+    background-color: gray;
+    width: 80%;
+    height: 20%;
+    margin: auto;
+}
+
+.resultshow {
+    background-color: darkgray;
+    width: 80%;
+    height: 60%;
+    margin: auto;
+}
+
+
+/* Style the links inside the sidenav */
+#mySidenav a {
+  position: absolute; /* Position them relative to the browser window */
+  right: -80px; /* Position them outside of the screen */
+  transition: 0.3s; /* Add transition on hover */
+  padding: 15px; /* 15px padding */
+  width: 100px; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 20px; /* Increase font size */
+  color: white; /* White text color */
+  border-radius: 5px 0 0 5px; /* Rounded corners on the top right and bottom right side */
+}
+
+#mySidenav a:hover {
+  right: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+/* The about link: 20px from the top with a green background */
+#about {
+  top: 130px;
+  background-color: #04AA6D;
+}
+
+#blog {
+  top: 190px;
+  background-color: #2196F3; /* Blue */
+}
+
+#projects {
+  top: 250px;
+  background-color: #f44336; /* Red */
+}
+
+#profile{
+    top: 310px;
+  background-color: #00ff00 ; /* Green */
+}
+
+#contact {
+  top: 370px;
+  background-color: #555 /* Light Black */
+}
+
+#Filterbtn{
+    display: inline-block;
+  padding: 15px 25px;
+  position: relative;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #3399ff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  float: right;
+  top: 58%;
+  right: 10px;
+}
+
+#Filterbtn:hover {
+    background-color: #1a8cff;
+}
+
+#Filterbtn:active {
+    background-color: #1a8cff;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#Resetbtn{
+    display: inline-block;
+  padding: 15px 25px;
+  position: relative;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: black;
+  background-color: #ffff33;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  float: right;
+  top: 58%;
+  right: 10px;
+}
+
+#Resetbtn:hover {
+    background-color: #b3b300;
+}
+
+#Resetbtn:active {
+    background-color: #b3b300;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#svetatri:after{
+    content: "";
+    display: table;
+    clear: both;
+
+}
+
+#fin {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    font-size: 10px;
+ 
+}
+
+@media screen and (max-width: 600px) {
+  #fin {
+    width: 100%;
+  }
+}
+
+#centerfin{
+   
+
+}
+
+#leftfin{
+    
+
+}
+
+#imotiinfo {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#imotiinfo td, #imotiinfo th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#imotiinfo tr:nth-child(even){background-color: #f2f2f2;}
+
+#imotiinfo tr:hover {background-color: #ddd;}
+
+#imotiinfo th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}

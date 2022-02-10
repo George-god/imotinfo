@@ -1,17 +1,24 @@
+
+html{
+    max-width: 100%;
+    overflow-x: ;
+}
+ 
 body {
-   background-color: gray;
+    background-color: red;
     padding: 20px;
+    height: 100%;
     font-family: Arial;
-    background-image:url(../Pictures/BackGrond.jpg);
+    background-image:url(../Pictures/Back2.png);
     background-position: center; 
     background-repeat:no-repeat;
+    background-attachment: scroll;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow: auto;
+
       }
  
-header {
- 
-    
-    }
-
 footer {
     padding: 20px;
     text-align:right;
@@ -22,9 +29,11 @@ footer {
 
 * {
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
-h1 {
+h1,h2 {
         text-align: center;
      }
 a {
@@ -64,37 +73,431 @@ a {
 
 .logo {
   display: block;
-  margin-left: 20px;
+  position: center;
+  margin-left: auto;
   margin-right: auto;
-  width: 40%;
-  height: 230px;
+  width: auto;
+  height: 100px;
 }
 
 .MainI {
     background-color: #ccf2ff;
-    height: 600px;
+    height: 10.5in;
     margin-top: 10px;
-}  
+    margin-left: 10px;
+    transition: margin-left .5s;
+    padding: 20px;
+    border-radius: 50px;
+
+}
+
+.buti {
+    width: 100%;
+    background-color: ;
+    float: right;
+}
+
+
+  
 
 .LeftCol{
-    background-color: gray;
+    background-color: ;
     float: left;
     width: 65%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.LeftCol > div{
+    margin: 10px;
+  padding: 20px;
 }
 
 .RightCol{
-    background-color: red;
+    background-color: ;
     float: right;
     width: 35%;
 
 }
 
+.cookie-banner {
+  position: relative;
+  bottom: 40px;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  padding: 5px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eee;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.ad {
+    background-color: gray;
+    width: 90%;
+    height: 90px;
+    margin: 15px auto;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+
+
+/* Close button */
+.closebtn {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Change color on mouse-over */
+.closebtn:hover {
+  color: lightgrey;
+}
+
 .ImotCard{
     background-color: white;
-    height: 225px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    height: 155px;
     width: 700px;
     border-style: outset;
     border-radius: 2px;
     margin-left: 25px;
 }
+
+.ImotBody{
+    float: left;
+    width: 510px;
+    background-color: red;
+}
+
+.ImotBody {
     
+}
+
+.ImotCard img{
+    float: left;
+    background-color: dimgray;
+    width: 150px;
+    height: 150px;
+
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 10px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body {
+    padding: 2px 16px;
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
+
+
+.inptextmod1 {
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.inpsubmod1 {
+      width: 100%;
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.inpsubmod1:hover {
+    background-color: #45a049;
+}
+
+
+
+.modal-footer {
+  padding: 2px 10px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.button{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  float: right;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.Edit {
+    background-color: #0080ff;
+    float: left;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+
+}
+
+.buttonremove {
+    background-color: #ff4d4d;
+    padding: 15px 25px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+
+}
+
+.buttonremove:hover {
+    background-color: #ff3333
+
+}
+
+.buttonremove:active {
+    background-color: #ff3333;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+
+}
+
+.buttonadd {
+    padding: 15px 25px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.buttonadd:hover {background-color: #3e8e41}
+
+.buttonadd:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.icard {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 8px; /* 5px rounded corners */
+  width: 25%;
+  padding-top: 20px;
+  background-color: lightgray;
+
+}
+
+/* On mouse-over, add a deeper shadow */
+.icard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.icontainer {
+  padding: 2px 16px;
+}
+
+.cenlab {
+    left: 32%;
+    position: relative;
+    text-align: center;
+}
+
+.dos {
+    left: 30%;
+    position: relative;
+}
+
+.linebet {
+    border: 2px solid black;
+}
+
+#editbtn {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #4CAF50;
+  text-align: center;
+  cursor: pointer;
+  width: 50%;
+  font-size: 18px;
+}
+
+#editbtn:hover {
+  opacity: 0.7;
+}
+
+#viewbtn {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #4CAF50;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+#viewbtn:hover {
+  opacity: 0.7;
+}
+
+#iimg {
+    border-radius: 8px 8px 0 0;
+}
+
+#myBtn{
+    border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #4CAF50;
+  text-align: center;
+  cursor: pointer;
+  width: 45%;
+  font-size: 18px;
+}
+
+#myBtn:hover {
+    opacity: 0.7;
+}
+
+/* Style the links inside the sidenav */
+#mySidenav a {
+  position: absolute; /* Position them relative to the browser window */
+  right: -80px; /* Position them outside of the screen */
+  transition: 0.3s; /* Add transition on hover */
+  padding: 15px; /* 15px padding */
+  width: 100px; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 20px; /* Increase font size */
+  color: white; /* White text color */
+  border-radius: 5px 0 0 5px; /* Rounded corners on the top right and bottom right side */
+}
+
+#mySidenav a:hover {
+  right: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+/* The about link: 20px from the top with a green background */
+#about {
+  top: 130px;
+  background-color: #04AA6D;
+}
+
+#blog {
+  top: 190px;
+  background-color: #2196F3; /* Blue */
+}
+
+#projects {
+  top: 250px;
+  background-color: #f44336; /* Red */
+}
+
+#profile{
+    top: 310px;
+  background-color: #00ff00 ; /* Green */
+}
+
+#contact {
+  top: 370px;
+  background-color: #555 /* Light Black */
+}
+
+#field {
+    background-color: lightgray;
+    border-style: outset;
+    border-radius: 3px;
+}
