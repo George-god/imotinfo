@@ -1,0 +1,5 @@
+function checkEdits() {
+
+//localStorage.clear();
+
+}
