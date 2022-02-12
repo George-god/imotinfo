@@ -128,7 +128,7 @@ require 'sqlconn.php';
                 <th>Status</th>
                 <th>Rent</th>
                 <th>Gas</th>
-                <th>Tok</th>
+                <th>Tok(Elec)</th>
                 <th>Water</th>
             </tr>
             <?php
