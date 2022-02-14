@@ -39,7 +39,7 @@ require 'sqlconn.php';
   <a href="finance.php" id="blog">Finansi</a>
   <a href="#" id="projects">Market</a>
   <a href="profile.php" id="profile">Profile</a>
-  <a href="#" id="contact">Contact</a>
+  <a href="Contact.php" id="contact">Contact</a>
 </div>
 
 <div class="FinanceMain">

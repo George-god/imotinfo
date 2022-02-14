@@ -1,0 +1,116 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image:url(../Pictures/Back2.png);
+  background-position: center; 
+  background-repeat:no-repeat;
+  background-attachment: scroll;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.logo {
+  display: block;
+  position: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  height: 100px;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+/* Style the links inside the sidenav */
+#mySidenav a {
+  position: absolute; /* Position them relative to the browser window */
+  right: -80px; /* Position them outside of the screen */
+  transition: 0.3s; /* Add transition on hover */
+  padding: 15px; /* 15px padding */
+  width: 100px; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 20px; /* Increase font size */
+  color: white; /* White text color */
+  border-radius: 5px 0 0 5px; /* Rounded corners on the top right and bottom right side */
+}
+
+#mySidenav a:hover {
+  right: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+/* The about link: 20px from the top with a green background */
+#about {
+  top: 130px;
+  background-color: #04AA6D;
+}
+
+#blog {
+  top: 190px;
+  background-color: #2196F3; /* Blue */
+}
+
+#projects {
+  top: 250px;
+  background-color: #f44336; /* Red */
+}
+
+#profile{
+    top: 310px;
+  background-color: #00ff00 ; /* Green */
+}
+
+#contact {
+  top: 370px;
+  background-color: #555 /* Light Black */
+}
