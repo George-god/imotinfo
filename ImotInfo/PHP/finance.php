@@ -119,6 +119,8 @@ require 'sqlconn.php';
                 $sum = $rowd['rent_sum'];
                 $sumdif=$sum*$diff;
 
+                //Opravi razhodite da sa ot sushtiq imot det e rentata
+
                 $resultr = mysqli_query($conn, 
                     'SELECT SUM(COALESCE(gasprice,0))
                         + COALESCE(waterprice,0) 
@@ -142,6 +144,7 @@ require 'sqlconn.php';
             </tr>
             <?php
             while ($rowt = mysqli_fetch_array($resultt)){
+
                 echo "<tr>
                 <td>" . htmlspecialchars($rowt['name']) . "</td>
                 <td>" . htmlspecialchars($rowt['status']) . "</td>
