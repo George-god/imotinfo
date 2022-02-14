@@ -38,31 +38,9 @@ require 'sqlconn.php';
   <a href="index.php" id="about">Imoti</a>
   <a href="finance.php" id="blog">Finansi</a>
   <a href="#" id="projects">Market</a>
-  <a href="#" id="profile">Profile</a>
+  <a href="profile.php" id="profile">Profile</a>
   <a href="#" id="contact">Contact</a>
 </div>
-
-<!--
-<div class="nav">   
-    <a href="BlogMaster.php" class="Blogo">Мойте Имоти</a>
-    <a href="SupriseHome.php" class="paths">Нещоси</a>
-    <a href="Contact.php" class="Cont">Съобщения</a>
-    <a href="Blast.php" class="Blst">Контакт</a>
-    <2!--
-    <?php
-    if(isset($_SESSION['username'])){
-    ?>
-     <a href="logout.php" title="Logout"><?php echo $_SESSION['username']; ?>(Logout)</a>
-    <?php
-    }else echo '<a href="login.php"><span>Login</span></a>
-          <a href="register.php"><span>Register</span></a>'; ?>
-    --2>
-</div>
-
-<input type="radio" id="Razhodi" name="Razhodi" value="Razhodi">
--->
-
-
 
 <div class="FinanceMain">
 <h1>Finance Manager</h1>
@@ -116,10 +94,41 @@ require 'sqlconn.php';
 
             if(isset($_POST['submit'])){
                 $imoti = implode("','",$_POST['imoti']);
+                $sdate =$_POST['datemin'];
+                $edate =$_POST['datemax'];
+
+                $ds1=strtotime($sdate);
+                $ds2=strtotime($edate);
+
+                $year1 = date('Y', $ds1);
+                $year2 = date('Y', $ds2);
+
+                $month1 = date('m', $ds1);
+                $month2 = date('m', $ds2);
+
+                $diff = (($year2 - $year1) * 12) + ($month2 - $month1);
+
+
 
                 
             $sqlt ="SELECT * FROM imoti,imot_harakter WHERE (imot_harakter.imot_id = imoti.id and imoti.name IN ('$imoti') )";
             $resultt = mysqli_query($conn,$sqlt);
+
+                $resultd = mysqli_query($conn, "SELECT SUM(rent) AS rent_sum FROM imoti WHERE name IN ('$imoti') "); 
+                $rowd = mysqli_fetch_assoc($resultd); 
+                $sum = $rowd['rent_sum'];
+                $sumdif=$sum*$diff;
+
+                $resultr = mysqli_query($conn, 
+                    'SELECT SUM(COALESCE(gasprice,0))
+                        + COALESCE(waterprice,0) 
+                        + COALESCE(electricity,0)
+                         AS razh_sum FROM imot_harakter'); 
+                $rowr = mysqli_fetch_assoc($resultr); 
+                $sumr = $rowr['razh_sum'];
+                $sumrdif=$sumr*$diff;
+
+                $treud = $sumdif-$sumrdif;
             
         echo "<table id='imotiinfo'> ";
         ?>
@@ -142,6 +151,27 @@ require 'sqlconn.php';
                 <td>" . htmlspecialchars($rowt['gasprice']) . "</td>
                 </tr>";
             }
+        echo "</table>";
+        
+
+        echo "<table id='imotifinan'> ";
+        ?>
+            <tr>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Dohodi</th>
+                <th>Razhodi</th>
+                <th>True Dohod</th>
+            </tr>
+            
+            <tr>
+                <td><?php echo $sdate ?></td>
+                <td><?php echo $edate ?></td>
+                <td style="background-color: #4dff4d"><?php echo $sumdif ?></td>
+                <td style="background-color: #ff3333"><?php echo $sumrdif ?></td>
+                <td><?php echo $treud ?></td>
+            </tr>
+        <?php   
         echo "</table>";
         }
         ?>
