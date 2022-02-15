@@ -41,9 +41,15 @@ require 'sqlconn.php';
 <div id="mySidenav" class="sidenav">
   <a href="index.php" id="about">Imoti</a>
   <a href="finance.php" id="blog">Finansi</a>
-  <a href="#" id="projects">Market</a>
+  <a href="market.php" id="projects">Market</a>
   <a href="profile.php" id="profile">Profile</a>
-  <a href="#" id="contact">Contact</a>
+  <a href="Contact.php" id="contact">Contact</a>
+</div>
+
+<div id="imotside" class="sidenavimot">
+  <a href="#" id="addn">AddImot</a>
+  <a href="#" id="editn" onclick="editimot1()">EditImot</a>
+  <a href="#" id="deleten" onclick="remimot1()">Delete Imot</a>
 </div>
 
 
@@ -55,11 +61,6 @@ require 'sqlconn.php';
     }else {echo $_SESSION['user'];}
 ?>
 <h2>Това са вашите имоти</h2>
-<span class="buti"><button class="buttonadd" id="imtadd">AddImot</button> <button class="buttonremove" id="imtdlt" onclick="remimot1()">DeleteImot</button>
-<button class="buttonadd" id="imtadd" onclick="editimot1()">Edit</button>
-<hr class="linebet">
-</span>
- 
     <div class="LeftCol">
     <?php
     $userImd = $_SESSION['userIm'];

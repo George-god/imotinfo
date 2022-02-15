@@ -3,7 +3,7 @@ $(document).ready(function () {
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("imtadd");
+var btn = document.getElementById("addn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -26,4 +26,6 @@ window.onclick = function(event) {
 }
 
 });
+
+
 
