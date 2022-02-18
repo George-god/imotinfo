@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'sqlconn.php';
+$prom = '0';
     if(isset($_SESSION['user'])){
  
     }else header("location: Login.html");
@@ -52,9 +53,17 @@ require 'sqlconn.php';
  
     <div class="LeftCol">
     <?php
-    
         $userImd = $_SESSION['userIm'];
-        $statem = "SELECT * FROM imoti,imot_harakter WHERE imot_harakter.imot_id=imoti.id ";
+        if(isset($_POST['submit'])){
+            $prom='1';
+            $type=$_POST['timot'];
+            $pricer=$_POST['price'];
+            $tok=$_POST['neses1'];
+            $gas=$_POST['neses2'];
+            $voda=$_POST['neses3'];
+        }
+        if($prom=='0') {
+            $statem = "SELECT * FROM imoti,imot_harakter WHERE imot_harakter.imot_id=imoti.id ";
         $resultc = $conn -> query($statem);
      
 
@@ -99,8 +108,63 @@ require 'sqlconn.php';
         </div>        
     <?php
         }
-    
     ?>
+    <?php
+        }
+    elseif ($prom=='1') {
+        $statemf = "SELECT * FROM imoti,imot_harakter 
+        WHERE imot_harakter.imot_id=imoti.id 
+        and imot_harakter.electricity='$tok' 
+        and imot_harakter.water='$voda' 
+        and imot_harakter.gas='$gas'";
+        $resultf = $conn -> query($statemf);
+     
+
+     while ($rowf = $resultf->fetch_assoc()) {
+       
+    ?>  
+        <div class="icard" id="edit">
+            <div class="icontainer">
+            <img src="../Pictures/img_avatar.png" alt="Avatar" style="width:50%" id="iimg"><br>
+            <label>ID na Durjatel:</label><label><?php echo $rowf['imoter_id']?></label><br>
+            </div>
+            <div class="icontainer">
+                <label>Ime na imot:</label><label><?php echo $rowf['name']?></label><br>
+                <label>Price:</label><label><?php echo $rowf['saleprice']?>€</label><br>
+                <label>Rent:</label><label><?php echo $rowf['rent']?>€</label><br>
+                <label>Status:</label><label><?php echo $rowf['status']?></label><br>
+            </div>
+            <div class="icontainer">
+                <label>Kavdratura:</label><label><?php echo $rowf['kvadrat']?> ㎡</label><br>
+                <label>Voda:</label><label>
+                    <?php 
+                        if($rowf['water']=="1"){echo "Yes";  }
+                        else {echo "No"; }
+                    ?> 
+                    </label><br>
+
+                <label>Tok:</label><label>
+                    <?php 
+                        if($rowf['electricity']=="1"){echo "Yes";  }
+                        else {echo "No"; }
+                    ?> 
+                </label><br>
+
+                <label>Gas:</label><label>
+                    <?php 
+                        if($rowf['gas']=="1"){echo "Yes";  }
+                        else {echo "No"; }
+                    ?> 
+                </label><br>
+
+            </div>
+        </div>        
+    <?php
+            }
+        }
+    ?>
+        
+        
     </div>
          
     <div class="RightCol">
@@ -119,17 +183,17 @@ require 'sqlconn.php';
                     <output>500000</output><br>
                 <label for="neses">Iskate li ot tiq neshta?</label><br>
                 <label class="containers">Tok
-                    <input type="checkbox" name="neses" value="electricity">
+                    <input type="checkbox" name="neses1" value="1">
                     <span class="checkmark"></span>
                 </label>
 
                 <label class="containers">Gas
-                    <input type="checkbox" name="neses" value="gas">
+                    <input type="checkbox" name="neses2" value="1">
                     <span class="checkmark"></span>
                 </label>
 
                 <label class="containers">Voda
-                    <input type="checkbox" name="neses" value="water">
+                    <input type="checkbox" name="neses3" value="1">
                     <span class="checkmark"></span>
                 </label>
 
