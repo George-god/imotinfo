@@ -1,7 +1,6 @@
 <?php
 session_start();
 require 'sqlconn.php';
-$prom = '0';
     if(isset($_SESSION['user'])){
  
     }else header("location: Login.html");
@@ -61,6 +60,9 @@ $prom = '0';
             $tok=$_POST['neses1'];
             $gas=$_POST['neses2'];
             $voda=$_POST['neses3'];
+        }
+        else {
+            $prom = '0';
         }
         if($prom=='0') {
             $statem = "SELECT * FROM imoti,imot_harakter WHERE imot_harakter.imot_id=imoti.id ";
