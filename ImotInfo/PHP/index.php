@@ -95,11 +95,6 @@ require 'sqlconn.php';
     }
     ?>
 
-
-
-<!-- NAPRAVI VIEW MODALA DA SE GLEDATA SHITNITE -->
-
-
     </div>
 
 
@@ -141,7 +136,7 @@ require 'sqlconn.php';
 
                 </div>
 
-                <div id="myModal2" class="modal two"><!-- OPRAVI EDIT PHP FORMA DA UPDEITVA -->
+                <div id="myModal2" class="modal two">
 
                     <div class="modal-content">
                         <div class="modal-header">

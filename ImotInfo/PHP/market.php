@@ -175,11 +175,15 @@ require 'sqlconn.php';
             <form method="post" action="">
 
                 <label for="timot">Type of imot:</label><br>
-                <select id="timot" name="timot">
-                    <option value="">1 room</option>
-                    <option value="">2 rooms</option>
-                    <option value="">3 rooms</option>
-                </select><br>
+                <select id="type" name="type" class="inptextmod1">
+                        <?php
+                            $sqlt = mysqli_query($conn, "SELECT * From imottype");
+                            $rowt = mysqli_num_rows($sqlt);
+                            while ($rowt = mysqli_fetch_array($sqlt)){
+                            echo "<option value='". $rowt['typeid'] ."'>" .$rowt['type'] ."</option>" ;
+                            }
+                        ?>
+                    </select><br>
                 <label for="price">Wanted Price:</label><br>
                     <input type="range" id="price" name="price" min="0" max="1000000" oninput="this.nextElementSibling.value = this.value">
                     <output>500000</output><br>

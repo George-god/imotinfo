@@ -61,7 +61,20 @@ $imoterID = $_SESSION['userIm'];
                     $water = $rower['water'];
                     $gas = $rower['gas'];
                     $tok = $rower['electricity'];
+                    $type = $rower['imottype'];
                 ?>
+
+                    <label for="type">What type:</label>
+                    <select id="type" name="type" class="inptextmod1">
+                        <?php
+                            $sqlt = mysqli_query($conn, "SELECT * From imottype");
+                                $rowt = mysqli_num_rows($sqlt);
+                                while ($rowt = mysqli_fetch_array($sqlt)){
+                                echo "<option value='". $rowt['typeid'] ."' ".(($type==$rowt['typeid'])?'selected="selected"':"")." >" .$rowt['type'] ."</option>" ;
+                            }
+                        ?>
+                    </select>
+
                     <label for="water">Water:</label>
                     <select id="water" name="water" class="inptextmod1">
                         <option value="1" <?php if($water=="1") echo 'selected="selected"'; ?> >YES</option>
