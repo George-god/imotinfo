@@ -54,71 +54,15 @@ require 'sqlconn.php';
     <?php
         $userImd = $_SESSION['userIm'];
         if(isset($_POST['submit'])){
-            $prom='1';
-            $type=$_POST['timot'];
+            $type=$_POST['type'];
             $pricer=$_POST['price'];
             $tok=$_POST['neses1'];
             $gas=$_POST['neses2'];
             $voda=$_POST['neses3'];
-        }
-        else {
-            $prom = '0';
-        }
-        if($prom=='0') {
-            $statem = "SELECT * FROM imoti,imot_harakter WHERE imot_harakter.imot_id=imoti.id ";
-        $resultc = $conn -> query($statem);
-     
 
-     while ($row = $resultc->fetch_assoc()) {
-       
-    ?>  
-        <div class="icard" id="edit">
-            <div class="icontainer">
-            <img src="../Pictures/img_avatar.png" alt="Avatar" style="width:50%" id="iimg"><br>
-            <label>ID na Durjatel:</label><label><?php echo $row['imoter_id']?></label><br>
-            </div>
-            <div class="icontainer">
-                <label>Ime na imot:</label><label><?php echo $row['name']?></label><br>
-                <label>Price:</label><label><?php echo $row['saleprice']?>€</label><br>
-                <label>Rent:</label><label><?php echo $row['rent']?>€</label><br>
-                <label>Status:</label><label><?php echo $row['status']?></label><br>
-            </div>
-            <div class="icontainer">
-                <label>Kavdratura:</label><label><?php echo $row['kvadrat']?> ㎡</label><br>
-                <label>Voda:</label><label>
-                    <?php 
-                        if($row['water']=="1"){echo "Yes";  }
-                        else {echo "No"; }
-                    ?> 
-                    </label><br>
-
-                <label>Tok:</label><label>
-                    <?php 
-                        if($row['electricity']=="1"){echo "Yes";  }
-                        else {echo "No"; }
-                    ?> 
-                </label><br>
-
-                <label>Gas:</label><label>
-                    <?php 
-                        if($row['gas']=="1"){echo "Yes";  }
-                        else {echo "No"; }
-                    ?> 
-                </label><br>
-
-            </div>
-        </div>        
-    <?php
-        }
-    ?>
-    <?php
-        }
-    elseif ($prom=='1') {
         $statemf = "SELECT * FROM imoti,imot_harakter 
         WHERE imot_harakter.imot_id=imoti.id 
-        and imot_harakter.electricity='$tok' 
-        and imot_harakter.water='$voda' 
-        and imot_harakter.gas='$gas'";
+        and imot_harakter.imottype= '$type' ";
         $resultf = $conn -> query($statemf);
      
 
@@ -162,9 +106,61 @@ require 'sqlconn.php';
             </div>
         </div>        
     <?php
-            }
         }
+    }
+        else {
+            $statem = "SELECT * FROM imoti,imot_harakter LEFT JOIN imottype ON imot_harakter.imottype=imottype.typeid WHERE imot_harakter.imot_id=imoti.id ";
+        $resultc = $conn -> query($statem);
+     
+
+     while ($row = $resultc->fetch_assoc()) {
+       
+    ?>  
+        <div class="icard" id="edit">
+            <div class="icontainer">
+            <img src="../Pictures/img_avatar.png" alt="Avatar" style="width:50%" id="iimg"><br>
+            <label>ID na Durjatel:</label><label><?php echo $row['imoter_id']?></label><br>
+            </div>
+            <div class="icontainer">
+                <label>Ime na imot:</label><label><?php echo $row['name']?></label><br>
+                <label>Price:</label><label><?php echo $row['saleprice']?>€</label><br>
+                <label>Rent:</label><label><?php echo $row['rent']?>€</label><br>
+                <label>Status:</label><label><?php echo $row['status']?></label><br>
+                <label>Type:</label><label><?php echo $row['type']?></label><br>
+            </div>
+            <div class="icontainer">
+                <label>Kavdratura:</label><label><?php echo $row['kvadrat']?> ㎡</label><br>
+                <label>Voda:</label><label>
+                    <?php 
+                        if($row['water']=="1"){echo "Yes";  }
+                        else {echo "No"; }
+                    ?> 
+                    </label><br>
+
+                <label>Tok:</label><label>
+                    <?php 
+                        if($row['electricity']=="1"){echo "Yes";  }
+                        else {echo "No"; }
+                    ?> 
+                </label><br>
+
+                <label>Gas:</label><label>
+                    <?php 
+                        if($row['gas']=="1"){echo "Yes";  }
+                        else {echo "No"; }
+                    ?> 
+                </label><br>
+
+            </div>
+        </div>        
+    <?php
+        }
+    }
     ?>
+        
+        
+
+        
         
         
     </div>
