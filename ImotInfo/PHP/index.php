@@ -25,7 +25,7 @@ require 'sqlconn.php';
 <script src="../JS/modal2.js"></script>
 <script src="../JS/modal3.js"></script>
 <script src="../JS/cookie.js"></script>
-<script src="../JS/checkEdits.js"></script>
+<script src="../JS/picchange.js"></script>
 <script src="../JS/saveEdits.js"></script>
 <script src="../JS/MSEdit.js"></script>
 <!-- <script src="../JS/msaved.js"></script> -->
