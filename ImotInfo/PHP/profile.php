@@ -39,10 +39,10 @@ session_start();
 
 <div id="mySidenav" class="sidenav">
   <a href="index.php" id="about">Imoti</a>
-  <a href="finance.html" id="blog">Finansi</a>
-  <a href="#" id="projects">Market</a>
-  <a href="#" id="profile">Profile</a>
-  <a href="#" id="contact">Contact</a>
+  <a href="finance.php" id="blog">Finansi</a>
+  <a href="market.php" id="projects">Market</a>
+  <a href="profile.php" id="profile">Profile</a>
+  <a href="Contact.php" id="contact">Contact</a>
 </div>
 
 <body>
@@ -73,8 +73,14 @@ session_start();
                 <label for="phone">PhoneNumber:</label><br>
                 <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" value="<?php echo $rower ['PhoneNumber']; ?>" class="hidform" readonly>
                 <br>
+                <?php
+                    $id=$rower['id'];
+                    $sqlcout = "SELECT * FROM imoti WHERE imoter_id ='$id' ";
+                    $resultcount = mysqli_query($conn, $sqlcout);
+                    $row = mysqli_num_rows($resultcount);
+                ?>
                 <label for="bnumber">Broi Imoti:</label><br>
-                <input type="number" id="bnumber" name="bnumber" value="0" class="hidform" readonly>
+                <input type="number" id="bnumber" name="bnumber" value="<?php echo $row ?>" class="hidform" readonly>
                 <br>
 
                 <button type="button" id="editbtn" class="hidformb" onmousedown="editbutoH()">Edit</button>

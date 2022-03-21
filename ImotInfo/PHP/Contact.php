@@ -34,7 +34,7 @@ require 'sqlconn.php';
 <div id="mySidenav" class="sidenav">
   <a href="index.php" id="about">Imoti</a>
   <a href="finance.php" id="blog">Finansi</a>
-  <a href="#" id="projects">Market</a>
+  <a href="market.php" id="projects">Market</a>
   <a href="profile.php" id="profile">Profile</a>
   <a href="Csontact.php" id="contact">Contact</a>
 </div>
