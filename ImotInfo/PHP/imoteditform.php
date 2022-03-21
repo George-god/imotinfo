@@ -46,13 +46,6 @@ $imoterID = $_SESSION['userIm'];
                 <label for="renta">Rent for Imot:</label>
                 <input type="number" id="renta" name="renta" class="inptextmod1" value="<?php echo $row ['rent']; ?>" placeholder="Zadai rentata..">
 
-                <form action="upload.php" method="post" enctype="multipart/form-data">
-                    Select Image File to Upload:
-                    <input type="file" name="file">
-                     <input type="text" id="idim" name="idim" class="inptextmod1" hidden value="<?php echo $imid; ?>">
-                    <input type="submit" name="submit" value="Upload">
-                </form>
-
                 <label for="status">Status:</label>
                 <select id="status" name="status" class="inptextmod1">
                     <option value="rented" <?php if($status=="rented") echo 'selected="selected"'; ?> >rented</option>
