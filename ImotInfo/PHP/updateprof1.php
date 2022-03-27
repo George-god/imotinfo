@@ -19,6 +19,7 @@
 	}
 	else {
 		echo 'Welp. Something didnt happend';
+		header("location: index.php");
 	}
 
 ?>
