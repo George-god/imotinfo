@@ -173,7 +173,12 @@ session_start();
     </div>
 
     <div class="tabcontent" id="Other">
-        <p>3-ti tab</p>
+        <form action="logout.php" method="post">
+
+                <label for="Logout">Logout:</label>
+
+                <input type="submit" value="Submit" class="inpsubmod1">
+        </form>
         
     </div>
 
