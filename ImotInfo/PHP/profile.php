@@ -177,7 +177,7 @@ session_start();
 
                 <label for="Logout">Logout:</label>
 
-                <input type="submit" value="Submit" class="inpsubmod1">
+                <input type="submit" value="Logout" class="inpsubmod1">
         </form>
         
     </div>
