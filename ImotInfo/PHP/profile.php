@@ -59,7 +59,7 @@ session_start();
         
         <div class="imoterinfo">
             <h3>Info za immoter</h3>
-           <form action="" method="post">
+           <form action="updateprof1.php" method="post">
                 <?php
                     $uname=$_SESSION['userIm'];
                     $sqlimo = "SELECT * FROM imoters WHERE imoter_name ='$uname' ";
@@ -89,11 +89,8 @@ session_start();
             </form>
             <?php
             }
-            ?>
-            <?php 
-                if($_SESSION['userIm']==$uname){
 
-                }
+                if(isset($_SESSION['userIm'])){}
                 else {
             ?>
                     <button type="button" id="addim" class="hidformb">Add Yourself</button>
@@ -121,31 +118,31 @@ session_start();
                 ?>
 
                 <label for="fname" id="shitname">First Name:</label>
-                <input type="text" id="fname" name="firstname" value="<?php echo $row ['first_name']; ?>" class="normform">
+                <input type="text" id="fname" name="firstname" value="<?php echo $row ['first_name']; ?>" class="normform" readonly>
 
                 <label for="lname">Last Name:</label>
-                <input type="text" id="lname" name="lastname" value="<?php echo $row ['last_name']; ?>" class="normform" >
+                <input type="text" id="lname" name="lastname" value="<?php echo $row ['last_name']; ?>" class="normform" readonly>
 
                 <label for="mail">Mail:</label>
-                <input type="mail" id="mail" name="mail" value="<?php echo $row ['email']; ?>" class="normform">
+                <input type="mail" id="mail" name="mail" value="<?php echo $row ['email']; ?>" class="normform" readonly>
 
                 <label for="pnumber">PostCode</label>
-                <input type="number" id="pnumber" name="pnumber" value="<?php echo $row ['town_code']; ?>" class="normform" >
+                <input type="number" id="pnumber" name="pnumber" value="<?php echo $row ['town_code']; ?>" class="normform" readonly>
 
                 <label>Immoter li si:</label>
                 <label class="imoterr">DA
-                <input type="radio"  name="radioI" class="normform" id="imotda" value="1" <?php if($row['imoter'] == "1") echo " checked";?>>
+                <input type="radio"  name="radioI" class="normform" id="imotda" value="1" <?php if($row['imoter'] == "1") echo " checked";?> disabled="true">
                 <span class="checkmark"></span>
                 </label>
 
                 <label class="imoterr">NE
-                <input type="radio" name="radioI" class="normform" id="imotne" value="0" <?php if($row['imoter'] == "0") echo " checked";?>>
+                <input type="radio" name="radioI" class="normform" id="imotne" value="0" <?php if($row['imoter'] == "0") echo " checked";?> disabled="true">
                 <span class="checkmark"></span>
                 </label>
 
                 
-                
-                <input type="submit" value="Save" id="savebtn" class="normformb">
+                <button type="button" id="editbtn" class="normformb" onmousedown="editbuto()">Edit</button>
+                <input type="submit" value="Save" id="savebtn" class="normformb" onclick="savebtn()">
 
             </form>
             <?php
