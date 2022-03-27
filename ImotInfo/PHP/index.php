@@ -86,7 +86,14 @@ require 'sqlconn.php';
         $imotid=$row['id'];
     ?>  
         <div class="icard" id="edit">
-            <img src="../Pictures/img_avatar.png" alt="Avatar" style="width:100%" id="iimg">
+
+            <?php 
+                $stpic = "SELECT imot_harakter.imottype,imottype.typeid,imottype.icon From imottype INNER JOIN imot_harakter on imot_harakter.imottype = imottype.typeid WHERE imot_id='$imotid' ";
+                $respic = $conn -> query($stpic);
+                $rowpic = mysqli_fetch_array($respic,MYSQLI_BOTH);
+            ?>
+
+            <img src="../Pictures/<?php echo $rowpic['icon'] ?>" alt="Avatar" style="width:100%" id="iimg">
             <div class="icontainer">
                 <form method="post" action="viewimto.php">
                     <label class="cenlab uno"><?php echo $row['name'] ?> </label><br>

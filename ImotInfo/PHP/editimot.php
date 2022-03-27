@@ -11,6 +11,7 @@
 	$tok = $_POST['tok'];
 	$cenatok = $_POST['cenatok'];
 	$kvadratura = $_POST['kvadratura'];
+	$type =$_POST['type'];
 
 	$sqlse = "SELECT id FROM imoti WHERE name='$name'";
     $resultse = $conn->query($sqlse);
@@ -24,7 +25,7 @@
 	$sqlr = "UPDATE imoti SET name='$name', saleprice='$cena', rent='$renta', status='$status' WHERE name='$name'";
 	$result = $conn->query($sqlr);
 
-	$sqlrh = "UPDATE imot_harakter SET water='$water', gas='$gas', electricity='$tok', kvadrat='$kvadratura', gasprice='$cenagas', waterprice='$cenavoda', electricityprice='$cenatok' WHERE imot_id='$uid'";
+	$sqlrh = "UPDATE imot_harakter SET imottype='$type', water='$water', gas='$gas', electricity='$tok', kvadrat='$kvadratura', gasprice='$cenagas', waterprice='$cenavoda', electricityprice='$cenatok' WHERE imot_id='$uid'";
 	$resulth = $conn->query($sqlrh);
 
 	if($result and $resulth){
