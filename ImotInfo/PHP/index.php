@@ -5,6 +5,11 @@ require 'sqlconn.php';
  
     }else header("location: Login.html");
 
+    if(isset($_SESSION['userIm'])){
+
+    }else header("location: market.php");
+
+
 ?>
 <!DOCTYPE html>
 <html>

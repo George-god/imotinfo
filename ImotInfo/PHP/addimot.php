@@ -33,11 +33,16 @@ require 'sqlconn.php';
 	$resulthar = $conn->query($sqlrhar);
 
 	if($result and $resulthar){
-		$_SESSION['message'] = "Imot was added";
 		header("location: index.php");
 	}
 	else {
 		echo 'Welp. Something didnt happend';
+		echo $idgen .'-----';
+		echo $imotname.'-----';
+		echo $imid.'-----';
+		echo $imotcena.'-----';
+		echo $imotrenta.'-----';
+		echo $imotstatus.'-----';
 	}
 
 ?>
