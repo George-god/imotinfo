@@ -397,6 +397,12 @@ a {
     position: relative;
 }
 
+.tres {
+    text-align: center;
+    left: 28%;
+    position: relative;
+}
+
 .linebet {
     border: 2px solid black;
 }
@@ -435,6 +441,8 @@ a {
 
 #iimg {
     border-radius: 8px 8px 0 0;
+    height: 200px;
+    width: 190px;
 }
 
 #myBtn{

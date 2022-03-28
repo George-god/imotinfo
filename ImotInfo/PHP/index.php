@@ -31,8 +31,6 @@ require 'sqlconn.php';
 <script src="../JS/modal2.js"></script>
 <script src="../JS/modal3.js"></script>
 <script src="../JS/cookie.js"></script>
-<script src="../JS/picchange.js"></script>
-<script src="../JS/saveEdits.js"></script>
 <script src="../JS/MSEdit.js"></script>
 <!-- <script src="../JS/msaved.js"></script> -->
 </head>
@@ -88,7 +86,7 @@ require 'sqlconn.php';
         <div class="icard" id="edit">
 
             <?php 
-                $stpic = "SELECT imot_harakter.imottype,imottype.typeid,imottype.icon From imottype INNER JOIN imot_harakter on imot_harakter.imottype = imottype.typeid WHERE imot_id='$imotid' ";
+                $stpic = "SELECT imot_harakter.imottype,imottype.typeid,imottype.icon,imottype.type From imottype INNER JOIN imot_harakter on imot_harakter.imottype = imottype.typeid WHERE imot_id='$imotid' ";
                 $respic = $conn -> query($stpic);
                 $rowpic = mysqli_fetch_array($respic,MYSQLI_BOTH);
             ?>
@@ -99,6 +97,7 @@ require 'sqlconn.php';
                     <label class="cenlab uno"><?php echo $row['name'] ?> </label><br>
                     <input type="hidden" name="imotnamecard" value="<?php echo $row['name'] ?>">
                     <label class="cenlab dos"><?php echo $row['status'] ?></label><br>
+                    <label class="cenlab tres"><?php echo $rowpic['type'] ?></label><br>
                     
                     <input type="submit" value="View" id="viewbtn" onclick="">
                 </form>
