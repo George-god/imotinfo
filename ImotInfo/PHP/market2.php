@@ -53,60 +53,67 @@ require 'sqlconn.php';
  
     <div class="LeftCol">
     <?php
-        $userImd = $_SESSION['userIm'];       
-            $statem = "SELECT * FROM imoti,imot_harakter LEFT JOIN imottype ON imot_harakter.imottype=imottype.typeid WHERE imot_harakter.imot_id=imoti.id AND status='for_sale' ";
-        $resultc = $conn -> query($statem);
+        $userImd = $_SESSION['userIm'];
+            $type=$_POST['type'];
+            $pricer=$_POST['price'];
+            $tok=$_POST['neses1'];
+            $gas=$_POST['neses2'];
+            $voda=$_POST['neses3'];
+
+        $statemf = "SELECT * FROM imoti,imot_harakter 
+        WHERE imot_harakter.imot_id=imoti.id 
+        and imot_harakter.imottype= '$type' and status='for_sale' ";
+        $resultf = $conn -> query($statemf);
      
 
-     while ($row = $resultc->fetch_assoc()) {
+     while ($rowf = $resultf->fetch_assoc()) {
        
     ?>  
         <div class="icard" id="edit">
             <div class="icontainer">
             <img src="../Pictures/img_avatar.png" alt="Avatar" style="width:50%" id="iimg"><br>
-            <label>ID na Durjatel:</label><label><?php echo $row['imoter_id']?></label><br>
+            <label>ID na Durjatel:</label><label><?php echo $rowf['imoter_id']?></label><br>
             </div>
             <div class="icontainer">
-                <label>Ime na imot:</label><label><?php echo $row['name']?></label><br>
-                <label>Price:</label><label><?php echo $row['saleprice']?>€</label><br>
-                <label>Rent:</label><label><?php echo $row['rent']?>€</label><br>
-                <label>Status:</label><label><?php echo $row['status']?></label><br>
-                <label>Type:</label><label><?php echo $row['type']?></label><br>
+                <label>Ime na imot:</label><label><?php echo $rowf['name']?></label><br>
+                <label>Price:</label><label><?php echo $rowf['saleprice']?>€</label><br>
+                <label>Rent:</label><label><?php echo $rowf['rent']?>€</label><br>
+                <label>Status:</label><label><?php echo $rowf['status']?></label><br>
             </div>
             <div class="icontainer">
-                <label>Kavdratura:</label><label><?php echo $row['kvadrat']?> ㎡</label><br>
+                <label>Kavdratura:</label><label><?php echo $rowf['kvadrat']?> ㎡</label><br>
                 <label>Voda:</label><label>
                     <?php 
-                        if($row['water']=="1"){echo "Yes";  }
+                        if($rowf['water']=="1"){echo "Yes";  }
                         else {echo "No"; }
                     ?> 
                     </label><br>
 
                 <label>Tok:</label><label>
                     <?php 
-                        if($row['electricity']=="1"){echo "Yes";  }
+                        if($rowf['electricity']=="1"){echo "Yes";  }
                         else {echo "No"; }
                     ?> 
                 </label><br>
 
                 <label>Gas:</label><label>
                     <?php 
-                        if($row['gas']=="1"){echo "Yes";  }
+                        if($rowf['gas']=="1"){echo "Yes";  }
                         else {echo "No"; }
                     ?> 
                 </label><br>
 
             </div>
-        </div>        
-    <?php
-    }
-    ?> 
+        </div>
+        <?php
+            }
+        ?>           
     </div>
          
     <div class="RightCol">
         <button class="open-button" onclick="openForm()">FILTER</button>
         <div class="form-popup" id="myForm">
-            <form method="post" action="market2.php" class="form-container">
+            <form method="post" action="" class="form-container">
 
                 <label for="timot">Type of imot:</label><br>
                 <select id="type" name="type" class="inptextmod1">
