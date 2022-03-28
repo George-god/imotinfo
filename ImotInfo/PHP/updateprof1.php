@@ -18,8 +18,7 @@
 		header("location: Login.html");		
 	}
 	else {
-		echo 'Welp. Something didnt happend';
-		header("location: index.php");
+		header("location: errorpage.html");
 	}
 
 ?>

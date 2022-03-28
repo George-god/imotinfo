@@ -27,7 +27,7 @@
 		header("location: Login.html");		
 	}
 	else {
-		echo 'Welp. Something didnt happend';
+		header("location: errorpage.html");
 	}
 
 ?>

@@ -25,7 +25,7 @@
 		header("location: index.php");
 	}
 	else {
-		echo 'Welp. Something didnt happend';
+		header("location: errorpage.html");
 	}
 
 ?>
