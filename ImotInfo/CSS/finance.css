@@ -42,6 +42,14 @@ a {
     
   }
 
+select {
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    left: 0%;
+    position: relative;
+}
+
 .nav    {
     overflow: hidden;
     background-color: #66d9ff;
@@ -107,17 +115,41 @@ a {
 }
 
 .filterfinance {
-    background-color: gray;
+    background-color: lightgray;
     width: 80%;
     height: 20%;
     margin: auto;
+    border-bottom: 5px solid blue;
+    border-radius: 10px;
 }
 
 .resultshow {
-    background-color: darkgray;
+    
     width: 80%;
     height: 60%;
     margin: auto;
+}
+
+.svetatri:after{
+    content: "";
+    display: table;
+    clear: both;
+
+}
+
+.fin {
+    float: left;
+    width: 40%;
+    height: 153px;
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+
+}
+
+.finsub {
+    width: 20%;
+    height: 153px;
 }
 
 
@@ -168,7 +200,7 @@ a {
     display: inline-block;
   padding: 15px 25px;
   position: relative;
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -178,9 +210,9 @@ a {
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
-  float: right;
-  top: 58%;
-  right: 10px;
+  float: left;
+  top: 27%;
+  left: 24%;
 }
 
 #Filterbtn:hover {
@@ -191,50 +223,6 @@ a {
     background-color: #1a8cff;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
-}
-
-#Resetbtn{
-    display: inline-block;
-  padding: 15px 25px;
-  position: relative;
-  font-size: 14px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: black;
-  background-color: #ffff33;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-  float: right;
-  top: 58%;
-  right: 10px;
-}
-
-#Resetbtn:hover {
-    background-color: #b3b300;
-}
-
-#Resetbtn:active {
-    background-color: #b3b300;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-
-#svetatri:after{
-    content: "";
-    display: table;
-    clear: both;
-
-}
-
-#fin {
-    float: left;
-    width: 33.33%;
-    padding: 10px;
-    font-size: 10px;
- 
 }
 
 @media screen and (max-width: 600px) {

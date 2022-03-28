@@ -47,9 +47,9 @@ require 'sqlconn.php';
 
     <div class="filterfinance">
         <form action="" id="finfil" method="post">
-        <div id="svetatri">
-            <div id="fin">
-                <p>Use the min and max attributes to add restrictions to dates:</p>
+        <div class="svetatri">
+            <div class="fin">
+                <p><b>Use the min and max attributes to add restrictions to dates:</b></p>
 
                 <label for="datemin">Enter a date after 2000-01-01:</label>
                 <input type="date" id="datemin" name="datemin" min="2000-01-02"><br>
@@ -58,11 +58,11 @@ require 'sqlconn.php';
                 <input type="date" id="datemax" name="datemax" max="2049-12-31"><br>
             </div>
             
-            <div id="fin">
+            <div class="fin">
                 
                 <label for="Razhodi">Koi imoti da se vkluchat vuv finansite?</label><br>
 
-                <select name="imoti[]" multiple>
+                <select name="imoti[]" multiple >
                     <?php
                         $sqlse = "SELECT id FROM imoters WHERE imoter_name='$userImed'";
                         $resultse = $conn->query($sqlse);
@@ -78,8 +78,7 @@ require 'sqlconn.php';
                 
             </div>
 
-            <div id="fin">
-                <input type="reset" id="Resetbtn">
+            <div class="fin finsub">
                 <input type="submit" id="Filterbtn" name="submit">
             </div>
         </div>
