@@ -118,6 +118,7 @@ input[type=submit][disabled]:hover {
   background-color: #009999;
   position: relative;
   float: center;
+  z-index:7
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -133,6 +134,7 @@ input[type=submit][disabled]:hover {
   transition: 0.3s;
   left: 43%;
   position: relative;
+  z-index:7
 }
 
 /* Change background color of buttons on hover */
@@ -386,11 +388,13 @@ input[type=submit][disabled]:hover {
 #blog {
   top: 190px;
   background-color: #2196F3; /* Blue */
+  z-index:9
 }
 
 #projects {
   top: 250px;
   background-color: #f44336; /* Red */
+  z-index:9
 }
 
 #profile{

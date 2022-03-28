@@ -100,24 +100,25 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 }
 
 .open-button {
-  background-color: #555;
+  background-color: cadetblue;
   color: white;
   padding: 16px 20px;
   border: none;
   cursor: pointer;
   opacity: 0.8;
-  position: fixed;
+  position: relative;
   top: 40%;
-  right: 50px;
+  right: 10px;
   width: 200px;
+  z-index:8
 }
 
 /* The popup form - hidden by default */
 .form-popup {
   display: none;
-  position: fixed;
+  position: relative;
   bottom: 0;
-  right: 25px;
+  right: 14px;
   border: 3px solid #f1f1f1;
   z-index: 9;
 }
@@ -352,7 +353,6 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   padding: 2px 16px;
   width: 40%;
   height: 100%;
-  background-color: yellow;
 }
 
 .filter {
@@ -386,6 +386,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 #about {
   top: 130px;
   background-color: #04AA6D;
+
 }
 
 #blog {
@@ -396,11 +397,13 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 #projects {
   top: 250px;
   background-color: #f44336; /* Red */
+  z-index:9
 }
 
 #profile{
     top: 310px;
   background-color: #00ff00 ; /* Green */
+  z-index:9
 }
 
 #contact {

@@ -56,11 +56,12 @@ require 'sqlconn.php';
         $userImd = $_SESSION['userIm'];
             $type=$_POST['type'];
             $pricer=$_POST['price'];
+            $tok=$gas=$voda='0';
             $tok=$_POST['neses1'];
             $gas=$_POST['neses2'];
             $voda=$_POST['neses3'];
 
-        $statemf = "SELECT * FROM imoti,imot_harakter 
+        $statemf = "SELECT * FROM imoti,imot_harakter LEFT JOIN imottype ON imot_harakter.imottype=imottype.typeid
         WHERE imot_harakter.imot_id=imoti.id 
         and imot_harakter.imottype= '$type' and status='for_sale' ";
         $resultf = $conn -> query($statemf);
@@ -79,6 +80,7 @@ require 'sqlconn.php';
                 <label>Price:</label><label><?php echo $rowf['saleprice']?>€</label><br>
                 <label>Rent:</label><label><?php echo $rowf['rent']?>€</label><br>
                 <label>Status:</label><label><?php echo $rowf['status']?></label><br>
+                <label>Type:</label><label><?php echo $rowf['type']?></label><br>
             </div>
             <div class="icontainer">
                 <label>Kavdratura:</label><label><?php echo $rowf['kvadrat']?> ㎡</label><br>
