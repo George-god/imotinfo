@@ -29,7 +29,6 @@
 	$resulth = $conn->query($sqlrh);
 
 	if($result and $resulth){
-		$_SESSION['message'] = "Changes were made!";
 		header("location: index.php");		
 	}
 	else {

@@ -1,22 +1,9 @@
 <?php
 	session_start();
-	//Get values from form in login.php file
+	require 'sqlconn.php';
+
 	$mail = $_POST['ename'];
 	$password = $_POST['psw'];
-
-
-	//Connect to server and select database
-	$userS = 'NGoshko';
-	$passwordS = 'Goshko993';
-	$server = 'localhost';
-	$database = 'imotdata';
-
-
-	$conn = mysqli_connect($server, $userS, $passwordS, $database);
-	if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-	}
-	echo "Connected successfully";
 
 	$sql = "SELECT * FROM users WHERE email ='$mail' and password ='$password'";
 	$result = $conn->query($sql);
@@ -32,12 +19,14 @@
 	$userImot= $rowimo['imoter_name'];
 
 	if ($row['email']==$mail && $row['password']==$password) {
-		echo "Login success! Welcome ".$row['Email'];
+
 		$_SESSION['user']=$mail;
 		$_SESSION['userIm']=$userImot;
 		header("location: index.php");
-	} else {
-		echo "Failed to login!";
+
+	} 
+	else {
+		header("location: errorpage.html");
 	}
 
 
