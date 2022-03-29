@@ -94,10 +94,10 @@ require 'sqlconn.php';
             <img src="../Pictures/<?php echo $rowpic['icon'] ?>" alt="Avatar" style="width:100%" id="iimg">
             <div class="icontainer">
                 <form method="post" action="viewimto.php">
-                    <label class="cenlab uno"><?php echo $row['name'] ?> </label><br>
+                    <label class="cenlab uno"><?php echo 'Name:'.$row['name'] ?> </label><br>
                     <input type="hidden" name="imotnamecard" value="<?php echo $row['name'] ?>">
-                    <label class="cenlab dos"><?php echo $row['status'] ?></label><br>
-                    <label class="cenlab tres"><?php echo $rowpic['type'] ?></label><br>
+                    <label class="cenlab dos"><?php echo 'Status:'.$row['status'] ?></label><br>
+                    <label class="cenlab tres"><?php echo 'Type:'.$rowpic['type'] ?></label><br>
                     
                     <input type="submit" value="View" id="viewbtn" onclick="">
                 </form>

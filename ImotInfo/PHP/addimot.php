@@ -12,8 +12,8 @@ require 'sqlconn.php';
 	$idyear = date("y");
 	$idday = date("d");
 	$idmont = date("m");
-	$idgen = $idday.rand(1,99).$idmont.$idyear.rand(1,99);
-	$idhargen = rand(1,99).rand(432,964);
+	$idgen = $idday.rand(1,9).$idmont.$idyear.rand(1,9);
+	$idhargen = rand(1,9).rand(13,96);
 
 	$sqlse = "SELECT id FROM imoters WHERE imoter_name='$userIm'";
 	$resultse = $conn->query($sqlse);

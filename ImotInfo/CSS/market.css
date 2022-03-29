@@ -190,12 +190,13 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 .LeftCol{
     background-color: ;
     float: left;
-    width: 85%;
+    width: 84%;
+    height: 80%;
     display: flex;
     font-size: 20px;
     text-align: center;
     flex-direction: column;
-
+    overflow: auto;
 }
 
 .LeftCol > div{
