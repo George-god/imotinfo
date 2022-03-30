@@ -1,6 +1,34 @@
 <?php
 	require 'sqlconn.php';
 
+	//$data = $_POST;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "Invalid email format";
+    }
+  }
+
+  if ($_POST['psw'] !== $_POST['psw-repeat']) {
+   		$passErr = "Password is not matching!";  
+   } else {
+   		$passErr = test_input($_POST["psw"]);
+   } 
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
 	$mail = $_POST['email'];
 	$pass = $_POST['psw'];
 	
@@ -16,7 +44,6 @@
 		$result = $conn->query($sqlr);
 
 		if($result){
-			$_SESSION['message'] = "You are now a member of the ImotInfo";
 			$_SESSION['user']=$mail;
 			header("location: index.php");
 		}
