@@ -33,7 +33,7 @@ include ('regproc.php');
                 <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
                 <div class="clearfix">
-                    <button type="button" class="login" onclick="location.href='Login.html';" >Login</button>
+                    <button type="button" class="login" onclick="location.href='login.php';" >Login</button>
                     <button type="submit" class="signupbtn" name="singup">Sign Up</button>
                 </div>
             </div>

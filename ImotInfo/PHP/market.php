@@ -3,7 +3,7 @@ session_start();
 require 'sqlconn.php';
     if(isset($_SESSION['user'])){
  
-    }else header("location: Login.html");
+    }else header("location: login.php");
 
 ?>
 <!DOCTYPE html>

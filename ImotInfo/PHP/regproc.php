@@ -33,8 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 	elseif(!empty($pass))
 	{
-
-    	$sqlr = "INSERT INTO users (password , email) VALUES('$pass', '$email')";
+		$password = mysqli_real_escape_string($conn, $pass);
+		$password = password_hash($password, PASSWORD_DEFAULT);
+    	$sqlr = "INSERT INTO users (password , email) VALUES('$password', '$email')";
 		$result = $conn->query($sqlr);
 
 		if($result){

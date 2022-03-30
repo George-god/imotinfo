@@ -2,7 +2,7 @@
 session_start();
     if(isset($_SESSION['user'])){
  
-    }else header("location: Login.html");
+    }else header("location: login.php");
 
 ?>
 <?php require 'sqlconn.php'; ?>
@@ -61,7 +61,9 @@ session_start();
             <h3>Info za immoter</h3>
            <form action="updateprof1.php" method="post">
                 <?php
-                    $uname=$_SESSION['userIm'];
+                    if(isset($_SESSION['userIm'])){
+                        $uname = $_SESSION['userIm'];
+                    
                     $sqlimo = "SELECT * FROM imoters WHERE imoter_name ='$uname' ";
                     $resultimo = $conn->query($sqlimo);
 
@@ -88,6 +90,7 @@ session_start();
 
             </form>
             <?php
+                }
             }
 
                 if(isset($_SESSION['userIm'])){}

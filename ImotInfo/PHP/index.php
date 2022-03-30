@@ -2,12 +2,17 @@
 session_start();
 require 'sqlconn.php';
     if(isset($_SESSION['user'])){
+        $user = $_SESSION['user'];
+        if(isset($_SESSION['userIm'])){
+            $userImd = $_SESSION['userIm'];
+        }else header("location: profile.php");
  
-    }else header("location: Login.html");
+    }else {
+        header("location: login.php");
+    }
+    
 
-    if(isset($_SESSION['userIm'])){
-
-    }else header("location: market.php");
+    
 
 
 ?>
@@ -61,13 +66,12 @@ require 'sqlconn.php';
 <h1>Здравейте 
 <?php 
     if(isset($_SESSION['userIm'])){
-        echo $_SESSION['userIm']; 
-    }else {echo $_SESSION['user'];}
+        echo $userImd; 
+    }else {echo $user;}
 ?>
 <h2>Това са вашите имоти</h2>
     <div class="LeftCol">
     <?php
-    $userImd = $_SESSION['userIm'];
     $sqlse = "SELECT id FROM imoters WHERE imoter_name='$userImd'";
     $resultse = $conn->query($sqlse);
 
