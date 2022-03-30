@@ -2,6 +2,7 @@
 	require 'sqlconn.php';
 
 	//$data = $_POST;
+	$emailErr = $passErr = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
@@ -18,8 +19,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if ($_POST['psw'] !== $_POST['psw-repeat']) {
    		$passErr = "Password is not matching!";  
    } else {
-   		$passErr = test_input($_POST["psw"]);
-   } 
+   		$pass = $_POST["psw"];
+   }
+
+   if (isset($_POST['singup'])) {
+    //$mail = $_POST['email'];
+	//$pass = $_POST['psw'];
+
+	$queryc = mysqli_query($conn, "SELECT * FROM `users` WHERE email='".$email."'");
+
+	if(mysqli_num_rows($queryc) > 0){
+    $emailErr = "Email is in use!";
+	}
+	elseif(!empty($pass))
+	{
+
+    	$sqlr = "INSERT INTO users (password , email) VALUES('$pass', '$email')";
+		$result = $conn->query($sqlr);
+
+		if($result){
+			$_SESSION['user']=$email;
+			header("location: index.php");
+		}
+		else {
+			header("location: errorpage.html");
+		}
+
+	}
+	else {}
+
+	
+	//$sqlcheck = "SELECT COUNT(*) FROM users WHERE email = '$email' ";
+	//$resultcheck = $conn->query($sqlcheck);
+
+	//if($resultcheck->fetchColumn() > 0){
+
+		//$emailErr = "Email is in use!";
+	//}
+	//else {
+		
+		
+	//} 
+  } 
 }
 
 function test_input($data) {
@@ -28,30 +69,5 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
-
-	$mail = $_POST['email'];
-	$pass = $_POST['psw'];
-	
-	$sqlcheck = "SELECT 1 FROM users WHERE email = '$mail' ";
-	$resultcheck = $conn->query($sqlcheck);
-
-	if($resultcheck){
-		header("location: errorpagemail.html");
-	}
-	else {
-		
-		$sqlr = "INSERT INTO users (password , email) VALUES('$pass', '$mail')";
-		$result = $conn->query($sqlr);
-
-		if($result){
-			$_SESSION['user']=$mail;
-			header("location: index.php");
-		}
-		else {
-			header("location: errorpage.html");
-		}
-	}
-
-	
 
 ?>

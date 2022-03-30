@@ -34,7 +34,7 @@ include ('regproc.php');
 
                 <div class="clearfix">
                     <button type="button" class="login" onclick="location.href='Login.html';" >Login</button>
-                    <button type="submit" class="signupbtn">Sign Up</button>
+                    <button type="submit" class="signupbtn" name="singup">Sign Up</button>
                 </div>
             </div>
         </form>
