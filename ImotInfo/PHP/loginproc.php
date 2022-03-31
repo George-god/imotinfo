@@ -20,21 +20,16 @@
                           $_SESSION['user'] = $username;
                           $usdi=$row['id'];
                           $sqlimo = "SELECT imoter_name FROM imoters WHERE admin_id ='$usdi'";
-						  //$resultimo = $conn->query($sqlimo);
 						  $resultimo = mysqli_query($conn, $sqlimo);
 
 						  if(mysqli_num_rows($resultimo) > 0){
 						  	$rowimo = mysqli_fetch_array($resultimo,MYSQLI_BOTH);
 						  	$userImot= $rowimo['imoter_name'];
-						  	$_SESSION['userIm']=$userImot;
-						  	echo $_SESSION['user'].'---'.$_SESSION['userIm'];
-						  	//echo '<script>alert("imot not working")</script>';
+						  	$_SESSION['userIm']=$userImot;				
 						  	header("location: index.php");
 						  }
 						  else {
-						  	//echo '<script>alert("not imot not working")</script>';
 						  	header("location: index.php");
-						  	//echo $_SESSION['user'];
 						  }  
                      }  
                      else  

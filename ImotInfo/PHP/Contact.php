@@ -1,8 +1,9 @@
 <?php
 session_start();
 require 'sqlconn.php';
+require 'mailsend.php';
     if(isset($_SESSION['user'])){
-        $userImed = $_SESSION['userIm'];
+        $user = $_SESSION['user'];
     }else header("location: login.php");
 
 ?>
@@ -49,19 +50,14 @@ require 'sqlconn.php';
       <img src="/Pictures/img_avatar.png" style="width:100%">
     </div>
     <div class="column">
-      <form action="/action_page.php">
+      <form action="" method="post">
+        <input type="text" id="mail" name="mail" value="<?php echo $user;?>" hidden>
         <label for="fname">Username OR Fullname:</label>
         <input type="text" id="name" name="name" placeholder="Username or Fullname..">
-        <label for="lname">Problem:</label>
-        <input type="text" id="problem" name="problem" placeholder="Problem..">
-        <label for="country">Country:</label>
-        <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
+        <label for="lname">Subject:</label>
+        <input type="text" id="subject" name="subject" placeholder="Subject..">
         <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <textarea id="subject" name="problem" placeholder="Write something.." style="height:170px"></textarea>
         <input type="submit" value="Submit">
       </form>
     </div>
