@@ -17,11 +17,12 @@ body {
 
 body::after {
   content: "";
-  background: url("https://i.imgur.com/1kMS74y.jpg");
+  background: url("https://i.imgur.com/7JDX5cA.jpg");
   background-position: center; 
     background-repeat:no-repeat;
     background-size: cover;
-  opacity: 0.5;
+    height: 95em;
+  opacity: 0.8;
   top: 0;
   left: 0;
   bottom: 0;
@@ -125,7 +126,7 @@ a {
 }
 
 .MainI {
-    background-color: transparent;
+    background: rgba(153, 255, 255,0.5);
     height: 10.5in;
     margin-top: 10px;
     margin-left: 10px;

@@ -9,13 +9,25 @@ body {
     padding: 20px;
     height: 100%;
     font-family: Arial;
-    background-image:url(../Pictures/Back2.png);
-    background-position: center; 
-    background-repeat: repeat;
-    background-attachment: scroll;
     max-width: 100%;
     /* overflow-x: hidden; */
       }
+
+body::after {
+  content: "";
+  background: url("https://i.imgur.com/1kMS74y.jpg");
+  background-position: center; 
+    background-repeat:no-repeat;
+    background-size: cover;
+    height: 95em;
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
  
 footer {
     padding: 20px;

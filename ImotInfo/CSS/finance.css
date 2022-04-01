@@ -9,15 +9,25 @@ body {
     padding: 20px;
     height: 100%;
     font-family: Arial;
-    background-image:url(../Pictures/Back2.png);
-    background-position: center; 
-    background-repeat:no-repeat;
-    background-attachment: scroll;
     max-width: 100%;
     overflow-x: hidden;
-
-
       }
+
+body::after {
+  content: "";
+  background: url("https://i.imgur.com/7JDX5cA.jpg");
+  background-position: center; 
+    background-repeat:no-repeat;
+    background-size: cover;
+    height: 77em;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
  
 footer {
     padding: 20px;
@@ -89,7 +99,7 @@ select {
 }
 
 .FinanceMain {
-    background-color: #ccf2ff;
+    background: rgba(204, 242, 255,0.7);
     height: 8.4in;
     margin-top: 10px;
     margin-left: 10px;
