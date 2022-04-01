@@ -23,8 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    }
 
    if (isset($_POST['singup'])) {
-    //$mail = $_POST['email'];
-	//$pass = $_POST['psw'];
 
 	$queryc = mysqli_query($conn, "SELECT * FROM `users` WHERE email='".$email."'");
 
@@ -47,20 +45,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		}
 
 	}
-	else {}
+	else {
 
-	
-	//$sqlcheck = "SELECT COUNT(*) FROM users WHERE email = '$email' ";
-	//$resultcheck = $conn->query($sqlcheck);
-
-	//if($resultcheck->fetchColumn() > 0){
-
-		//$emailErr = "Email is in use!";
-	//}
-	//else {
-		
-		
-	//} 
+	 } 
   } 
 }
 

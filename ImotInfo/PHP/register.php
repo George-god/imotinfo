@@ -9,33 +9,23 @@ include ('regproc.php');
     <link rel="stylesheet" type="text/css" href="../CSS/RS.css">
 </head>
 <body>
-    <img src="../Pictures/LogoMaybe.png" alt="Italian Trulli" class="center">
+   <!--<img src="../Pictures/LogoMaybe.png" alt="Italian Trulli" class="center">-->
     <div>       
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" style="border-radius:20px" method="POST">
-            <div class="container">
-                <h1>Регистрация</h1>
-                <p>Моля попълнете формуляра!</p>
-                <hr>
+            <div class="form-box">
 
-                <label for="email"><b>Email</b></label><span class="error">* <?php echo $emailErr;?></span>
-                <input type="text" placeholder="Enter Email" name="email" required>
-
-                <label for="psw"><b>Password/Парола</b></label><span class="error">*</span>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-
-                <label for="psw-repeat"><b>Repeat Password/Повтори парола</b></label><span class="error">* <?php echo $passErr;?></span>
-                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-    
-                <label>
-                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                </label>
-    
-                <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-                <div class="clearfix">
-                    <button type="button" class="login" onclick="location.href='login.php';" >Login</button>
-                    <button type="submit" class="signupbtn" name="singup">Sign Up</button>
+                <div class="header-text">
+                    Register
                 </div>
+                <input placeholder="<?php echo $emailErr;?>Your Email Address" type="text" name="email" value="" required> 
+                <input placeholder="Your Password" type="password" name="psw" required>
+                <input placeholder="<?php echo $passErr;?>Repeat Password" type="password" name="psw-repeat" required value=""> 
+
+                <input id="terms" type="checkbox"> <label for="terms"></label>
+                <span>Agree with <a href="#">Terms & Conditions</a></span> 
+
+                <input type="submit" name="singup" value="Register">
+                <button onclick="location.href='login.php';" type="button">Login</button>
             </div>
         </form>
     </div>    

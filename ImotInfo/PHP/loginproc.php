@@ -2,7 +2,8 @@
 	require 'sqlconn.php';
 
    			if(empty($_POST["ename"]) || empty($_POST["psw"]))  
-      		{    
+      		{
+      			    
       		}  
       		else  
       		{  

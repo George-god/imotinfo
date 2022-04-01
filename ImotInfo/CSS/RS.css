@@ -2,89 +2,129 @@ body {
     background-color: gray;
     padding: 20px;
     font-family: Arial, Helvetica, sans-serif;
-	background-image:url(../Pictures/Back2.png);
-	background-position: center; 
 }
 
 * {box-sizing: border-box}
 
-h1{
-	text-align: center;
+.form-box {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: auto auto;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #000;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 500px;
+  height: 470px;
 }
-
-input[type=text], input[type=password] {
+.form-box:before {
+  background-image: url("https://i.imgur.com/1kMS74y.jpg");
   width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
+  height: 100%;
+  background-size: cover;
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  display: block;
+  filter: blur(2px);
+}
+.form-box .header-text {
+  font-size: 32px;
+  font-weight: 600;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.form-box input {
+  margin: 10px 0px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 18px;
+  font-family: poppins;
+}
+.form-box input[type=checkbox] {
+  display: none;
+}
+.form-box label {
+  position: relative;
+  margin-left: 5px;
+  margin-right: 10px;
+  top: 5px;
   display: inline-block;
-  border: none;
-  background: #f1f1f1;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
-
-input[type=text]:focus, input[type=password]:focus {
+.form-box label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  bottom: 1px;
   background-color: #ddd;
-  outline: none;
 }
-
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+.form-box input[type=checkbox]:checked+label:before {
+  content: "\2713";
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+  line-height: 20px;
 }
-
-/* Set a style for all buttons */
-button {
-  background-color: #00a3cc;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+.form-box span {
+  font-size: 14px;
+}
+.form-box input[type=submit] {
+  background-color: deepskyblue;
+  color: #fff;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   width: 100%;
-  opacity: 0.9;
+  font-size: 18px;
+  padding: 10px;
+  margin: 10px 0px;
 }
 
-button:hover {
-  opacity:1;
+.form-box input[type=submit]:hover {
+  background-color: #0099cc;
+  color: #fff;
 }
 
+.form-box button {
+  background-color: deepskyblue;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  padding: 10px;
+  margin: 10px 0px;
+}
+
+.form-box button:hover {
+  background-color: #0099cc;
+  color: #fff;
+}
+span a {
+  color: #BBB;
+}
 .error {color: #FF0000;}
-
-/* Extra styles for the cancel button */
-.login {
-  padding: 14px 20px;
-  background-color: #40ff00;
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.login, .signupbtn {
-  float: left;
-  width: 50%;
-}
-
-/* Add padding to container elements */
-.container {
-  padding: 16px;
-  background-color: white;
-  border-radius: 20px;
-}
 
 /* Clear floats */
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 30%;
-  height: 160px;
-}
-
-@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-     width: 100%;
-  }
 }
