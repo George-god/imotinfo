@@ -63,13 +63,19 @@ require 'sqlconn.php';
 
 
 <div class="MainI">
-<h1>Здравейте 
-<?php 
-    if(isset($_SESSION['userIm'])){
-        echo $userImd; 
-    }else {echo $user;}
-?>
-<h2>Това са вашите имоти</h2>
+<h2 class="wordCarousel">
+    <span><b>Това са вашите:<b></span>
+    <div>
+        <!-- Use classes 2,3, or 4 to match the number of words -->
+        <ul class="flip4">
+            <li>Имоти</li>
+            <li>Магазини</li>
+            <li>Хотели</li>
+            <li>Земи</li>
+        </ul>
+    </div>
+
+</h2>
     <div class="LeftCol">
     <?php
     $sqlse = "SELECT id FROM imoters WHERE imoter_name='$userImd'";
