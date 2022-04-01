@@ -28,10 +28,6 @@ require 'mailsend.php';
 
 <body>
 
-<header>
-    <img src="../Pictures/LogoMaybe.png" alt="Italian Trulli" class="logo">
-</header>
-
 <div id="mySidenav" class="sidenav">
   <a href="index.php" id="about">Imoti</a>
   <a href="finance.php" id="blog">Finansi</a>

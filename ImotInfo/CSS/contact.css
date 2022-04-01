@@ -1,10 +1,21 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-image:url(../Pictures/Back2.png);
-  background-position: center; 
-  background-repeat:no-repeat;
-  background-attachment: scroll;
+}
 
+body::after {
+  content: "";
+  background: url("https://i.imgur.com/7JDX5cA.jpg");
+  background-position: center; 
+    background-repeat:no-repeat;
+    background-size: cover;
+    height: 54em;
+  opacity: 1.0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
 }
 
 * {
@@ -46,7 +57,7 @@ input[type=submit]:hover {
 .container {
   border-radius: 5px;
   background-color: #f2f2f2;
-  padding: 10px;
+  padding: 28px;
 }
 
 /* Create two columns that float next to eachother */

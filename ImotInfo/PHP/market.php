@@ -22,7 +22,7 @@ require 'sqlconn.php';
 <script nomodule defer src="../JS/js.cookie.js"></script>
 <script src="../JS/menu.js"></script>
 <script src="../JS/cookie.js"></script>
-<script src="../JS/range.js"></script>
+<script src="../JS/chekbox.js"></script>
 <script src="../JS/otherscript.js"></script>
 </head>
 
@@ -43,12 +43,7 @@ require 'sqlconn.php';
 
 
 <div class="MainI">
-<h1>Здравейте 
-<?php 
-    if(isset($_SESSION['userIm'])){
-        echo $_SESSION['userIm']; 
-    }else {echo $_SESSION['user'];}
-?>
+
 <h2>This is the marketplace</h2>
  
     <div class="LeftCol">
@@ -63,7 +58,7 @@ require 'sqlconn.php';
     ?>  
         <div class="icard" id="edit">
             <div class="icontainer">
-            <img src="../Pictures/img_avatar.png" alt="Avatar" style="width:50%" id="iimg"><br>
+            <img src="../Pictures/<?php echo $row['icon'] ?>" alt="Avatar" style="width:50%" id="iimg"><br>
             <label>ID na Durjatel:</label><label><?php echo $row['imoter_id']?></label><br>
             </div>
             <div class="icontainer">
@@ -119,23 +114,18 @@ require 'sqlconn.php';
                         ?>
                     </select><br>
                 <label for="price">Wanted Price:</label><br>
-                    <input type="range" id="price" name="price" min="0" max="1000000" oninput="this.nextElementSibling.value = this.value">
-                    <output>500000</output><br>
+                    <input type="range" id="price" name="price" min="0" max="100000000" oninput="this.nextElementSibling.value = this.value">
+                    <output>50000000</output><br>
                 <label for="neses">Iskate li ot tiq neshta?</label><br>
-                <label class="containers">Tok
-                    <input type="checkbox" name="neses1" value="1">
-                    <span class="checkmark"></span>
-                </label>
-
-                <label class="containers">Gas
-                    <input type="checkbox" name="neses2" value="1">
-                    <span class="checkmark"></span>
-                </label>
-
-                <label class="containers">Voda
-                    <input type="checkbox" name="neses3" value="1">
-                    <span class="checkmark"></span>
-                </label>
+                <input type="checkbox" id="Tok" name="Tok" value="1">
+                <input type="hidden" id="Tokhidden" name="Tok" value="0">
+                <label for="Tok"> TOK</label><br>
+                <input type="checkbox" id="Gas" name="Gas" value="1">
+                <input type="hidden" id="Gashidden" name="Gas" value="0">
+                <label for="Gas"> GAS</label><br>
+                <input type="checkbox" id="voda" name="voda" value="1">
+                <input type="hidden" id="vodahidden" name="voda" value="0">
+                <label for="voda"> WATER</label><br>
 
                 
 

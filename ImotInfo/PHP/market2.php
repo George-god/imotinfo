@@ -43,27 +43,19 @@ require 'sqlconn.php';
 
 
 <div class="MainI">
-<h1>Здравейте 
-<?php 
-    if(isset($_SESSION['userIm'])){
-        echo $_SESSION['userIm']; 
-    }else {echo $_SESSION['user'];}
-?>
-<h2>This is the marketplace</h2>
- 
+
     <div class="LeftCol">
     <?php
         $userImd = $_SESSION['userIm'];
             $type=$_POST['type'];
             $pricer=$_POST['price'];
-            $tok=$gas=$voda='0';
-            $tok=$_POST['neses1'];
-            $gas=$_POST['neses2'];
-            $voda=$_POST['neses3'];
+            $tok=$_POST['Tok'];
+            $gas=$_POST['Gas'];
+            $voda=$_POST['voda'];
 
         $statemf = "SELECT * FROM imoti,imot_harakter LEFT JOIN imottype ON imot_harakter.imottype=imottype.typeid
         WHERE imot_harakter.imot_id=imoti.id 
-        and imot_harakter.imottype= '$type' and status='for_sale' ";
+        and imot_harakter.imottype= '$type' and status='for_sale' and saleprice <= '$pricer' and  water='$voda' and gas='$gas' and electricity='$tok' ";
         $resultf = $conn -> query($statemf);
      
 
@@ -72,7 +64,7 @@ require 'sqlconn.php';
     ?>  
         <div class="icard" id="edit">
             <div class="icontainer">
-            <img src="../Pictures/img_avatar.png" alt="Avatar" style="width:50%" id="iimg"><br>
+            <img src="../Pictures/<?php echo $rowf['icon'] ?>" alt="Avatar" style="width:50%" id="iimg"><br>
             <label>ID na Durjatel:</label><label><?php echo $rowf['imoter_id']?></label><br>
             </div>
             <div class="icontainer">
@@ -117,7 +109,7 @@ require 'sqlconn.php';
         <div class="form-popup" id="myForm">
             <form method="post" action="" class="form-container">
 
-                <label for="timot">Type of imot:</label><br>
+                <<label for="timot">Type of imot:</label><br>
                 <select id="type" name="type" class="inptextmod1">
                         <?php
                             $sqlt = mysqli_query($conn, "SELECT * From imottype");
@@ -128,23 +120,18 @@ require 'sqlconn.php';
                         ?>
                     </select><br>
                 <label for="price">Wanted Price:</label><br>
-                    <input type="range" id="price" name="price" min="0" max="1000000" oninput="this.nextElementSibling.value = this.value">
-                    <output>500000</output><br>
+                    <input type="range" id="price" name="price" min="0" max="100000000" oninput="this.nextElementSibling.value = this.value">
+                    <output>50000000</output><br>
                 <label for="neses">Iskate li ot tiq neshta?</label><br>
-                <label class="containers">Tok
-                    <input type="checkbox" name="neses1" value="1">
-                    <span class="checkmark"></span>
-                </label>
-
-                <label class="containers">Gas
-                    <input type="checkbox" name="neses2" value="1">
-                    <span class="checkmark"></span>
-                </label>
-
-                <label class="containers">Voda
-                    <input type="checkbox" name="neses3" value="1">
-                    <span class="checkmark"></span>
-                </label>
+                <input type="checkbox" id="Tok" name="Tok" value="1">
+                <input type="hidden" id="Tokhidden" name="Tok" value="0">
+                <label for="Tok"> TOK</label><br>
+                <input type="checkbox" id="Gas" name="Gas" value="1">
+                <input type="hidden" id="Gashidden" name="Gas" value="0">
+                <label for="Gas"> GAS</label><br>
+                <input type="checkbox" id="voda" name="voda" value="1">
+                <input type="hidden" id="vodahidden" name="voda" value="0">
+                <label for="voda"> WATER</label><br>
 
                 
 

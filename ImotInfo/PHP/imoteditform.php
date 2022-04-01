@@ -26,7 +26,6 @@ $imoterID = $_SESSION['userIm'];
 <body>
     <img src="../Pictures/LogoMaybe.png" alt="Italian Trulli" class="center">
     <div>
-        <h1>Update Imot - <?php echo $selection ?> </h1>
         <form action="editimot.php" method="post">
             <div class="container">
                 <?php
@@ -52,7 +51,7 @@ $imoterID = $_SESSION['userIm'];
                     <option value="not_rented" <?php if($status=="not_rented") echo 'selected="selected"'; ?> >not_rented</option>
                     <option value="for_sale" <?php if($status=="for_sale") echo 'selected="selected"'; ?> >for_sale</option>
                 </select>
-                <p>Harakteristiki za imota:</p><br>
+                <h4><b>Harakteristiki za imota:</b></h4><br>
                 <?php 
                 $sql = "SELECT * FROM imot_harakter WHERE imot_id='$imid'";
                 $result = $conn->query($sql);
