@@ -329,11 +329,14 @@ input[type=submit][disabled]:hover {
 
 
 #primg {
-    border-radius: 8px 8px 8px 8px;
-    float: right;
+    border-radius: 50%;
+    float: left;
     width: 240px;
     height: 260px;
     margin: 20px;
+    position: relative;
+    left: 40%;
+
 }
 
 #myBtn:hover {

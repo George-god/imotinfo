@@ -104,7 +104,19 @@ session_start();
         </div>
 
         <div class="imgvata">
-            <img src="../Pictures/img_avatar.png" alt="Italian Trulli" id="primg">
+            <?php
+                    $mailpic=$_SESSION['user'];
+                    $sqlpic = "SELECT profpic FROM users WHERE email ='$mailpic' ";
+                    $resultpic = $conn->query($sqlpic);
+                    if($resultpic){
+                        $rowpic = mysqli_fetch_array($resultpic,MYSQLI_BOTH);?>
+                        <img src="../Pictures/<?php echo $rowpic['profpic'] ?> " alt="Italian Trulli" id="primg">  <?php
+                    }
+                    else {?>
+                        <img src="../Pictures/img_avatar.png" alt="Italian Trulli" id="primg"><?php
+                    }
+            ?>
+            
         </div>
 
         <br>
@@ -178,6 +190,13 @@ session_start();
                 <label for="Logout">Logout:</label>
 
                 <input type="submit" value="Logout" class="inpsubmod1">
+        </form>
+        <form action="../Pictures/upload.php" method="post" enctype="multipart/form-data">
+
+                <label for="upload">Upload:</label>
+                <input type="file" name="upload" id="upload">
+
+                <input type="submit" value="Set Profile Pic" class="inpsubmod1">
         </form>
         
     </div>
