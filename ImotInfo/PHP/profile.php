@@ -28,8 +28,6 @@ session_start();
 <script src="../JS/modalprof.js"></script>
 <script src="../JS/resetpass.js"></script>
 <script src="../JS/passcheck.js"></script>
-<script src="../JS/editbtn.js"></script>
-<script src="../JS/savebtn.js"></script>
 </head>
    
 <header>
@@ -108,7 +106,7 @@ session_start();
                     $resultpic = $conn->query($sqlpic);
                     if($resultpic){
                         $rowpic = mysqli_fetch_array($resultpic,MYSQLI_BOTH);?>
-                        <img src="../Pictures/<?php echo $rowpic['profpic'] ?> " alt="Italian Trulli" id="primg">  <?php
+                        <img src="../Pictures/uploads/<?php echo $rowpic['profpic'] ?> " alt="Italian Trulli" id="primg">  <?php
                     }
                     else {?>
                         <img src="../Pictures/img_avatar.png" alt="Italian Trulli" id="primg"><?php
