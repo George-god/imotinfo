@@ -79,8 +79,7 @@ session_start();
                     $resultcount = mysqli_query($conn, $sqlcout);
                     $row = mysqli_num_rows($resultcount);
                 ?>
-                <label for="bnumber">Broi Imoti:</label><br>
-                <input type="number" id="bnumber" name="bnumber" value="<?php echo $row ?>" class="hidform" readonly>
+                <label for="bnumber">Number of Properties: <?php echo $row ?></label><br>
                 <br>
                 <input type="submit" value="Save" id="savebtni" class="hidformb" name="hidsub">
 
