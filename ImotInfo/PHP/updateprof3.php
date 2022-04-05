@@ -41,6 +41,7 @@
 
 		if($resultU){
 			echo '<script>alert("Changes were saved!")</script>';
+			$_SESSION['userIm']=$uname;
 			header("location: profile.php");		
 		}
 		else {

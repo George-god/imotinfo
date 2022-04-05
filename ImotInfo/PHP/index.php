@@ -142,12 +142,13 @@ require 'sqlconn.php';
 
                                 <label for="status">Status:</label>
                                 <select id="status" name="status" class="inptextmod1">
+                                    <option disabled selected>-- Select Status --</option>
                                     <option value="rented">rented</option>
                                     <option value="not_rented">not_rented</option>
                                     <option value="for_sale">for_sale</option>
                                 </select>
 
-                                <input type="submit" value="Submit" class="inpsubmod1">
+                                <input type="submit" value="Add" class="inpsubmod1">
                             </form>
                         </div>
                         <div class="modal-footer">
@@ -160,7 +161,7 @@ require 'sqlconn.php';
 
                 <div id="myModal2" class="modal two">
 
-                    <div class="modal-content">
+                    <div class="modal-content" id="editmod">
                         <div class="modal-header">
                             <span class="close dre" onclick="editimot2()">&times;</span>
                             <h2>Edit the Imot</h2>
@@ -183,21 +184,16 @@ require 'sqlconn.php';
                                         }
                                     ?>
                                 </select>
-                                <input type="submit" value="Submit" class="inpsubmod1">
+                                <input type="submit" value="Edit" class="inpsubmod1">
                             </form>
                         </div>
-                        <div class="modal-footer">
-                            <h3>Imot Info</h3>
-                            <p>This website is made by Georgi Pavlov. Please, if you are thinking of stealing it then don't!</p>
-                        </div>
                     </div>
-
                 </div>
 
                 <div id="myModal3" class="modal three">
 
                     <div class="modal-content">
-                        <div class="modal-header">
+                        <div class="modal-header" id="moddelhead">
                             <span class="close dre" onclick="remimot2()">&times;</span>
                             <h2>Remove Imot</h2>
                         </div>
@@ -219,7 +215,7 @@ require 'sqlconn.php';
                                         }
                                     ?>
                                 </select>
-                                <input type="submit" value="Submit" class="inpsubmod1">
+                                <input type="submit" value="Delete" class="delimot">
                             </form>
                         </div>
                     </div>
