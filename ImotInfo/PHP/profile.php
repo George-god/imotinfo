@@ -59,7 +59,7 @@ session_start();
         
         <div class="imoterinfo">
             <h3>Info za immoter</h3>
-           <form action="updateprof1.php" method="post">
+           <form action="updateprof3.php" method="post">
                 <?php
                     if(isset($_SESSION['userIm'])){
                         $uname = $_SESSION['userIm'];
@@ -70,10 +70,10 @@ session_start();
                     while($rower = mysqli_fetch_array($resultimo,MYSQLI_BOTH)) {
                 ?>
                 <label for="uname">Username:</label><br>
-                <input type="text" id="uname" name="username" value="<?php echo $rower ['imoter_name']; ?>" class="hidform" readonly>
+                <input type="text" id="uname" name="username" value="<?php echo $rower ['imoter_name']; ?>" class="hidform" >
                 <br>
                 <label for="phone">PhoneNumber:</label><br>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" value="<?php echo $rower ['PhoneNumber']; ?>" class="hidform" readonly>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{5}-[0-9]{4}" value="<?php echo $rower ['PhoneNumber']; ?>" class="hidform" >
                 <br>
                 <?php
                     $id=$rower['id'];
@@ -84,9 +84,7 @@ session_start();
                 <label for="bnumber">Broi Imoti:</label><br>
                 <input type="number" id="bnumber" name="bnumber" value="<?php echo $row ?>" class="hidform" readonly>
                 <br>
-
-                <button type="button" id="editbtn" class="hidformb" onmousedown="editbutoH()">Edit</button>
-                <input type="submit" value="Save" id="savebtn" class="hidformb" disabled>
+                <input type="submit" value="Save" id="savebtni" class="hidformb" name="hidsub">
 
             </form>
             <?php
@@ -122,7 +120,7 @@ session_start();
         <br>
 
         <div class="norminfo">
-            <form action="updateprof1.php" method="post">
+            <form action="updateprof1.php" method="post" id="formmain" name="formmain">
 
                 <?php
                     $mail=$_SESSION['user'];
@@ -133,31 +131,29 @@ session_start();
                 ?>
 
                 <label for="fname" id="shitname">First Name:</label>
-                <input type="text" id="fname" name="firstname" value="<?php echo $row ['first_name']; ?>" class="normform" readonly>
+                <input type="text" id="fname" name="firstname" value="<?php echo $row ['first_name']; ?>" class="normform" >
 
                 <label for="lname">Last Name:</label>
-                <input type="text" id="lname" name="lastname" value="<?php echo $row ['last_name']; ?>" class="normform" readonly>
+                <input type="text" id="lname" name="lastname" value="<?php echo $row ['last_name']; ?>" class="normform" >
 
                 <label for="mail">Mail:</label>
-                <input type="mail" id="mail" name="mail" value="<?php echo $row ['email']; ?>" class="normform" readonly>
+                <input type="mail" id="mail" name="mail" value="<?php echo $row ['email']; ?>" class="normform" >
 
                 <label for="pnumber">PostCode</label>
-                <input type="number" id="pnumber" name="pnumber" value="<?php echo $row ['town_code']; ?>" class="normform" readonly>
+                <input type="number" id="pnumber" name="pnumber" value="<?php echo $row ['town_code']; ?>" class="normform" >
 
                 <label>Immoter li si:</label>
                 <label class="imoterr">DA
-                <input type="radio"  name="radioI" class="normform" id="imotda" value="1" <?php if($row['imoter'] == "1") echo " checked";?> disabled="true">
+                <input type="radio"  name="radioI" class="normform" id="imotda" value="1" <?php if($row['imoter'] == "1") echo " checked";?>>
                 <span class="checkmark"></span>
                 </label>
 
                 <label class="imoterr">NE
-                <input type="radio" name="radioI" class="normform" id="imotne" value="0" <?php if($row['imoter'] == "0") echo " checked";?> disabled="true">
+                <input type="radio" name="radioI" class="normform" id="imotne" value="0" <?php if($row['imoter'] == "0") echo " checked";?>>
                 <span class="checkmark"></span>
                 </label>
-
-                
-                <button type="button" id="editbtn" class="normformb" onmousedown="editbuto()">Edit</button>
-                <input type="submit" value="Save" id="savebtn" class="normformb" onclick="savebtn()">
+               
+                <input type="submit" value="Save" id="savebtn" class="normformb" name="formmsub">
 
             </form>
             <?php
@@ -209,12 +205,12 @@ session_start();
             <form action="updateprof2.php" method="post">
                
                 <label for="uname">Username:</label><br>
-                <input type="text" id="uname" name="username" value="wut" class="hidform" >
+                <input type="text" id="uname" name="username" placeholder="Set username..." class="hidform" required>
                 <br>
                 <label for="phone">PhoneNumber:</label><br>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{5}-[0-9]{4}" placeholder="Ex:359-87880-1144" class="hidform" >
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{5}-[0-9]{4}" placeholder="Ex:359-87880-1144" class="hidform" required>
                 <br>
-                <input type="submit" value="Save" id="savebtn" class="hidformb">
+                <input type="submit" value="Save" id="savebtnin" class="hidformb">
   </div>
 
 </div>

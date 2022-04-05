@@ -22,9 +22,7 @@
 
 	if($result){
 		$_SESSION['userIm']=$uname;
-		echo '<script>alert("Changes were saved!")</script>';
-		session_unset();
-		header("location: Login.html");		
+		header("location: profile.php");		
 	}
 	else {
 		header("location: errorpage.html");
