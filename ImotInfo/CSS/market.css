@@ -297,6 +297,8 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   width: 95%;
   padding-top: 20px;
   background-color: lightgray;
+  background-image: url("../Pictures/marketback.jpg");
+  background-size: cover;
   float: left;
   display: flex;
   flex-direction: row;
