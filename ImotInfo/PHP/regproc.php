@@ -33,16 +33,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	{
 		$password = mysqli_real_escape_string($conn, $pass);
 		$password = password_hash($password, PASSWORD_DEFAULT);
-    	$sqlr = "INSERT INTO users (password , email) VALUES('$password', '$email')";
-		$result = $conn->query($sqlr);
 
-		if($result){
+		$stmt = $conn->prepare("INSERT INTO users (password, email) VALUES (?, ?)");
+		$stmt->bind_param("ss", $password, $email);
+
+    //$sqlr = "INSERT INTO users (password , email) VALUES('$password', '$email')";
+		//$result = $conn->query($sqlr);
+
+		//if($result){
+			$stmt->execute();
 			$_SESSION['user']=$email;
-			header("location: index.php");
-		}
-		else {
-			header("location: errorpage.html");
-		}
+			$stmt->close();
+			header("location: login.php");
+		//}
+		//else {
+			//header("location: errorpage.html");
+		//}
 
 	}
 	else {

@@ -1,31 +1,46 @@
 <?php require 'sqlconn.php'; 
 	session_start();
+	
+
+	$selector = $conn->prepare("SELECT id,town_code FROM users WHERE email=?");
+
+	$mail = $_SESSION['user'];
+	$selector->bind_param("s",$mail);
+
+	$selector->execute();
+
+	$result=$selector->get_result();
+			if($result->num_rows > 0) {
+				while($row = $result->fetch_assoc()) {
+					$id=$row['id'];
+					$town=$row['town_code'];
+					$selector->close();
+				}
+			}else { 
+				$selector->close();
+				header("location: errorpage.html"); 
+			}
+
+
+	$insertor = $conn->prepare("INSERT INTO imoters SET id=?, town_code=?, imoter_name=?, admin_id=?, PhoneNumber=? ");
+
 	$uname = $_POST['username'];
 	$phun = $_POST['phone'];
-	$mail = $_SESSION['user'];
-	$idgen = rand(1,25).rand(50,150);
+	$idgen = rand(1,999)."$id";
 
-	$sqlse = "SELECT id,town_code FROM users WHERE email='$mail'";
-	$resultse = $conn->query($sqlse);
+	$insertor->bind_param("ddsds",$idgen,$town,$uname,$id,$phun);
+	$status=$insertor->execute();
 
-	$row = mysqli_fetch_array($resultse,MYSQLI_BOTH);
+	if ($status === false) {
+  			trigger_error($insertor->error, E_USER_ERROR);
+  			$insertor->close();
+  			header("location: errorpage.html");
 
-	if ($resultse->num_rows > 0) {
-
-  		$postu=$row['town_code'];
-  		$uid=$row['id'];
-
-  	}
-
-	$sqlr = "INSERT INTO imoters SET id='$idgen', town_code='$postu', imoter_name='$uname', admin_id='$uid', PhoneNumber='$phun' ";
-	$result = $conn->query($sqlr);
-
-	if($result){
-		$_SESSION['userIm']=$uname;
-		header("location: profile.php");		
-	}
-	else {
-		header("location: errorpage.html");
-	}
+		}
+		else {
+			$_SESSION['userIm']=$uname;
+			$insertor->close();
+			header("location: profile.php");
+		}
 
 ?>

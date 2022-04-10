@@ -8,41 +8,44 @@
       		else  
       		{  
            		$username = mysqli_real_escape_string($conn, $_POST["ename"]);  
-           		$password = mysqli_real_escape_string($conn, $_POST["psw"]);  
-           		$query = "SELECT * FROM users WHERE email = '$username'";  
-           		$result = mysqli_query($conn, $query);  
-           	if(mysqli_num_rows($result) > 0)  
-           	{  
-                while($row = mysqli_fetch_array($result))  
-                {              
-                     if(password_verify($password, $row["password"]))  
-                     {  
-                     	session_start(); 
-                          $_SESSION['user'] = $username;
-                          $usdi=$row['id'];
-                          $sqlimo = "SELECT imoter_name FROM imoters WHERE admin_id ='$usdi'";
-						  $resultimo = mysqli_query($conn, $sqlimo);
+           		$password = mysqli_real_escape_string($conn, $_POST["psw"]); 
 
-						  if(mysqli_num_rows($resultimo) > 0){
-						  	$rowimo = mysqli_fetch_array($resultimo,MYSQLI_BOTH);
-						  	$userImot= $rowimo['imoter_name'];
-						  	$_SESSION['userIm']=$userImot;				
-						  	header("location: index.php");
-						  }
-						  else {
-						  	header("location: index.php");
-						  }  
-                     }  
-                     else  
-                     {    
-                          echo '<script>alert("Wrong User Pass")</script>';   
-                     }  
-                }  
-           	}  
-           	else  
-           	{  
-                echo '<script>alert("Wrong User Email maybe")</script>';  
-           	}  
+
+           		$checkpass = $conn->prepare("SELECT password,id FROM users WHERE email=?");
+				$checkpass->bind_param("s", $username);
+				$checkpass->execute();
+
+				//get and check result
+				$checkpass->bind_result($getpass,$idr);
+				$checkpass->fetch();
+				if (!password_verify($password, $getpass)) {
+    					echo '<script>alert("Wrong User Pass")</script>'; 
+    					return false;
+    					exit;
+				}
+				else {
+					session_start(); 
+					$_SESSION['user'] = $username;
+					$id = $idr;
+					$checkpass->close();
+					$checkimot = $conn->prepare("SELECT imoter_name FROM imoters WHERE admin_id=?");
+					$checkimot->bind_param("i", $id);
+					$checkimot->execute();
+
+					$result=$checkimot->get_result();
+					if($result->num_rows > 0) {
+						while($row = $result->fetch_assoc()) {
+							$_SESSION['userIm']=$row['imoter_name'];
+							header("location: index.php");
+							$checkimot->close();
+						}
+					}else { 
+						$checkimot->close();
+						header("location: profile.php"); 
+					}
+
+					$conn->close();
+				} 
       	}  
  
 ?>

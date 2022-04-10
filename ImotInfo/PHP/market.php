@@ -49,7 +49,7 @@ require 'sqlconn.php';
     <div class="LeftCol">
     <?php
         $userImd = $_SESSION['userIm'];       
-            $statem = "SELECT * FROM imoti,imot_harakter LEFT JOIN imottype ON imot_harakter.imottype=imottype.typeid WHERE imot_harakter.imot_id=imoti.id AND status='for_sale' ";
+        $statem = "SELECT * FROM imoti,imot_harakter LEFT JOIN imottype ON imot_harakter.imottype=imottype.typeid WHERE imot_harakter.imot_id=imoti.id AND status='for_sale' ";
         $resultc = $conn -> query($statem);
      
 

@@ -1,22 +1,28 @@
 <?php require 'sqlconn.php'; 
 	
+	$update = $conn->prepare("UPDATE users SET first_name=?, last_name=?, town_code=?, email=?, imoter=? WHERE email=?");
+	if ($update === false) {
+  		trigger_error($conn->mysqli->error, E_USER_ERROR);
+  		return;
+	}
+	$mail = $_POST['mail'];
 	$fname = $_POST['firstname'];
 	$lname = $_POST['lastname'];
-	$mail = $_POST['mail'];
 	$post = $_POST['pnumber'];
 	$imotrad = $_POST['radioI'];
 
 
-	$sqlr = "UPDATE users SET first_name='$fname', last_name='$lname', town_code='$post', email='$mail', imoter='$imotrad' WHERE email='$mail'";
-	$result = $conn->query($sqlr);
+	$update->bind_param("ssisis",$fname,$lname,$post,$mail,$imotrad,$mail);
+	$status=$update->execute();
 
-	if($result){
-		$_SESSION['user']=$mail;
-		echo '<script>alert("Changes were saved!")</script>';
-		header("location: profile.php");		
+	if ($status === false) {
+  		trigger_error($stmt->error, E_USER_ERROR);
+  		header("location: errorpage.html");
 	}
 	else {
-		header("location: errorpage.html");
+		$_SESSION['user']=$mail;
+		echo '<script>alert("Changes were saved!")</script>';
+		header("location: profile.php");
 	}
 
 ?>
