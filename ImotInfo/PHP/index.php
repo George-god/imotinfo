@@ -37,7 +37,7 @@ require 'sqlconn.php';
 <script src="../JS/modal3.js"></script>
 <script src="../JS/cookie.js"></script>
 <script src="../JS/MSEdit.js"></script>
-<!-- <script src="../JS/msaved.js"></script> -->
+<script src="../JS/indexmarketscroll.js"></script>
 </head>
 
 <body onload="">
@@ -222,29 +222,25 @@ require 'sqlconn.php';
 
                 </div>
 
+
+    <h2>LATEST MARKET ADDITIONS</h2>
+
     <div class="RightCol">
-        <p>REKLAME</p>
-        <div class="ad">
-
-        </div>
-        <br>
-        <div class="ad">
-            
-        </div>
-        <br>
-        <div class="ad">
-            
-        </div>
-        <br>
-        <div class="ad">
-            
-        </div>
-        <br>
-        <div class="ad">
-            
-        </div>
-        <br>
-
+        <?php
+        $statemark = "SELECT * FROM imoti,imot_harakter LEFT JOIN imottype ON imot_harakter.imottype=imottype.typeid WHERE imot_harakter.imot_id=imoti.id AND status='for_sale' LIMIT 5";
+        $resultmark = $conn -> query($statemark);
+        while ($rowmark = $resultmark->fetch_assoc()) {
+        ?>  
+            <div class="ad">
+                <p>Name:<?php echo $rowmark['name'];?></p><br>
+                <p>
+                  Price: <?php echo $rowmark['saleprice'];?> € Type: <?php echo $rowmark['type'];?>
+                </p>
+            </div>
+                
+        <?php
+        }
+        ?>
     </div>
 
    

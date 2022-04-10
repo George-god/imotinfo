@@ -1,7 +1,7 @@
 
 html{
     max-width: 100%;
-    overflow-x: ;
+    overflow-x: hidden;
 }
  
 body {
@@ -161,10 +161,21 @@ a {
 }
 
 .RightCol{
-    background-color: ;
+    background-color:;
+    top: 10%;
+    position: relative;
     float: right;
     width: 35%;
+    height: 500px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    border-left:5px solid #444;
+    border-radius: 5px;
 
+}
+
+.RightCol:hover {
+    border-color:red;
 }
 
 .cookie-banner {
@@ -183,15 +194,14 @@ a {
 }
 
 .ad {
-    background-color: gray;
-    width: 90%;
-    height: 90px;
-    margin: 15px auto;
+    background-color: royalblue;
+    width: 100%;
+    height: 120px;
+    font-size: 20px;
+    margin: 40px auto;
     border-style: solid;
     border-radius: 10px;
 }
-
-
 
 /* Close button */
 .closebtn {
