@@ -49,7 +49,7 @@ require 'sqlconn.php';
         <form action="" id="finfil" method="post">
         <div class="svetatri">
             <div class="fin">
-                <p><b>Use the min and max attributes to add restrictions to dates:</b></p>
+                <p><b>There must be a minimum of 1 month:</b></p>
 
                 <label for="datemin">Enter a date after 2000-01-01:</label>
                 <input type="date" id="datemin" name="datemin" min="2000-01-02"><br>
@@ -60,7 +60,7 @@ require 'sqlconn.php';
             
             <div class="fin">
                 
-                <label for="Razhodi">Koi imoti da se vkluchat vuv finansite?</label><br>
+                <label for="Razhodi">Which properties should be included?</label><br>
 
                 <select name="imoti[]" multiple >
                     <?php

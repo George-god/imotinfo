@@ -76,7 +76,7 @@ $imoterID = $_SESSION['userIm'];
                             ?>
                         </label><br>
 
-                        <label for="tok">Tok:
+                        <label for="tok">Elec.:
                             <?php
                                 if($tok=="1"){
                                     echo "YES";
@@ -88,10 +88,10 @@ $imoterID = $_SESSION['userIm'];
                         </label> <br>              
                         </div>
                         <div class="rightright">
-                            <label for="cenatok">Cena na toka: <?php echo $rower['electricityprice']; ?>.00 €</label><br>
-                            <label for="cenavoda">Cena na voda: <?php echo $rower['waterprice']; ?>.00 €</label><br>
-                            <label for="cenagas">Cena na gasta: <?php echo $rower['gasprice']; ?>.00 €</label><br>
-                            <label for="kvadratura">Kvadratura: <?php echo $rower['kvadrat']; ?> ㎡</label> <br> 
+                            <label for="cenatok">Elec. Price: <?php echo $rower['electricityprice']; ?>.00 €</label><br>
+                            <label for="cenavoda">Water Price: <?php echo $rower['waterprice']; ?>.00 €</label><br>
+                            <label for="cenagas">Gas Price: <?php echo $rower['gasprice']; ?>.00 €</label><br>
+                            <label for="kvadratura">Squaring: <?php echo $rower['kvadrat']; ?> ㎡</label> <br> 
                         </div>
                     </div>                
 

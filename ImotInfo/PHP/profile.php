@@ -56,7 +56,7 @@ session_start();
     <div class="tabcontent" id="Info">
         
         <div class="imoterinfo">
-            <h3>Info za immoter</h3>
+            <h3>Property holder info</h3>
            <form action="updateprof3.php" method="post">
                 <?php
                     if(isset($_SESSION['userIm'])){
@@ -70,7 +70,7 @@ session_start();
                 <label for="uname">Username:</label><br>
                 <input type="text" id="uname" name="username" value="<?php echo $rower ['imoter_name']; ?>" class="hidform" >
                 <br>
-                <label for="phone">PhoneNumber:</label><br>
+                <label for="phone">Phone-Number:</label><br>
                 <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{5}-[0-9]{4}" value="<?php echo $rower ['PhoneNumber']; ?>" class="hidform" >
                 <br>
                 <?php
@@ -139,13 +139,13 @@ session_start();
                 <label for="pnumber">PostCode</label>
                 <input type="number" id="pnumber" name="pnumber" value="<?php echo $row ['town_code']; ?>" class="normform" >
 
-                <label>Immoter li si:</label>
-                <label class="imoterr">DA
+                <label>Are you a property holder?:</label>
+                <label class="imoterr">YES
                 <input type="radio"  name="radioI" class="normform" id="imotda" value="1" <?php if($row['imoter'] == "1") echo " checked";?>>
                 <span class="checkmark"></span>
                 </label>
 
-                <label class="imoterr">NE
+                <label class="imoterr">NO
                 <input type="radio" name="radioI" class="normform" id="imotne" value="0" <?php if($row['imoter'] == "0") echo " checked";?>>
                 <span class="checkmark"></span>
                 </label>

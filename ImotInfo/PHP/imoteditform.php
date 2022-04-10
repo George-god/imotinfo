@@ -37,13 +37,13 @@ $imoterID = $_SESSION['userIm'];
                     $imid=$row['id'];
                 ?>
                 <label for="Imotname">Name for Imot:</label>
-                <input type="text" id="Imotname" name="Imotname" class="inptextmod1" value="<?php echo $row ['name']; ?>" placeholder="The name..">
+                <input type="text" id="Imotname" name="Imotname" class="inptextmod1" value="<?php echo $row ['name']; ?>" placeholder="The name.." maxlength="100">
 
                 <label for="cena">Price for Imot:</label>
-                <input type="number" id="cena" name="cena" class="inptextmod1" value="<?php echo $row ['saleprice']; ?>" placeholder="Zadai cenata..">
+                <input type="number" id="cena" name="cena" class="inptextmod1" value="<?php echo $row ['saleprice']; ?>" placeholder="Zadai cenata.." maxlength="1000000000">
 
                 <label for="renta">Rent for Imot:</label>
-                <input type="number" id="renta" name="renta" class="inptextmod1" value="<?php echo $row ['rent']; ?>" placeholder="Zadai rentata..">
+                <input type="number" id="renta" name="renta" class="inptextmod1" value="<?php echo $row ['rent']; ?>" placeholder="Zadai rentata.." maxlength="100000">
 
                 <label for="status">Status:</label>
                 <select id="status" name="status" class="inptextmod1">
@@ -51,7 +51,7 @@ $imoterID = $_SESSION['userIm'];
                     <option value="not_rented" <?php if($status=="not_rented") echo 'selected="selected"'; ?> >not_rented</option>
                     <option value="for_sale" <?php if($status=="for_sale") echo 'selected="selected"'; ?> >for_sale</option>
                 </select>
-                <h4><b>Harakteristiki za imota:</b></h4><br>
+                <h4><b>Property characteristics:</b></h4><br>
                 <?php 
                 $sql = "SELECT * FROM imot_harakter WHERE imot_id='$imid'";
                 $result = $conn->query($sql);
@@ -80,8 +80,8 @@ $imoterID = $_SESSION['userIm'];
                         <option value="0" <?php if($water=="0") echo 'selected="selected"'; ?> >NO</option>
                     </select>
 
-                    <label for="cenavoda">Cena na voda:</label>
-                    <input type="number" id="cenavoda" name="cenavoda" class="inptextmod1" value="<?php echo $rower['waterprice']; ?>" placeholder="Zadai cenata na vodata..">
+                    <label for="cenavoda">Water Price:</label>
+                    <input type="number" id="cenavoda" name="cenavoda" class="inptextmod1" value="<?php echo $rower['waterprice']; ?>" placeholder="Zadai cenata na vodata.." maxlength="100000">
 
                     <label for="gas">Gas:</label>
                     <select id="gas" name="gas" class="inptextmod1">
@@ -89,8 +89,8 @@ $imoterID = $_SESSION['userIm'];
                         <option value="0" <?php if($gas=="0") echo 'selected="selected"'; ?> >NO</option>
                     </select>
 
-                    <label for="cenagas">Cena na gasta:</label>
-                    <input type="number" id="cenagas" name="cenagas" class="inptextmod1" value="<?php echo $rower['gasprice']; ?>" placeholder="Zadai cenata na gasta..">
+                    <label for="cenagas">Gas Price:</label>
+                    <input type="number" id="cenagas" name="cenagas" class="inptextmod1" value="<?php echo $rower['gasprice']; ?>" placeholder="Zadai cenata na gasta.." maxlength="100000">
 
                     <label for="tok">Tok:</label>
                     <select id="tok" name="tok" class="inptextmod1">
@@ -98,11 +98,11 @@ $imoterID = $_SESSION['userIm'];
                         <option value="0" <?php if($tok=="0") echo 'selected="selected"'; ?> >NO</option>
                     </select>
 
-                    <label for="cenatok">Cena na toka:</label>
-                    <input type="number" id="cenatok" name="cenatok" class="inptextmod1" value="<?php echo $rower['electricityprice']; ?>" placeholder="Zadai cenata na toka..">
+                    <label for="cenatok">Elec. Price:</label>
+                    <input type="number" id="cenatok" name="cenatok" class="inptextmod1" value="<?php echo $rower['electricityprice']; ?>" placeholder="Zadai cenata na toka.." maxlength="100000">
 
-                    <label for="kvadratura">Kvadratura:</label>
-                    <input type="number" id="kvadratura" name="kvadratura" class="inptextmod1" value="<?php echo $rower['kvadrat']; ?>" placeholder="Zadai kvadratura..">
+                    <label for="kvadratura">Squaring:</label>
+                    <input type="number" id="kvadratura" name="kvadratura" class="inptextmod1" value="<?php echo $rower['kvadrat']; ?>" placeholder="Zadai kvadratura.." maxlength="1000000">
 
                 <input type="submit" value="Submit" class="inpsubmod1">                
             </div>
