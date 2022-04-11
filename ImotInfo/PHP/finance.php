@@ -109,22 +109,28 @@ require 'sqlconn.php';
 
 
 
-                
-            $sqlt ="SELECT * FROM imoti,imot_harakter WHERE (imot_harakter.imot_id = imoti.id and imoti.name IN ('$imoti') )";
-            $resultt = mysqli_query($conn,$sqlt);
+            
+            $sqlall ="SELECT * FROM imoti,imot_harakter WHERE (imot_harakter.imot_id = imoti.id and imoti.name IN ('$imoti') )";
+            $resultall = mysqli_query($conn,$sqlall);
 
+            $sqlt ="SELECT id FROM imoti WHERE (imoti.name IN ('$imoti') )";
+            $resultt = $conn->query($sqlt);
+
+            while ($rowt = $resultt->fetch_assoc()) {
+                $ids = $rowt['id'];
+                $idres[]=$ids;
+            }
+
+            $id=implode("','", $idres);
+            
                 $resultd = mysqli_query($conn, "SELECT SUM(rent) AS rent_sum FROM imoti WHERE name IN ('$imoti') "); 
                 $rowd = mysqli_fetch_assoc($resultd); 
                 $sum = $rowd['rent_sum'];
                 $sumdif=$sum*$diff;
 
-                //Opravi razhodite da sa ot sushtiq imot det e rentata
 
                 $resultr = mysqli_query($conn, 
-                    'SELECT SUM(COALESCE(gasprice,0))
-                        + COALESCE(waterprice,0) 
-                        + COALESCE(electricity,0)
-                         AS razh_sum FROM imot_harakter'); 
+                "SELECT SUM(gasprice + waterprice + electricityprice) AS razh_sum FROM imot_harakter WHERE (imot_id IN ('$id'))" ); 
                 $rowr = mysqli_fetch_assoc($resultr); 
                 $sumr = $rowr['razh_sum'];
                 $sumrdif=$sumr*$diff;
@@ -142,15 +148,15 @@ require 'sqlconn.php';
                 <th>Water</th>
             </tr>
             <?php
-            while ($rowt = mysqli_fetch_array($resultt)){
+            while ($rowall = mysqli_fetch_array($resultall)){
 
                 echo "<tr>
-                <td>" . htmlspecialchars($rowt['name']) . "</td>
-                <td>" . htmlspecialchars($rowt['status']) . "</td>
-                <td>" . htmlspecialchars($rowt['rent']) . "</td>
-                <td>" . htmlspecialchars($rowt['gasprice']) . "</td>
-                <td>" . htmlspecialchars($rowt['electricityprice']) . "</td>
-                <td>" . htmlspecialchars($rowt['gasprice']) . "</td>
+                <td>" . htmlspecialchars($rowall['name']) . "</td>
+                <td>" . htmlspecialchars($rowall['status']) . "</td>
+                <td>" . htmlspecialchars($rowall['rent']) . "</td>
+                <td>" . htmlspecialchars($rowall['gasprice']) . "</td>
+                <td>" . htmlspecialchars($rowall['electricityprice']) . "</td>
+                <td>" . htmlspecialchars($rowall['waterprice']) . "</td>
                 </tr>";
             }
         echo "</table>";
@@ -161,9 +167,9 @@ require 'sqlconn.php';
             <tr>
                 <th>Start Date</th>
                 <th>End Date</th>
-                <th>Dohodi</th>
-                <th>Razhodi</th>
-                <th>True Dohod</th>
+                <th>Income</th>
+                <th>Costs</th>
+                <th>True Income</th>
             </tr>
             
             <tr>
