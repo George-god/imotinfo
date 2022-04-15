@@ -22,6 +22,7 @@ $imoterID = $_SESSION['userIm'];
     <script type="module" src="../JS/js.cookie.mjs"></script>
     <script nomodule defer src="../JS/js.cookie.js"></script>
     <script src="../JS/cookie.js"></script>
+    <script src="../JS/otherscript.js"></script>
 </head>
 <body>
     <img src="../Pictures/LogoMaybe.png" alt="Italian Trulli" class="center">
@@ -88,13 +89,16 @@ $imoterID = $_SESSION['userIm'];
                         </label> <br>              
                         </div>
                         <div class="rightright">
-                            <label for="cenatok">Elec. Price: <?php echo $rower['electricityprice']; ?>.00 €</label>
-                            <form> 
-                                <input type="image" src="../Pictures/history.png" border="0" alt="Submit" /> 
-                            </form><br>
-                            <label for="cenavoda">Water Price: <?php echo $rower['waterprice']; ?>.00 €</label><br>
-                            <label for="cenagas">Gas Price: <?php echo $rower['gasprice']; ?>.00 €</label><br>
-                            <label for="kvadratura">Squaring: <?php echo $rower['kvadrat']; ?> ㎡</label> <br> 
+                            <label for="cenatok">Elec. Price:<?php echo $rower['electricityprice']; ?>.00 €</label>
+                            <form form action="" method="post" name="tokform">
+                                <input type="hidden" name="idm" value="<?php echo $imid ?>">
+                                <input type="image" src="../Pictures/history.png" alt="Submit" name="submita" form="tokform">
+                            </form> 
+                            <label for="cenavoda">Water Price:<?php echo $rower['waterprice']; ?>.00 €</label> 
+                                <img src="../Pictures/history.png" onclick="openHistory()"> 
+                            <label for="cenagas">Gas Price:<?php echo $rower['gasprice']; ?>.00 €</label>
+                                <img src="../Pictures/history.png" onclick="openHistory()"> 
+                            <label for="kvadratura">Squaring:<?php echo $rower['kvadrat']; ?> ㎡</label> <br> 
                         </div>
                     </div>                
 
@@ -106,19 +110,30 @@ $imoterID = $_SESSION['userIm'];
         }
         ?>
     </div>
-    <!--
-                <div id="myModal3" class="modal three">
 
-                    <div class="modal-content">
-                        <div class="modal-header" id="moddelhead">
-                            <span class="close dre" onclick="remimot2()">&times;</span>
-                            <h2>Someting History</h2>
-                        </div>
-                        <div class="modal-body">
-                        </div>
-                    </div>
+    <div id="myHistory" class="hisory-popup">
+        <?php
+                    $sqlcena = "SELECT * FROM cena_history WHERE imot_id='$imid'";
+                    $resultcena = $conn->query($sqlcena);
+            if(isset($_POST['submite'])){
+                ?>  
 
-                </div> 
-        -->   
+                <tr>
+                    <th>DateChanged</th>
+                    <th>Old Price</th>
+                    <th>New Price</th>
+                </tr>
+            <?php 
+                while ($rowcena = mysqli_fetch_array($resultcena)){
+                    echo "<tr>
+                    <td>" . htmlspecialchars($rowcena['date']) . "</td>
+                    <td>" . htmlspecialchars($rowcena['old']) . "</td>
+                    <td>" . htmlspecialchars($rowcena['new']) . "</td>
+                    </tr>";
+                }
+            }
+        ?>
+    </div>
+                   
 </body>
 </html>
