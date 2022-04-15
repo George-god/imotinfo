@@ -57,10 +57,10 @@ $imoterID = $_SESSION['userIm'];
                         <label for="water">Water:
                             <?php
                                 if($water=="1"){
-                                    echo "YES";
+                                    echo '<img src="../Pictures/check.png">';
                                 }
                                 else {
-                                    echo "NO";
+                                    echo '<img src="../Pictures/remove.png">';
                                 }
                             ?>
                         </label><br>
@@ -68,10 +68,10 @@ $imoterID = $_SESSION['userIm'];
                         <label for="gas">Gas:
                             <?php
                                 if($gas=="1"){
-                                    echo "YES";
+                                    echo '<img src="../Pictures/check.png">';
                                 }
                                 else {
-                                    echo "NO";
+                                    echo '<img src="../Pictures/remove.png">';
                                 }
                             ?>
                         </label><br>
@@ -79,10 +79,10 @@ $imoterID = $_SESSION['userIm'];
                         <label for="tok">Elec.:
                             <?php
                                 if($tok=="1"){
-                                    echo "YES";
+                                    echo '<img src="../Pictures/check.png">';
                                 }
                                 else {
-                                    echo "NO";
+                                    echo '<img src="../Pictures/remove.png">';
                                 }
                             ?>
                         </label> <br>              
