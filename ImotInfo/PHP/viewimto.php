@@ -88,7 +88,10 @@ $imoterID = $_SESSION['userIm'];
                         </label> <br>              
                         </div>
                         <div class="rightright">
-                            <label for="cenatok">Elec. Price: <?php echo $rower['electricityprice']; ?>.00 €</label><br>
+                            <label for="cenatok">Elec. Price: <?php echo $rower['electricityprice']; ?>.00 €</label>
+                            <form> 
+                                <input type="image" src="../Pictures/history.png" border="0" alt="Submit" /> 
+                            </form><br>
                             <label for="cenavoda">Water Price: <?php echo $rower['waterprice']; ?>.00 €</label><br>
                             <label for="cenagas">Gas Price: <?php echo $rower['gasprice']; ?>.00 €</label><br>
                             <label for="kvadratura">Squaring: <?php echo $rower['kvadrat']; ?> ㎡</label> <br> 
@@ -102,6 +105,20 @@ $imoterID = $_SESSION['userIm'];
             } 
         }
         ?>
-    </div>    
+    </div>
+    <!--
+                <div id="myModal3" class="modal three">
+
+                    <div class="modal-content">
+                        <div class="modal-header" id="moddelhead">
+                            <span class="close dre" onclick="remimot2()">&times;</span>
+                            <h2>Someting History</h2>
+                        </div>
+                        <div class="modal-body">
+                        </div>
+                    </div>
+
+                </div> 
+        -->   
 </body>
 </html>
