@@ -26,8 +26,9 @@ $imoterID = $_SESSION['userIm'];
 </head>
 <body>
     <img src="../Pictures/LogoMaybe.png" alt="Italian Trulli" class="center">
+    
     <div class="conui">
-        <form action="index.php">
+        <form action="history.php" method="post">
             <div class="container">
                 <?php
                 $sqlse = "SELECT * FROM imoti WHERE name='$selection'";
@@ -36,6 +37,7 @@ $imoterID = $_SESSION['userIm'];
                 while($row = mysqli_fetch_array($resultse,MYSQLI_BOTH)) {
                     $imid=$row['id'];
                 ?>
+
                 <div class="left">
                 <label for="Imotname">Name for Imot: <?php echo $row ['name']; ?></label><br>
                 <label for="cena">Price for Imot: <?php echo $row ['saleprice']; ?>.00 €</label><br>
@@ -90,19 +92,17 @@ $imoterID = $_SESSION['userIm'];
                         </div>
                         <div class="rightright">
                             <label for="cenatok">Elec. Price:<?php echo $rower['electricityprice']; ?>.00 €</label>
-                            <form form action="" method="post" name="tokform">
-                                <input type="hidden" name="idm" value="<?php echo $imid ?>">
-                                <input type="image" src="../Pictures/history.png" alt="Submit" name="submita" form="tokform">
-                            </form> 
-                            <label for="cenavoda">Water Price:<?php echo $rower['waterprice']; ?>.00 €</label> 
-                                <img src="../Pictures/history.png" onclick="openHistory()"> 
+                                <input type="hidden" name="idm" value="<?php echo $imid; ?>">
+                                <input type="submit" value="" class="imgClass" name="submita" title="Cena Tok History">
+                            <label for="cenavoda">Water Price:<?php echo $rower['waterprice']; ?>.00 €</label>
+                                <input type="submit" value="" class="imgClass" name="submitb" title="Cena Voda History">  
                             <label for="cenagas">Gas Price:<?php echo $rower['gasprice']; ?>.00 €</label>
-                                <img src="../Pictures/history.png" onclick="openHistory()"> 
+                                <input type="submit" value="" class="imgClass" name="submitc" title="Cena Gas History">
                             <label for="kvadratura">Squaring:<?php echo $rower['kvadrat']; ?> ㎡</label> <br> 
                         </div>
                     </div>                
 
-                <input type="submit" value="Done Viewing" class="inpsubmod1">                
+                <input type="submit" value="Done Viewing" class="inpsubmod1" name="subback">                
             </div>
         </form>
         <?php
@@ -111,29 +111,5 @@ $imoterID = $_SESSION['userIm'];
         ?>
     </div>
 
-    <div id="myHistory" class="hisory-popup">
-        <?php
-                    $sqlcena = "SELECT * FROM cena_history WHERE imot_id='$imid'";
-                    $resultcena = $conn->query($sqlcena);
-            if(isset($_POST['submite'])){
-                ?>  
-
-                <tr>
-                    <th>DateChanged</th>
-                    <th>Old Price</th>
-                    <th>New Price</th>
-                </tr>
-            <?php 
-                while ($rowcena = mysqli_fetch_array($resultcena)){
-                    echo "<tr>
-                    <td>" . htmlspecialchars($rowcena['date']) . "</td>
-                    <td>" . htmlspecialchars($rowcena['old']) . "</td>
-                    <td>" . htmlspecialchars($rowcena['new']) . "</td>
-                    </tr>";
-                }
-            }
-        ?>
-    </div>
-                   
 </body>
 </html>

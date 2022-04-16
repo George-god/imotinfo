@@ -52,6 +52,7 @@ $imoterID = $_SESSION['userIm'];
                     <option value="for_sale" <?php if($status=="for_sale") echo 'selected="selected"'; ?> >for_sale</option>
                 </select>
                 <h4><b>Property characteristics:</b></h4><br>
+                <div class="lefthar">
                 <?php 
                 $sql = "SELECT * FROM imot_harakter WHERE imot_id='$imid'";
                 $result = $conn->query($sql);
@@ -103,8 +104,11 @@ $imoterID = $_SESSION['userIm'];
 
                     <label for="kvadratura">Squaring:</label>
                     <input type="number" id="kvadratura" name="kvadratura" class="inptextmod1" value="<?php echo $rower['kvadrat']; ?>" placeholder="Zadai kvadratura.." maxlength="1000000">
+                    </div>
+                    <div class="righthar">
+                    </div> 
+                <input type="submit" value="Submit" class="inpsubmod1">
 
-                <input type="submit" value="Submit" class="inpsubmod1">                
             </div>
         </form>
         <?php
