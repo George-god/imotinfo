@@ -52,6 +52,8 @@ $imoterID = $_SESSION['userIm'];
                     $water = $rower['water'];
                     $gas = $rower['gas'];
                     $tok = $rower['electricity'];
+                    $obza = $rower['obzaveden'];
+                    $dogram = $rower['dograma'];
                 ?>
                     <div class="right">
                         <div class="rightleft">
@@ -88,7 +90,27 @@ $imoterID = $_SESSION['userIm'];
                                     echo '<img src="../Pictures/remove.png">';
                                 }
                             ?>
-                        </label> <br>              
+                        </label> <br> 
+                        <label for="obzav">Obzaveden:
+                            <?php
+                                if($obza=="1"){
+                                    echo '<img src="../Pictures/check.png">';
+                                }
+                                else {
+                                    echo '<img src="../Pictures/remove.png">';
+                                }
+                            ?>
+                    </label> <br> 
+                    <label for="dogra">Dograma:
+                            <?php
+                                if($dogram=="1"){
+                                    echo '<img src="../Pictures/check.png">';
+                                }
+                                else {
+                                    echo '<img src="../Pictures/remove.png">';
+                                }
+                            ?>
+                    </label> <br>             
                         </div>
                         <div class="rightright">
                             <label for="cenatok">Elec. Price:<?php echo $rower['electricityprice']; ?>.00 €</label>
@@ -98,9 +120,13 @@ $imoterID = $_SESSION['userIm'];
                                 <input type="submit" value="" class="imgClass" name="submitb" title="Cena Voda History">  
                             <label for="cenagas">Gas Price:<?php echo $rower['gasprice']; ?>.00 €</label>
                                 <input type="submit" value="" class="imgClass" name="submitc" title="Cena Gas History">
-                            <label for="kvadratura">Squaring:<?php echo $rower['kvadrat']; ?> ㎡</label> <br> 
+                            <label for="kvadratura">Squaring:<?php echo $rower['kvadrat']; ?> ㎡</label> <br>
+                            <label for="banq">Kupane:<?php echo $rower['banqsitu']; ?></label><br>
+                            <label for="pod">Podova nastilka:<?php echo $rower['poda']; ?></label><br>
+                            <label for="steni">Steni:<?php echo $rower['steni']; ?></label><br>
+                            <label for="terasa">Terasa:<?php echo $rower['terasa']; ?></label> 
                         </div>
-                    </div>                
+                    </div>
 
                 <input type="submit" value="Done Viewing" class="inpsubmod1" name="subback">                
             </div>
