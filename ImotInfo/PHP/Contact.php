@@ -10,7 +10,7 @@ require 'mailsend.php';
 <!DOCTYPE html>
 <html>
 <head>
-<title>God</title>
+<title>Контакти</title>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,17 +29,17 @@ require 'mailsend.php';
 <body>
 
 <div id="mySidenav" class="sidenav">
-  <a href="index.php" id="about">Imoti</a>
-  <a href="finance.php" id="blog">Finansi</a>
-  <a href="market.php" id="projects">Market</a>
-  <a href="profile.php" id="profile">Profile</a>
-  <a href="Csontact.php" id="contact">Contact</a>
+  <a href="index.php" id="about">Имоти</a>
+  <a href="finance.php" id="blog">Финанси</a>
+  <a href="market.php" id="projects">Пазар</a>
+  <a href="profile.php" id="profile">Профил</a>
+  <a href="Csontact.php" id="contact">Контакт</a>
 </div>
 
 <div class="container">
   <div style="text-align:center">
-    <h2>Contact Us</h2>
-    <p>Swing by for a cup of coffee, or leave us a message:</p>
+    <h2>Свържи се с нас</h2>
+    <p>Мини при нас и ни купи кафе:</p>
   </div>
   <div class="row">
     <div class="column">
@@ -48,13 +48,13 @@ require 'mailsend.php';
     <div class="column">
       <form action="" method="post">
         <input type="text" id="mail" name="mail" value="<?php echo $user;?>" hidden>
-        <label for="fname">Username OR Fullname:</label>
+        <label for="fname">Потребителско име или цяло име:</label>
         <input type="text" id="name" name="name" placeholder="Username or Fullname..">
-        <label for="lname">Subject:</label>
+        <label for="lname">Тема:</label>
         <input type="text" id="subject" name="subject" placeholder="Subject..">
-        <label for="subject">Subject</label>
+        <label for="subject">Доп. инфо</label>
         <textarea id="subject" name="problem" placeholder="Write something.." style="height:170px"></textarea>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Прати">
       </form>
     </div>
   </div>

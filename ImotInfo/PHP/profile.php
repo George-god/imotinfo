@@ -10,7 +10,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-<title>God</title>
+<title>Профил</title>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,27 +36,27 @@ session_start();
  
 
 <div id="mySidenav" class="sidenav">
-  <a href="index.php" id="about">Imoti</a>
-  <a href="finance.php" id="blog">Finansi</a>
-  <a href="market.php" id="projects">Market</a>
-  <a href="profile.php" id="profile">Profile</a>
-  <a href="Contact.php" id="contact">Contact</a>
+  <a href="index.php" id="about">Имоти</a>
+  <a href="finance.php" id="blog">Финанси</a>
+  <a href="market.php" id="projects">Пазар</a>
+  <a href="profile.php" id="profile">Профил</a>
+  <a href="Contact.php" id="contact">Контакт</a>
 </div>
 
 <body>
 <div class="MainI">
-<h1>Profile</h1>
+<h1>Профил</h1>
 
     <div class="tab">
-        <button class="tablinks" onclick="tabProfil(event, 'Info')" id="defaultOpen">Info</button>
-        <button class="tablinks" onclick="tabProfil(event, 'Security')">Security</button>
-        <button class="tablinks" onclick="tabProfil(event, 'Other')">Other</button>
+        <button class="tablinks" onclick="tabProfil(event, 'Info')" id="defaultOpen">Инфо</button>
+        <button class="tablinks" onclick="tabProfil(event, 'Security')">Защита</button>
+        <button class="tablinks" onclick="tabProfil(event, 'Other')">Друго</button>
     </div>
 
     <div class="tabcontent" id="Info">
         
         <div class="imoterinfo">
-            <h3>Property holder info</h3>
+            <h3>Информация за собстениците</h3>
            <form action="updateprof3.php" method="post">
                 <?php
                     if(isset($_SESSION['userIm'])){
@@ -67,10 +67,10 @@ session_start();
 
                     while($rower = mysqli_fetch_array($resultimo,MYSQLI_BOTH)) {
                 ?>
-                <label for="uname">Username:</label><br>
+                <label for="uname">Потребителско Име:</label><br>
                 <input type="text" id="uname" name="username" value="<?php echo $rower ['imoter_name']; ?>" class="hidform" >
                 <br>
-                <label for="phone">Phone-Number:</label><br>
+                <label for="phone">Мобилен телефон:</label><br>
                 <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{5}-[0-9]{4}" value="<?php echo $rower ['PhoneNumber']; ?>" class="hidform" >
                 <br>
                 <?php
@@ -79,9 +79,9 @@ session_start();
                     $resultcount = mysqli_query($conn, $sqlcout);
                     $row = mysqli_num_rows($resultcount);
                 ?>
-                <label for="bnumber">Number of Properties: <?php echo $row ?></label><br>
+                <label for="bnumber">Номер на имоти: <?php echo $row ?></label><br>
                 <br>
-                <input type="submit" value="Save" id="savebtni" class="hidformb" name="hidsub">
+                <input type="submit" value="Запази" id="savebtni" class="hidformb" name="hidsub">
 
             </form>
             <?php
@@ -91,7 +91,7 @@ session_start();
                 if(isset($_SESSION['userIm'])){}
                 else {
             ?>
-                    <button type="button" id="addim" class="hidformb">Add Yourself</button>
+                    <button type="button" id="addim" class="hidformb">Добави се!</button>
             <?php
                 }
             ?>
@@ -127,30 +127,30 @@ session_start();
                     while($row = mysqli_fetch_array($result,MYSQLI_BOTH)) {
                 ?>
 
-                <label for="fname" id="shitname">First Name:</label>
+                <label for="fname" id="shitname">Име:</label>
                 <input type="text" id="fname" name="firstname" value="<?php echo $row ['first_name']; ?>" class="normform" >
 
-                <label for="lname">Last Name:</label>
+                <label for="lname">Фамилия:</label>
                 <input type="text" id="lname" name="lastname" value="<?php echo $row ['last_name']; ?>" class="normform" >
 
-                <label for="mail">Mail:</label>
+                <label for="mail">Мейл:</label>
                 <input type="mail" id="mail" name="mail" value="<?php echo $row ['email']; ?>" class="normform" >
 
-                <label for="pnumber">PostCode</label>
+                <label for="pnumber">Пощенски код</label>
                 <input type="number" id="pnumber" name="pnumber" value="<?php echo $row ['town_code']; ?>" class="normform" >
 
-                <label>Are you a property holder?:</label>
-                <label class="imoterr">YES
+                <label>Собственик на Имоти ли си?:</label>
+                <label class="imoterr">Да
                 <input type="radio"  name="radioI" class="normform" id="imotda" value="1" <?php if($row['imoter'] == "1") echo " checked";?>>
                 <span class="checkmark"></span>
                 </label>
 
-                <label class="imoterr">NO
+                <label class="imoterr">Не
                 <input type="radio" name="radioI" class="normform" id="imotne" value="0" <?php if($row['imoter'] == "0") echo " checked";?>>
                 <span class="checkmark"></span>
                 </label>
                
-                <input type="submit" value="Save" id="savebtn" class="normformb" name="formmsub">
+                <input type="submit" value="Запази" id="savebtn" class="normformb" name="formmsub">
 
             </form>
             <?php
@@ -162,16 +162,16 @@ session_start();
     <div class="tabcontent" id="Security">
         <div class="container1">
             <form action="">
-                <label for="opsw">Old Password</label>
+                <label for="opsw">Стара Парола</label>
                 <input type="password" id="opsw" name="opsw" class="inp" required>
 
-                <label for="psw">Password</label>
-                <input type="password" id="psw" name="psw" onkeyup='check();' class="inp" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                <label for="psw">Нова Парола</label>
+                <input type="password" id="psw" name="psw" onkeyup='check();' class="inp" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Трябва да съдържа поне една цифра и една главна и малка буква и поне 8 или повече знака" required>
 
-                <label for="rpsw">Repeat Password</label>
+                <label for="rpsw">Повтори Нова Парола</label>
                 <input type="password" id="rpsw" name="rpsw" class="inp" onkeyup='check();' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                 <span id='message'></span>
-                <input type="submit" value="Submit" class="inps">
+                <input type="submit" value="Смени" class="inps">
             </form>
         </div>
       
@@ -180,16 +180,16 @@ session_start();
     <div class="tabcontent" id="Other">
         <form action="logout.php" method="post">
 
-                <label for="Logout">Logout:</label>
+                <label for="Logout">Излез от Акаунта си:</label>
 
-                <input type="submit" value="Logout" class="inpsubmod1">
+                <input type="submit" value="Излизане" class="inpsubmod1">
         </form>
         <form action="../Pictures/upload.php" method="post" enctype="multipart/form-data">
 
-                <label for="upload">Upload:</label>
+                <label for="upload">Сложи си снимка:</label>
                 <input type="file" name="upload" id="upload">
 
-                <input type="submit" value="Set Profile Pic" class="inpsubmod1">
+                <input type="submit" value="Задай" class="inpsubmod1">
         </form>
         
     </div>
@@ -201,13 +201,13 @@ session_start();
             <span class="close">&times;</span>
             <form action="updateprof2.php" method="post">
                
-                <label for="uname">Username:</label><br>
+                <label for="uname">Потребителско име:</label><br>
                 <input type="text" id="uname" name="username" placeholder="Set username..." class="hidform" required>
                 <br>
-                <label for="phone">PhoneNumber:</label><br>
+                <label for="phone">Мобилен Телефон:</label><br>
                 <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{5}-[0-9]{4}" placeholder="Ex:359-87880-1144" class="hidform" required>
                 <br>
-                <input type="submit" value="Save" id="savebtnin" class="hidformb">
+                <input type="submit" value="Запази" id="savebtnin" class="hidformb">
   </div>
 
 </div>

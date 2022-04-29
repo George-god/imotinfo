@@ -9,7 +9,7 @@ require 'sqlconn.php';
 <!DOCTYPE html>
 <html>
 <head>
-<title>God</title>
+<title>Финанси</title>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,32 +35,32 @@ require 'sqlconn.php';
  
 
 <div id="mySidenav" class="sidenav">
-  <a href="index.php" id="about">Imoti</a>
-  <a href="finance.php" id="blog">Finansi</a>
-  <a href="market.php" id="projects">Market</a>
-  <a href="profile.php" id="profile">Profile</a>
-  <a href="Contact.php" id="contact">Contact</a>
+  <a href="index.php" id="about">Имоти</a>
+  <a href="finance.php" id="blog">Финанси</a>
+  <a href="market.php" id="projects">Пазар</a>
+  <a href="profile.php" id="profile">Профил</a>
+  <a href="Contact.php" id="contact">Контакт</a>
 </div>
 
 <div class="FinanceMain">
-<h1>Finance Manager</h1>
+<h1>Мениджър на Финансите</h1>
 
     <div class="filterfinance">
         <form action="" id="finfil" method="post">
         <div class="svetatri">
             <div class="fin">
-                <p><b>There must be a minimum of 1 month:</b></p>
+                <p><b>Трябва да има минимум 1 месец разлика в датите:</b></p>
 
-                <label for="datemin">Enter a date after 2000-01-01:</label>
+                <label for="datemin">Задай дата след 2000-01-01:</label>
                 <input type="date" id="datemin" name="datemin" min="2000-01-02"><br>
 
-                <label for="datemax">Enter a date before 2050-01-01:</label>
+                <label for="datemax">Задай дата преди 2050-01-01:</label>
                 <input type="date" id="datemax" name="datemax" max="2049-12-31"><br>
             </div>
             
             <div class="fin">
                 
-                <label for="Razhodi">Which properties should be included?</label><br>
+                <label for="Razhodi">Кои имоти да се включат във финансите?</label><br>
 
                 <select name="imoti[]" multiple >
                     <?php
@@ -140,12 +140,12 @@ require 'sqlconn.php';
         echo "<table id='imotiinfo'> ";
         ?>
             <tr>
-                <th>Imot-Name</th>
-                <th>Status</th>
-                <th>Rent</th>
-                <th>Gas</th>
-                <th>Tok(Elec)</th>
-                <th>Water</th>
+                <th>Име на имота</th>
+                <th>Статус</th>
+                <th>Рента</th>
+                <th>Газ</th>
+                <th>Ток</th>
+                <th>Вода</th>
             </tr>
             <?php
             while ($rowall = mysqli_fetch_array($resultall)){
@@ -165,11 +165,11 @@ require 'sqlconn.php';
         echo "<table id='imotifinan'> ";
         ?>
             <tr>
-                <th>Start Date</th>
-                <th>End Date</th>
-                <th>Income</th>
-                <th>Costs</th>
-                <th>True Income</th>
+                <th>Начална Дата</th>
+                <th>Крайна Дата</th>
+                <th>Доходи</th>
+                <th>Разходи</th>
+                <th>Бюджет</th>
             </tr>
             
             <tr>

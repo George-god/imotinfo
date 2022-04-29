@@ -9,7 +9,7 @@ require 'sqlconn.php';
 <!DOCTYPE html>
 <html>
 <head>
-<title>God</title>
+<title>Пазар</title>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,17 +34,17 @@ require 'sqlconn.php';
  
 
 <div id="mySidenav" class="sidenav">
-  <a href="index.php" id="about">Imoti</a>
-  <a href="finance.php" id="blog">Finansi</a>
-  <a href="market.php" id="projects">Market</a>
-  <a href="profile.php" id="profile">Profile</a>
-  <a href="Contact.php" id="contact">Contact</a>
+  <a href="index.php" id="about">Имоти</a>
+  <a href="finance.php" id="blog">Финанси</a>
+  <a href="market.php" id="projects">Пазар</a>
+  <a href="profile.php" id="profile">Профил</a>
+  <a href="Contact.php" id="contact">Контакт</a>
 </div>
 
 
 <div class="MainI">
 
-<h2>This is the marketplace</h2>
+<h2>Добре дошли в Пазара</h2>
  
     <div class="LeftCol">
     <?php
@@ -59,35 +59,35 @@ require 'sqlconn.php';
         <div class="icard" id="edit">
             <div class="icontainer">
             <img src="../Pictures/<?php echo $row['icon'] ?>" alt="Avatar" style="width:50%" id="iimg"><br>
-            <label>ID na Durjatel:</label><label><?php echo $row['imoter_id']?></label><br>
+            <label>ID на Държател:</label><label><?php echo $row['imoter_id']?></label><br>
             </div>
             <div class="icontainer">
-                <label>Ime na imot:</label><label><?php echo $row['name']?></label><br>
-                <label>Price:</label><label><?php echo $row['saleprice']?>€</label><br>
-                <label>Rent:</label><label><?php echo $row['rent']?>€</label><br>
-                <label>Status:</label><label><?php echo $row['status']?></label><br>
-                <label>Type:</label><label><?php echo $row['type']?></label><br>
+                <label>Име на имота:</label><label><?php echo $row['name']?></label><br>
+                <label>Цена:</label><label><?php echo $row['saleprice']?>€</label><br>
+                <label>Рента:</label><label><?php echo $row['rent']?>€</label><br>
+                <label>Статус:</label><label><?php echo $row['status']?></label><br>
+                <label>Тип:</label><label><?php echo $row['type']?></label><br>
             </div>
             <div class="icontainer">
-                <label>Kavdratura:</label><label><?php echo $row['kvadrat']?> ㎡</label><br>
-                <label>Voda:</label><label>
+                <label>Квадратура:</label><label><?php echo $row['kvadrat']?> ㎡</label><br>
+                <label>Вода:</label><label>
                     <?php 
-                        if($row['water']=="1"){echo "Yes";  }
-                        else {echo "No"; }
+                        if($row['water']=="1"){echo '<img src="../Pictures/check.png">';  }
+                        else {echo '<img src="../Pictures/remove.png">'; }
                     ?> 
                     </label><br>
 
-                <label>Tok:</label><label>
+                <label>Ток:</label><label>
                     <?php 
-                        if($row['electricity']=="1"){echo "Yes";  }
-                        else {echo "No"; }
+                        if($row['electricity']=="1"){echo '<img src="../Pictures/check.png">';  }
+                        else {echo '<img src="../Pictures/remove.png">'; }
                     ?> 
                 </label><br>
 
-                <label>Gas:</label><label>
+                <label>Газ:</label><label>
                     <?php 
-                        if($row['gas']=="1"){echo "Yes";  }
-                        else {echo "No"; }
+                        if($row['gas']=="1"){echo '<img src="../Pictures/check.png">';  }
+                        else {echo '<img src="../Pictures/remove.png">'; }
                     ?> 
                 </label><br>
 
@@ -99,11 +99,11 @@ require 'sqlconn.php';
     </div>
          
     <div class="RightCol">
-        <button class="open-button" onclick="openForm()">FILTER</button>
+        <button class="open-button" onclick="openForm()">Филтър</button>
         <div class="form-popup" id="myForm">
             <form method="post" action="market2.php" class="form-container">
 
-                <label for="timot">Type of imot:</label><br>
+                <label for="timot">Тип на Имота:</label><br>
                 <select id="type" name="type" class="inptextmod1">
                         <?php
                             $sqlt = mysqli_query($conn, "SELECT * From imottype");
@@ -113,24 +113,24 @@ require 'sqlconn.php';
                             }
                         ?>
                     </select><br>
-                <label for="price">Wanted Price:</label><br>
+                <label for="price">Желана цена:</label><br>
                     <input type="range" id="price" name="price" min="0" max="100000000" oninput="this.nextElementSibling.value = this.value">
                     <output>50000000</output><br>
-                <label for="neses">Iskate li ot tiq neshta?</label><br>
+                <label for="neses">Искате ли от тези?</label><br>
                 <input type="checkbox" id="Tok" name="Tok" value="1">
                 <input type="hidden" id="Tokhidden" name="Tok" value="0">
-                <label for="Tok"> TOK</label><br>
+                <label for="Tok"> Ток</label><br>
                 <input type="checkbox" id="Gas" name="Gas" value="1">
                 <input type="hidden" id="Gashidden" name="Gas" value="0">
-                <label for="Gas"> GAS</label><br>
+                <label for="Gas"> Газ</label><br>
                 <input type="checkbox" id="voda" name="voda" value="1">
                 <input type="hidden" id="vodahidden" name="voda" value="0">
-                <label for="voda"> WATER</label><br>
+                <label for="voda"> Вода</label><br>
 
                 
 
-                <input type="submit" value="Filter" class="btn">
-                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                <input type="submit" value="Филтър" class="btn">
+                <button type="button" class="btn cancel" onclick="closeForm()">Затвори</button>
             </form>
 
             

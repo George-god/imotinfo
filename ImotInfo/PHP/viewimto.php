@@ -12,7 +12,7 @@ $imoterID = $_SESSION['userIm'];
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>AdImot</title>
+    <title>Поглед на Имот</title>
     <link rel="stylesheet" type="text/css" href="../CSS/imotformeditSview.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -39,10 +39,10 @@ $imoterID = $_SESSION['userIm'];
                 ?>
 
                 <div class="left">
-                <label for="Imotname">Name for Imot: <?php echo $row ['name']; ?></label><br>
-                <label for="cena">Price for Imot: <?php echo $row ['saleprice']; ?>.00 €</label><br>
-                <label for="renta">Rent for Imot: <?php echo $row ['rent']; ?>.00 €</label><br>
-                <label for="status">Status: <?php echo $row ['status']; ?></label><br>
+                <label for="Imotname">Име на Имота: <?php echo $row ['name']; ?></label><br>
+                <label for="cena">Цена на Имота: <?php echo $row ['saleprice']; ?>.00 €</label><br>
+                <label for="renta">Рента за Имота: <?php echo $row ['rent']; ?>.00 €</label><br>
+                <label for="status">Статус: <?php echo $row ['status']; ?></label><br>
                 </div>
                 <?php 
                 $sql = "SELECT * FROM imot_harakter INNER JOIN imottype on imot_harakter.imottype = imottype.typeid WHERE imot_id='$imid'";
@@ -57,9 +57,9 @@ $imoterID = $_SESSION['userIm'];
                 ?>
                     <div class="right">
                         <div class="rightleft">
-                        <label for="type">What type: <?php echo $rower['type']; ?></label><br>
+                        <label for="type">Тип на Имота: <?php echo $rower['type']; ?></label><br>
 
-                        <label for="water">Water:
+                        <label for="water">Вода:
                             <?php
                                 if($water=="1"){
                                     echo '<img src="../Pictures/check.png">';
@@ -70,7 +70,7 @@ $imoterID = $_SESSION['userIm'];
                             ?>
                         </label><br>
 
-                        <label for="gas">Gas:
+                        <label for="gas">Газ:
                             <?php
                                 if($gas=="1"){
                                     echo '<img src="../Pictures/check.png">';
@@ -81,7 +81,7 @@ $imoterID = $_SESSION['userIm'];
                             ?>
                         </label><br>
 
-                        <label for="tok">Elec.:
+                        <label for="tok">Ток:
                             <?php
                                 if($tok=="1"){
                                     echo '<img src="../Pictures/check.png">';
@@ -91,7 +91,7 @@ $imoterID = $_SESSION['userIm'];
                                 }
                             ?>
                         </label> <br> 
-                        <label for="obzav">Obzaveden:
+                        <label for="obzav">Обзавеждане:
                             <?php
                                 if($obza=="1"){
                                     echo '<img src="../Pictures/check.png">';
@@ -101,7 +101,7 @@ $imoterID = $_SESSION['userIm'];
                                 }
                             ?>
                     </label> <br> 
-                    <label for="dogra">Dograma:
+                    <label for="dogra">Дограма:
                             <?php
                                 if($dogram=="1"){
                                     echo '<img src="../Pictures/check.png">';
@@ -113,22 +113,22 @@ $imoterID = $_SESSION['userIm'];
                     </label> <br>             
                         </div>
                         <div class="rightright">
-                            <label for="cenatok">Elec. Price:<?php echo $rower['electricityprice']; ?>.00 €</label>
+                            <label for="cenatok">Цена Ток:<?php echo $rower['electricityprice']; ?>.00 €</label>
                                 <input type="hidden" name="idm" value="<?php echo $imid; ?>">
                                 <input type="submit" value="" class="imgClass" name="submita" title="Cena Tok History">
-                            <label for="cenavoda">Water Price:<?php echo $rower['waterprice']; ?>.00 €</label>
+                            <label for="cenavoda">Цена Вода:<?php echo $rower['waterprice']; ?>.00 €</label>
                                 <input type="submit" value="" class="imgClass" name="submitb" title="Cena Voda History">  
-                            <label for="cenagas">Gas Price:<?php echo $rower['gasprice']; ?>.00 €</label>
+                            <label for="cenagas">Цена Газ:<?php echo $rower['gasprice']; ?>.00 €</label>
                                 <input type="submit" value="" class="imgClass" name="submitc" title="Cena Gas History">
-                            <label for="kvadratura">Squaring:<?php echo $rower['kvadrat']; ?> ㎡</label> <br>
-                            <label for="banq">Kupane:<?php echo $rower['banqsitu']; ?></label><br>
-                            <label for="pod">Podova nastilka:<?php echo $rower['poda']; ?></label><br>
-                            <label for="steni">Steni:<?php echo $rower['steni']; ?></label><br>
-                            <label for="terasa">Terasa:<?php echo $rower['terasa']; ?></label> 
+                            <label for="kvadratura">Квадратура:<?php echo $rower['kvadrat']; ?> ㎡</label> <br>
+                            <label for="banq">Баня:<?php echo $rower['banqsitu']; ?></label><br>
+                            <label for="pod">Подова настилка:<?php echo $rower['poda']; ?></label><br>
+                            <label for="steni">Стени:<?php echo $rower['steni']; ?></label><br>
+                            <label for="terasa">Тераса:<?php echo $rower['terasa']; ?></label> 
                         </div>
                     </div>
 
-                <input type="submit" value="Done Viewing" class="inpsubmod1" name="subback">                
+                <input type="submit" value="Готов с гледането" class="inpsubmod1" name="subback">                
             </div>
         </form>
         <?php

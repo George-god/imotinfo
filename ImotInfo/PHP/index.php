@@ -19,7 +19,7 @@ require 'sqlconn.php';
 <!DOCTYPE html>
 <html>
 <head>
-<title>God</title>
+<title>Имоти</title>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,17 +48,17 @@ require 'sqlconn.php';
  
 
 <div id="mySidenav" class="sidenav">
-  <a href="index.php" id="about">Imoti</a>
-  <a href="finance.php" id="blog">Finansi</a>
-  <a href="market.php" id="projects">Market</a>
-  <a href="profile.php" id="profile">Profile</a>
-  <a href="Contact.php" id="contact">Contact</a>
+  <a href="index.php" id="about">Имоти</a>
+  <a href="finance.php" id="blog">Финанси</a>
+  <a href="market.php" id="projects">Пазар</a>
+  <a href="profile.php" id="profile">Профил</a>
+  <a href="Contact.php" id="contact">Контакт</a>
 </div>
 
 <div id="imotside" class="sidenavimot">
-  <a href="#" id="addn">AddImot</a>
-  <a href="#" id="editn" onclick="editimot1()">EditImot</a>
-  <a href="#" id="deleten" onclick="remimot1()">Delete Imot</a>
+  <a href="#" id="addn">Добави Имот</a>
+  <a href="#" id="editn" onclick="editimot1()">Редак. Имот</a>
+  <a href="#" id="deleten" onclick="remimot1()">Изтрий Имот</a>
 </div>
 
 
@@ -104,12 +104,12 @@ require 'sqlconn.php';
             <img src="../Pictures/<?php echo $rowpic['icon'] ?>" alt="Avatar" style="width:100%" id="iimg">
             <div class="icontainer">
                 <form method="post" action="viewimto.php">
-                    <label class="cenlab uno"><?php echo 'Name:'.$row['name'] ?> </label><br>
+                    <label class="cenlab uno"><?php echo 'Име:'.$row['name'] ?> </label><br>
                     <input type="hidden" name="imotnamecard" value="<?php echo $row['name'] ?>">
-                    <label class="cenlab dos"><?php echo 'Status:'.$row['status'] ?></label><br>
-                    <label class="cenlab tres"><?php echo 'Type:'.$rowpic['type'] ?></label><br>
+                    <label class="cenlab dos"><?php echo 'Статус:'.$row['status'] ?></label><br>
+                    <label class="cenlab tres"><?php echo 'Тип:'.$rowpic['type'] ?></label><br>
                     
-                    <input type="submit" value="View" id="viewbtn" onclick="">
+                    <input type="submit" value="Разгледай" id="viewbtn" onclick="">
                 </form>
             </div>
         </div>        
@@ -127,28 +127,28 @@ require 'sqlconn.php';
                     <div class="modal-content">
                         <div class="modal-header">
                             <span class="close">&times;</span>
-                            <h2>New Imot</h2>
+                            <h2>Нов имот</h2>
                         </div>
                         <div class="modal-body">
                             <form action="addimot.php" method="post">
-                                <label for="Imotname">Name for Imot:</label>
+                                <label for="Imotname">Име на Имота:</label>
                                 <input type="text" id="Imotname" name="Imotname" class="inptextmod1" placeholder="The name.." maxlength="20">
 
-                                <label for="cena">Price for Imot:</label>
+                                <label for="cena">Цена на Имота:</label>
                                 <input type="number" id="cena" name="cena" class="inptextmod1" placeholder="Zadai cenata.." maxlength="11">
 
-                                <label for="renta">Rent for Imot:</label>
+                                <label for="renta">Рента на Имота:</label>
                                 <input type="number" id="renta" name="renta" class="inptextmod1" placeholder="Zadai rentata.." maxlength="5">
 
-                                <label for="status">Status:</label>
+                                <label for="status">Статус:</label>
                                 <select id="status" name="status" class="inptextmod1">
-                                    <option disabled selected>-- Select Status --</option>
-                                    <option value="rented">rented</option>
-                                    <option value="not_rented">not_rented</option>
-                                    <option value="for_sale">for_sale</option>
+                                    <option disabled selected>-- Избери статус --</option>
+                                    <option value="rented">Под наем</option>
+                                    <option value="not_rented">Не под наем</option>
+                                    <option value="for_sale">За продажба</option>
                                 </select>
 
-                                <input type="submit" value="Add" class="inpsubmod1">
+                                <input type="submit" value="Добави" class="inpsubmod1">
                             </form>
                         </div>
                         <div class="modal-footer">
@@ -164,13 +164,13 @@ require 'sqlconn.php';
                     <div class="modal-content" id="editmod">
                         <div class="modal-header">
                             <span class="close dre" onclick="editimot2()">&times;</span>
-                            <h2>Edit the Imot</h2>
+                            <h2>Редактиране на имот</h2>
                         </div>
                         <div class="modal-body">
                             <form action="imoteditform.php" id="cform" method="post">
-                                <label for="selectimo">Which Imot do you want to edit:</label>
+                                <label for="selectimo">Кой имот искате на редактирате:</label>
                                 <select id="selectimo" name="selectimo" class="inptextmod1">
-                                    <option disabled selected>-- Select Imot --</option>
+                                    <option disabled selected>-- Изберете Имот --</option>
                                     <?php
                                         $userImed = $_SESSION['userIm'];
                                         $sqlse = "SELECT id FROM imoters WHERE imoter_name='$userImed'";
@@ -184,7 +184,7 @@ require 'sqlconn.php';
                                         }
                                     ?>
                                 </select>
-                                <input type="submit" value="Edit" class="inpsubmod1">
+                                <input type="submit" value="Редактиране" class="inpsubmod1">
                             </form>
                         </div>
                     </div>
@@ -195,13 +195,13 @@ require 'sqlconn.php';
                     <div class="modal-content">
                         <div class="modal-header" id="moddelhead">
                             <span class="close dre" onclick="remimot2()">&times;</span>
-                            <h2>Remove Imot</h2>
+                            <h2>Изтрий Имот</h2>
                         </div>
                         <div class="modal-body">
                             <form action="deleteimot.php" method="post">
-                                <label for="removimo">Which Imot do you want to remove:</label>
+                                <label for="removimo">Кой Имот искате да изтрийте:</label>
                                 <select id="removimo" name="removimo" class="inptextmod1">
-                                    <option disabled selected>-- Select Imot --</option>
+                                    <option disabled selected>-- Изберете Имот --</option>
                                     <?php
                                         $userIm = $_SESSION['userIm'];
                                         $sqlse = "SELECT id FROM imoters WHERE imoter_name='$userIm'";
@@ -223,7 +223,7 @@ require 'sqlconn.php';
                 </div>
 
 
-    <h2>LATEST MARKET ADDITIONS</h2>
+    <h2>ПОСЛЕДНИ ДОБАВКИ В ПАЗАРА</h2>
 
     <div class="RightCol">
         <?php
@@ -232,9 +232,9 @@ require 'sqlconn.php';
         while ($rowmark = $resultmark->fetch_assoc()) {
         ?>  
             <div class="ad">
-                <p>Name:<?php echo $rowmark['name'];?></p><br>
+                <p>Име:<?php echo $rowmark['name'];?></p><br>
                 <p>
-                  Price: <?php echo $rowmark['saleprice'];?> € Type: <?php echo $rowmark['type'];?>
+                  Цена: <?php echo $rowmark['saleprice'];?> € Тип: <?php echo $rowmark['type'];?>
                 </p>
             </div>
                 

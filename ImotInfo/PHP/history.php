@@ -26,9 +26,9 @@ require 'sqlconn.php';
 
          <table class="historytab">
             <tr>
-                <th>DateChanged</th>
-                <th>Old Price</th>
-                <th>New Price</th>
+                <th>Дата на Промяна</th>
+                <th>Стара цена</th>
+                <th>Нова цена</th>
             </tr>
         <?php
 
@@ -87,7 +87,7 @@ require 'sqlconn.php';
         ?>
     </table>
     <form>
-        <input type="button" value="Go back!" onclick="history.back()">
+        <input type="button" value="Върни се" onclick="history.back()">
     </form>
     </div>
 </div>

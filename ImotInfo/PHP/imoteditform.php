@@ -12,7 +12,7 @@ $imoterID = $_SESSION['userIm'];
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>AdImot</title>
+    <title>Редактиране на Имот</title>
     <link rel="stylesheet" type="text/css" href="../CSS/imotformeditS.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -36,22 +36,22 @@ $imoterID = $_SESSION['userIm'];
                     $status = $row['status'];
                     $imid=$row['id'];
                 ?>
-                <label for="Imotname">Name for Imot:</label>
+                <label for="Imotname">Име на Имота:</label>
                 <input type="text" id="Imotname" name="Imotname" class="inptextmod1" value="<?php echo $row ['name']; ?>" placeholder="The name.." maxlength="100">
 
-                <label for="cena">Price for Imot:</label>
+                <label for="cena">Цена на Имота:</label>
                 <input type="number" id="cena" name="cena" class="inptextmod1" value="<?php echo $row ['saleprice']; ?>" placeholder="Zadai cenata.." maxlength="1000000000">
 
-                <label for="renta">Rent for Imot:</label>
+                <label for="renta">Рента на Имота:</label>
                 <input type="number" id="renta" name="renta" class="inptextmod1" value="<?php echo $row ['rent']; ?>" placeholder="Zadai rentata.." maxlength="100000">
 
-                <label for="status">Status:</label>
+                <label for="status">Статус:</label>
                 <select id="status" name="status" class="inptextmod1">
-                    <option value="rented" <?php if($status=="rented") echo 'selected="selected"'; ?> >rented</option>
-                    <option value="not_rented" <?php if($status=="not_rented") echo 'selected="selected"'; ?> >not_rented</option>
-                    <option value="for_sale" <?php if($status=="for_sale") echo 'selected="selected"'; ?> >for_sale</option>
+                    <option value="rented" <?php if($status=="rented") echo 'selected="selected"'; ?> >Под наем</option>
+                    <option value="not_rented" <?php if($status=="not_rented") echo 'selected="selected"'; ?> >Не под наем</option>
+                    <option value="for_sale" <?php if($status=="for_sale") echo 'selected="selected"'; ?> >За продажба</option>
                 </select>
-                <h4><b>Property characteristics:</b></h4><br>
+                <h4><b>Характеристики за Имота:</b></h4><br>
                 <div class="hara">
                 <div class="har1">
                 <?php 
@@ -71,7 +71,7 @@ $imoterID = $_SESSION['userIm'];
                     $tera = $rower['terasa'];
                 ?>
 
-                    <label for="type">What type:</label>
+                    <label for="type">Тип на Имота:</label>
                     <select id="type" name="type" class="inptextmod1">
                         <?php
                             $sqlt = mysqli_query($conn, "SELECT * From imottype");
@@ -82,84 +82,84 @@ $imoterID = $_SESSION['userIm'];
                         ?>
                     </select>
 
-                    <label for="water">Water:</label>
+                    <label for="water">Вода:</label>
                     <select id="water" name="water" class="inptextmod1">
-                        <option value="1" <?php if($water=="1") echo 'selected="selected"'; ?> >YES</option>
-                        <option value="0" <?php if($water=="0") echo 'selected="selected"'; ?> >NO</option>
+                        <option value="1" <?php if($water=="1") echo 'selected="selected"'; ?> >Има</option>
+                        <option value="0" <?php if($water=="0") echo 'selected="selected"'; ?> >Няма</option>
                     </select>
 
-                    <label for="cenavoda">Water Price:</label>
-                    <input type="number" id="cenavoda" name="cenavoda" class="inptextmod1" value="<?php echo $rower['waterprice']; ?>" placeholder="Zadai cenata na vodata.." maxlength="100000">
+                    <label for="cenavoda">Цена но водата:</label>
+                    <input type="number" id="cenavoda" name="cenavoda" class="inptextmod1" value="<?php echo $rower['waterprice']; ?>" placeholder="Задай цена на водата.." maxlength="100000">
 
-                    <label for="gas">Gas:</label>
+                    <label for="gas">Газ:</label>
                     <select id="gas" name="gas" class="inptextmod1">
-                        <option value="1" <?php if($gas=="1") echo 'selected="selected"'; ?> >YES</option>
-                        <option value="0" <?php if($gas=="0") echo 'selected="selected"'; ?> >NO</option>
+                        <option value="1" <?php if($gas=="1") echo 'selected="selected"'; ?> >Има</option>
+                        <option value="0" <?php if($gas=="0") echo 'selected="selected"'; ?> >Няма</option>
                     </select>
 
-                    <label for="cenagas">Gas Price:</label>
-                    <input type="number" id="cenagas" name="cenagas" class="inptextmod1" value="<?php echo $rower['gasprice']; ?>" placeholder="Zadai cenata na gasta.." maxlength="100000">
+                    <label for="cenagas">Цена на газ:</label>
+                    <input type="number" id="cenagas" name="cenagas" class="inptextmod1" value="<?php echo $rower['gasprice']; ?>" placeholder="Задай цена на газта.." maxlength="100000">
 
-                    <label for="tok">Tok:</label>
+                    <label for="tok">Ток:</label>
                     <select id="tok" name="tok" class="inptextmod1">
-                        <option value="1" <?php if($tok=="1") echo 'selected="selected"'; ?> >YES</option>
-                        <option value="0" <?php if($tok=="0") echo 'selected="selected"'; ?> >NO</option>
+                        <option value="1" <?php if($tok=="1") echo 'selected="selected"'; ?> >Има</option>
+                        <option value="0" <?php if($tok=="0") echo 'selected="selected"'; ?> >Няма</option>
                     </select>
 
-                    <label for="cenatok">Elec. Price:</label>
-                    <input type="number" id="cenatok" name="cenatok" class="inptextmod1" value="<?php echo $rower['electricityprice']; ?>" placeholder="Zadai cenata na toka.." maxlength="100000">
+                    <label for="cenatok">Цена на тока:</label>
+                    <input type="number" id="cenatok" name="cenatok" class="inptextmod1" value="<?php echo $rower['electricityprice']; ?>" placeholder="Задай цена на тока.." maxlength="100000">
 
-                    <label for="kvadratura">Squaring:</label>
-                    <input type="number" id="kvadratura" name="kvadratura" class="inptextmod1" value="<?php echo $rower['kvadrat']; ?>" placeholder="Zadai kvadratura.." maxlength="1000000">
+                    <label for="kvadratura">Квадратура:</label>
+                    <input type="number" id="kvadratura" name="kvadratura" class="inptextmod1" value="<?php echo $rower['kvadrat']; ?>" placeholder="Задай квадратура.." maxlength="1000000">
                     </div>
                     <div class="har2">
-                        <label for="obzav">Obzaveden:</label>
+                        <label for="obzav">Обзаведен:</label>
                         <select id="obzav" name="obzav" class="inptextmod1">
-                            <option value="1" <?php if($obza=="1") echo 'selected="selected"'; ?> >YES</option>
-                            <option value="0" <?php if($obza=="0") echo 'selected="selected"'; ?> >NO</option>
+                            <option value="1" <?php if($obza=="1") echo 'selected="selected"'; ?> >Да</option>
+                            <option value="0" <?php if($obza=="0") echo 'selected="selected"'; ?> >Не</option>
                         </select>
 
-                        <label for="dogra">Dograma:</label>
+                        <label for="dogra">Дограма:</label>
                         <select id="dogra" name="dogra" class="inptextmod1">
-                            <option value="1" <?php if($dogra=="1") echo 'selected="selected"'; ?> >YES</option>
-                            <option value="0" <?php if($dogra=="0") echo 'selected="selected"'; ?> >NO</option>
+                            <option value="1" <?php if($dogra=="1") echo 'selected="selected"'; ?> >Има</option>
+                            <option value="0" <?php if($dogra=="0") echo 'selected="selected"'; ?> >Няма</option>
                         </select>
 
-                        <label for="banq">Banq:</label>
+                        <label for="banq">Баня:</label>
                         <select id="banq" name="banq" class="inptextmod1">
-                            <option value="vana" <?php if($banq=="vana") echo 'selected="selected"'; ?> >vana</option>
-                            <option value="dush" <?php if($banq=="dush") echo 'selected="selected"'; ?> >dush</option>
+                            <option value="vana" <?php if($banq=="vana") echo 'selected="selected"'; ?> >С вана</option>
+                            <option value="dush" <?php if($banq=="dush") echo 'selected="selected"'; ?> >С душ</option>
                         </select>
 
-                        <label for="pod">Podova nastilka:</label>
+                        <label for="pod">Подова настилка:</label>
                         <select id="pod" name="pod" class="inptextmod1">
-                            <option value="laminat" <?php if($pod=="laminat") echo 'selected="selected"'; ?> >laminat</option>
-                            <option value="chastichen_laminat" <?php if($pod=="chastichen_laminat") echo 'selected="selected"'; ?> >chastichen_laminat</option>
-                            <option value="parket" <?php if($pod=="parket") echo 'selected="selected"'; ?> >parket</option>
-                            <option value="keramika" <?php if($pod=="keramika") echo 'selected="selected"'; ?> >keramika</option>
-                            <option value="kamuk" <?php if($pod=="kamuk") echo 'selected="selected"'; ?> >kamuk</option>
-                            <option value="vinil" <?php if($pod=="vinil") echo 'selected="selected"'; ?> >vinil</option>
+                            <option value="laminat" <?php if($pod=="laminat") echo 'selected="selected"'; ?> >Ламинат</option>
+                            <option value="chastichen_laminat" <?php if($pod=="chastichen_laminat") echo 'selected="selected"'; ?> >частичен-ламинат</option>
+                            <option value="parket" <?php if($pod=="parket") echo 'selected="selected"'; ?> >Паркет</option>
+                            <option value="keramika" <?php if($pod=="keramika") echo 'selected="selected"'; ?> >Керамика</option>
+                            <option value="kamuk" <?php if($pod=="kamuk") echo 'selected="selected"'; ?> >Камък</option>
+                            <option value="vinil" <?php if($pod=="vinil") echo 'selected="selected"'; ?> >Винил</option>
                         </select>
 
-                        <label for="steni">Steni:</label>
+                        <label for="steni">Стени:</label>
                         <select id="steni" name="steni" class="inptextmod1">
-                            <option value="kamuk" <?php if($steni=="kamuk") echo 'selected="selected"'; ?> >kamuk</option>
-                            <option value="beton_blok" <?php if($steni=="beton_blok") echo 'selected="selected"'; ?> >beton_blok</option>
-                            <option value="tuhli" <?php if($steni=="tuhli") echo 'selected="selected"'; ?> >tuhli</option>
-                            <option value="durvo" <?php if($steni=="durvo") echo 'selected="selected"'; ?> >durvo</option>
+                            <option value="kamuk" <?php if($steni=="kamuk") echo 'selected="selected"'; ?> >Камък</option>
+                            <option value="beton_blok" <?php if($steni=="beton_blok") echo 'selected="selected"'; ?> >Бетон-блок</option>
+                            <option value="tuhli" <?php if($steni=="tuhli") echo 'selected="selected"'; ?> >Тухли</option>
+                            <option value="durvo" <?php if($steni=="durvo") echo 'selected="selected"'; ?> >Дърво</option>
                         </select>
 
-                        <label for="terasa">Terasa:</label>
+                        <label for="terasa">Тераса:</label>
                         <select id="terasa" name="terasa" class="inptextmod1">
-                            <option value="nqma" <?php if($tera=="nqma") echo 'selected="selected"'; ?> >nqma</option>
-                            <option value="otkrita" <?php if($tera=="otkrita") echo 'selected="selected"'; ?> >otkrita</option>
-                            <option value="zakrita" <?php if($tera=="zakrita") echo 'selected="selected"'; ?> >zakrita</option>
-                            <option value="sredno_otkrita" <?php if($tera=="sredno_otkrita") echo 'selected="selected"'; ?> >sredno_otkrita</option>
+                            <option value="nqma" <?php if($tera=="nqma") echo 'selected="selected"'; ?> >Няма</option>
+                            <option value="otkrita" <?php if($tera=="otkrita") echo 'selected="selected"'; ?> >Открита</option>
+                            <option value="zakrita" <?php if($tera=="zakrita") echo 'selected="selected"'; ?> >Закрита</option>
+                            <option value="sredno_otkrita" <?php if($tera=="sredno_otkrita") echo 'selected="selected"'; ?> >Средно-открита</option>
                         </select>
 
                      </div>
                     </div> 
-                <input type="submit" value="Submit" class="inpsubmod1">
+                <input type="submit" value="Готов" class="inpsubmod1">
             </div>
         </form>
         <?php
