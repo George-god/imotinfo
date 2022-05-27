@@ -132,13 +132,13 @@ require 'sqlconn.php';
                         <div class="modal-body">
                             <form action="addimot.php" method="post">
                                 <label for="Imotname">Име на Имота:</label>
-                                <input type="text" id="Imotname" name="Imotname" class="inptextmod1" placeholder="The name.." maxlength="20">
+                                <input type="text" id="Imotname" name="Imotname" class="inptextmod1" placeholder="Име.." maxlength="20">
 
                                 <label for="cena">Цена на Имота:</label>
-                                <input type="number" id="cena" name="cena" class="inptextmod1" placeholder="Zadai cenata.." maxlength="11">
+                                <input type="number" id="cena" name="cena" class="inptextmod1" placeholder="Цена.." maxlength="11">
 
                                 <label for="renta">Рента на Имота:</label>
-                                <input type="number" id="renta" name="renta" class="inptextmod1" placeholder="Zadai rentata.." maxlength="5">
+                                <input type="number" id="renta" name="renta" class="inptextmod1" placeholder="Рента.." maxlength="5">
 
                                 <label for="status">Статус:</label>
                                 <select id="status" name="status" class="inptextmod1">
