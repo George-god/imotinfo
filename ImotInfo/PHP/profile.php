@@ -68,7 +68,7 @@ session_start();
                     while($rower = mysqli_fetch_array($resultimo,MYSQLI_BOTH)) {
                 ?>
                 <label for="uname">Потребителско Име:</label><br>
-                <input type="text" id="uname" name="username" value="<?php echo $rower ['imoter_name']; ?>" class="hidform" >
+                <input type="text" id="uname" name="username" value="<?php echo $rower ['imoter_name']; ?>" class="hidform" maxlength="10">
                 <br>
                 <label for="phone">Мобилен телефон:</label><br>
                 <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{5}-[0-9]{4}" value="<?php echo $rower ['PhoneNumber']; ?>" class="hidform" >
@@ -128,16 +128,16 @@ session_start();
                 ?>
 
                 <label for="fname" id="shitname">Име:</label>
-                <input type="text" id="fname" name="firstname" value="<?php echo $row ['first_name']; ?>" class="normform" >
+                <input type="text" id="fname" name="firstname" value="<?php echo $row ['first_name']; ?>" class="normform" maxlength="15">
 
                 <label for="lname">Фамилия:</label>
-                <input type="text" id="lname" name="lastname" value="<?php echo $row ['last_name']; ?>" class="normform" >
+                <input type="text" id="lname" name="lastname" value="<?php echo $row ['last_name']; ?>" class="normform" maxlength="16">
 
                 <label for="mail">Мейл:</label>
-                <input type="mail" id="mail" name="mail" value="<?php echo $row ['email']; ?>" class="normform" >
+                <input type="mail" id="mail" name="mail" value="<?php echo $row ['email']; ?>" class="normform" maxlength="30">
 
                 <label for="pnumber">Пощенски код</label>
-                <input type="number" id="pnumber" name="pnumber" value="<?php echo $row ['town_code']; ?>" class="normform" >
+                <input type="number" id="pnumber" name="pnumber" value="<?php echo $row ['town_code']; ?>" class="normform" maxlength="7">
 
                 <label>Собственик на Имоти ли си?:</label>
                 <label class="imoterr">Да

@@ -49,11 +49,11 @@ require 'mailsend.php';
       <form action="" method="post">
         <input type="text" id="mail" name="mail" value="<?php echo $user;?>" hidden>
         <label for="fname">Потребителско име или цяло име:</label>
-        <input type="text" id="name" name="name" placeholder="Username or Fullname..">
+        <input type="text" id="name" name="name" placeholder="Username or Fullname.." maxlength="30">
         <label for="lname">Тема:</label>
-        <input type="text" id="subject" name="subject" placeholder="Subject..">
-        <label for="subject">Доп. инфо</label>
-        <textarea id="subject" name="problem" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="text" id="subject" name="subject" placeholder="Subject.." maxlength="10">
+        <label for="subject" >Доп. инфо</label>
+        <textarea id="subject" name="problem" placeholder="Write something.." style="height:170px" maxlength="500"></textarea>
         <input type="submit" value="Прати">
       </form>
     </div>

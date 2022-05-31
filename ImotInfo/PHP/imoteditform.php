@@ -37,13 +37,13 @@ $imoterID = $_SESSION['userIm'];
                     $imid=$row['id'];
                 ?>
                 <label for="Imotname">Име на Имота:</label>
-                <input type="text" id="Imotname" name="Imotname" class="inptextmod1" value="<?php echo $row ['name']; ?>" placeholder="The name.." maxlength="100">
+                <input type="text" id="Imotname" name="Imotname" class="inptextmod1" value="<?php echo $row ['name']; ?>" placeholder="The name.." maxlength="50">
 
                 <label for="cena">Цена на Имота:</label>
-                <input type="number" id="cena" name="cena" class="inptextmod1" value="<?php echo $row ['saleprice']; ?>" placeholder="Zadai cenata.." maxlength="1000000000">
+                <input type="number" id="cena" name="cena" class="inptextmod1" value="<?php echo $row ['saleprice']; ?>" placeholder="Zadai cenata.." maxlength="11">
 
                 <label for="renta">Рента на Имота:</label>
-                <input type="number" id="renta" name="renta" class="inptextmod1" value="<?php echo $row ['rent']; ?>" placeholder="Zadai rentata.." maxlength="100000">
+                <input type="number" id="renta" name="renta" class="inptextmod1" value="<?php echo $row ['rent']; ?>" placeholder="Zadai rentata.." maxlength="5">
 
                 <label for="status">Статус:</label>
                 <select id="status" name="status" class="inptextmod1">
@@ -88,8 +88,8 @@ $imoterID = $_SESSION['userIm'];
                         <option value="0" <?php if($water=="0") echo 'selected="selected"'; ?> >Няма</option>
                     </select>
 
-                    <label for="cenavoda">Цена но водата:</label>
-                    <input type="number" id="cenavoda" name="cenavoda" class="inptextmod1" value="<?php echo $rower['waterprice']; ?>" placeholder="Задай цена на водата.." maxlength="100000">
+                    <label for="cenavoda">Цена на водата:</label>
+                    <input type="number" id="cenavoda" name="cenavoda" class="inptextmod1" value="<?php echo $rower['waterprice']; ?>" placeholder="Задай цена на водата.." maxlength="10">
 
                     <label for="gas">Газ:</label>
                     <select id="gas" name="gas" class="inptextmod1">
@@ -98,7 +98,7 @@ $imoterID = $_SESSION['userIm'];
                     </select>
 
                     <label for="cenagas">Цена на газ:</label>
-                    <input type="number" id="cenagas" name="cenagas" class="inptextmod1" value="<?php echo $rower['gasprice']; ?>" placeholder="Задай цена на газта.." maxlength="100000">
+                    <input type="number" id="cenagas" name="cenagas" class="inptextmod1" value="<?php echo $rower['gasprice']; ?>" placeholder="Задай цена на газта.." maxlength="10">
 
                     <label for="tok">Ток:</label>
                     <select id="tok" name="tok" class="inptextmod1">
@@ -107,10 +107,10 @@ $imoterID = $_SESSION['userIm'];
                     </select>
 
                     <label for="cenatok">Цена на тока:</label>
-                    <input type="number" id="cenatok" name="cenatok" class="inptextmod1" value="<?php echo $rower['electricityprice']; ?>" placeholder="Задай цена на тока.." maxlength="100000">
+                    <input type="number" id="cenatok" name="cenatok" class="inptextmod1" value="<?php echo $rower['electricityprice']; ?>" placeholder="Задай цена на тока.." maxlength="10">
 
                     <label for="kvadratura">Квадратура:</label>
-                    <input type="number" id="kvadratura" name="kvadratura" class="inptextmod1" value="<?php echo $rower['kvadrat']; ?>" placeholder="Задай квадратура.." maxlength="1000000">
+                    <input type="number" id="kvadratura" name="kvadratura" class="inptextmod1" value="<?php echo $rower['kvadrat']; ?>" placeholder="Задай квадратура.." maxlength="10">
                     </div>
                     <div class="har2">
                         <label for="obzav">Обзаведен:</label>
