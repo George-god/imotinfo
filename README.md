@@ -1,4 +1,4 @@
 # imotinfo
-Saita za imoti
+Web site for properties.
 
-Tuk shte ima shit
+The site is basically done. Of course it needs more polish and more stuff but i hope in the future i could make it even better.
