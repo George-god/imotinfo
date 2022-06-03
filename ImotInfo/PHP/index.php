@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'sqlconn.php';
+require 'functions.php';
     if(isset($_SESSION['user'])){
         $user = $_SESSION['user'];
         if(isset($_SESSION['userIm'])){
@@ -10,10 +11,6 @@ require 'sqlconn.php';
     }else {
         header("location: login.php");
     }
-    
-
-    
-
 
 ?>
 <!DOCTYPE html>
