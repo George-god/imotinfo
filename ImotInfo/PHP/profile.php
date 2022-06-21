@@ -5,7 +5,11 @@ session_start();
     }else header("location: login.php");
 
 ?>
-<?php require 'sqlconn.php'; ?>
+<?php 
+require 'sqlconn.php';
+ 
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -28,6 +32,7 @@ session_start();
 <script src="../JS/modalprof.js"></script>
 <script src="../JS/resetpass.js"></script>
 <script src="../JS/passcheck.js"></script>
+<script src="../JS/logout.js"></script>
 </head>
    
 <header>
@@ -51,6 +56,7 @@ session_start();
         <button class="tablinks" onclick="tabProfil(event, 'Info')" id="defaultOpen">Инфо</button>
         <button class="tablinks" onclick="tabProfil(event, 'Security')">Защита</button>
         <button class="tablinks" onclick="tabProfil(event, 'Other')">Друго</button>
+        <button class="tablinks" id="leave" onclick="">Излез от акаунт!</button>
     </div>
 
     <div class="tabcontent" id="Info">
@@ -178,15 +184,9 @@ session_start();
     </div>
 
     <div class="tabcontent" id="Other">
-        <form action="logout.php" method="post">
-
-                <label for="Logout">Излез от Акаунта си:</label>
-
-                <input type="submit" value="Излизане" class="inpsubmod1">
-        </form>
         <form action="../Pictures/upload.php" method="post" enctype="multipart/form-data">
 
-                <label for="upload">Сложи си снимка:</label>
+                <label for="upload">Задай си снимка:</label>
                 <input type="file" name="upload" id="upload">
 
                 <input type="submit" value="Задай" class="inpsubmod1">

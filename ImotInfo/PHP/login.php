@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Влизане</title>
+    <title>Влизане в Системата</title>
     <link rel="stylesheet" type="text/css" href="../CSS/LS.css">
 </head>
 <body>

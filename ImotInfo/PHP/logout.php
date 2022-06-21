@@ -1,12 +1,8 @@
 <?php
-session_start();
 require 'sqlconn.php';
+require 'functions.php';
 
-
-
-unset($_SESSION['user']);
-unset($_SESSION['userIm']);
-header("location: login.php");
+logout();
 
 
 ?>
