@@ -22,6 +22,7 @@ $imoterID = $_SESSION['userIm'];
     <script type="module" src="../JS/js.cookie.mjs"></script>
     <script nomodule defer src="../JS/js.cookie.js"></script>
     <script src="../JS/cookie.js"></script>
+    <script src="../JS/naemcheck.js"></script>
 </head>
 <body>
     <img src="../Pictures/LogoMaybe.png" alt="Italian Trulli" class="center">
@@ -35,6 +36,7 @@ $imoterID = $_SESSION['userIm'];
                 while($row = mysqli_fetch_array($resultse,MYSQLI_BOTH)) {
                     $status = $row['status'];
                     $imid=$row['id'];
+                    
                 ?>
                 <label for="Imotname">Име на Имота:</label>
                 <input type="text" id="Imotname" name="Imotname" class="inptextmod1" value="<?php echo $row ['name']; ?>" placeholder="The name.." maxlength="50">
@@ -45,12 +47,13 @@ $imoterID = $_SESSION['userIm'];
                 <label for="renta">Рента на Имота:</label>
                 <input type="number" id="renta" name="renta" class="inptextmod1" value="<?php echo $row ['rent']; ?>" placeholder="Zadai rentata.." maxlength="5">
 
-                <label for="status">Статус:</label>
+                <label for="status" >Статус:</label>
                 <select id="status" name="status" class="inptextmod1">
                     <option value="rented" <?php if($status=="rented") echo 'selected="selected"'; ?> >Под наем</option>
                     <option value="not_rented" <?php if($status=="not_rented") echo 'selected="selected"'; ?> >Не под наем</option>
                     <option value="for_sale" <?php if($status=="for_sale") echo 'selected="selected"'; ?> >За продажба</option>
                 </select>
+
                 <h4><b>Характеристики за Имота:</b></h4><br>
                 <div class="hara">
                 <div class="har1">
@@ -69,6 +72,7 @@ $imoterID = $_SESSION['userIm'];
                     $pod = $rower['poda'];
                     $steni = $rower['steni'];
                     $tera = $rower['terasa'];
+                    $dogov=$rower['vid_naem'];
                 ?>
 
                     <label for="type">Тип на Имота:</label>
@@ -156,6 +160,15 @@ $imoterID = $_SESSION['userIm'];
                             <option value="zakrita" <?php if($tera=="zakrita") echo 'selected="selected"'; ?> >Закрита</option>
                             <option value="sredno_otkrita" <?php if($tera=="sredno_otkrita") echo 'selected="selected"'; ?> >Средно-открита</option>
                         </select>
+
+                        <label for="naem">Вид наем(Ако е под наем):</label>
+                        <select id="naem" name="naem" class="inptextmod1">
+                            <option value="Безсрочен лизинг" <?php if($dogov=="Безсрочен лизинг") echo 'selected="selected"'; ?> >Безсрочен лизинг</option>
+                            <option value="Временен наем" <?php if($dogov=="Временен наем") echo 'selected="selected"'; ?> >Временен наем</option>
+                        </select>
+
+                        <label for="dogdata">Срок на договор(Ако има):</label>
+                        <input type="date" name="dogdata" value="<?php echo $rower['srok_dogovor']; ?>">
 
                      </div>
                     </div> 

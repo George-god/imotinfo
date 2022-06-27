@@ -54,6 +54,8 @@ $imoterID = $_SESSION['userIm'];
                     $tok = $rower['electricity'];
                     $obza = $rower['obzaveden'];
                     $dogram = $rower['dograma'];
+                    $naem = $rower['vid_naem'];
+                    $dogov = $rower['srok_dogovor'];
                 ?>
                     <div class="right">
                         <div class="rightleft">
@@ -110,7 +112,19 @@ $imoterID = $_SESSION['userIm'];
                                     echo '<img src="../Pictures/remove.png">';
                                 }
                             ?>
-                    </label> <br>             
+                    </label> <br>
+                    <label for="naem">Вид наем(Ако има):
+                            <?php
+                                
+                                 echo $naem;
+                               
+                            ?>
+                    </label> <br> 
+                    <label for="srokdog">Срок на договор(Ако има):
+                            <?php
+                                echo $dogov;
+                            ?>
+                    </label> <br>              
                         </div>
                         <div class="rightright">
                             <label for="cenatok">Цена Ток:<?php echo $rower['electricityprice']; ?>.00 €</label>

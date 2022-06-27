@@ -1,7 +1,6 @@
 <?php
 session_start();
 require 'sqlconn.php';
-require 'functions.php';
     if(isset($_SESSION['user'])){
         $user = $_SESSION['user'];
         if(isset($_SESSION['userIm'])){
@@ -49,7 +48,7 @@ require 'functions.php';
   <a href="finance.php" id="blog">Финанси</a>
   <a href="market.php" id="projects">Пазар</a>
   <a href="profile.php" id="profile">Профил</a>
-  <a href="Contact.php" id="contact">Контакт</a>
+  <a href="Contact.php" id="contact">Докладвай</a>
 </div>
 
 <div id="imotside" class="sidenavimot">

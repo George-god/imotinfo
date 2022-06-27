@@ -14,6 +14,9 @@ require 'sqlconn.php';
   		$imid=$row['id'];
   	}
 
+  	$sqlse = "DELETE FROM cena_history WHERE imot_id='$imid' ";
+	$resultse = $conn->query($sqlse);
+
   	$sqlse = "DELETE FROM imot_harakter WHERE imot_id='$imid' ";
 	$resultse = $conn->query($sqlse);
 
@@ -30,6 +33,7 @@ require 'sqlconn.php';
 	}
 	else {
 		header("location: errorpage.html");
+
 	}
 
 ?>

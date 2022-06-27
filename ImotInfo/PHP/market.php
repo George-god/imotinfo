@@ -38,7 +38,7 @@ require 'sqlconn.php';
   <a href="finance.php" id="blog">Финанси</a>
   <a href="market.php" id="projects">Пазар</a>
   <a href="profile.php" id="profile">Профил</a>
-  <a href="Contact.php" id="contact">Контакт</a>
+  <a href="Contact.php" id="contact">Докладвай</a>
 </div>
 
 
@@ -49,7 +49,7 @@ require 'sqlconn.php';
     <div class="LeftCol">
     <?php
         $userImd = $_SESSION['userIm'];       
-        $statem = "SELECT * FROM imoti,imot_harakter LEFT JOIN imottype ON imot_harakter.imottype=imottype.typeid WHERE imot_harakter.imot_id=imoti.id AND status='for_sale' ";
+        $statem = "SELECT * FROM imoti,imot_harakter LEFT JOIN imottype ON imot_harakter.imottype=imottype.typeid WHERE imot_harakter.imot_id=imoti.id ";
         $resultc = $conn -> query($statem);
      
 
@@ -59,7 +59,7 @@ require 'sqlconn.php';
         <div class="icard" id="edit">
             <div class="icontainer">
             <img src="../Pictures/<?php echo $row['icon'] ?>" alt="Avatar" style="width:50%" id="iimg"><br>
-            <label>ID на Държател:</label><label><?php echo $row['imoter_id']?></label><br>
+            <label>Име на Държател:</label><label>Ivanov</label><br>
             </div>
             <div class="icontainer">
                 <label>Име на имота:</label><label><?php echo $row['name']?></label><br>

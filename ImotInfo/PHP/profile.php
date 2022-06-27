@@ -32,7 +32,6 @@ require 'sqlconn.php';
 <script src="../JS/modalprof.js"></script>
 <script src="../JS/resetpass.js"></script>
 <script src="../JS/passcheck.js"></script>
-<script src="../JS/logout.js"></script>
 </head>
    
 <header>
@@ -45,7 +44,7 @@ require 'sqlconn.php';
   <a href="finance.php" id="blog">Финанси</a>
   <a href="market.php" id="projects">Пазар</a>
   <a href="profile.php" id="profile">Профил</a>
-  <a href="Contact.php" id="contact">Контакт</a>
+  <a href="Contact.php" id="contact">Докладвай</a>
 </div>
 
 <body>
@@ -56,7 +55,6 @@ require 'sqlconn.php';
         <button class="tablinks" onclick="tabProfil(event, 'Info')" id="defaultOpen">Инфо</button>
         <button class="tablinks" onclick="tabProfil(event, 'Security')">Защита</button>
         <button class="tablinks" onclick="tabProfil(event, 'Other')">Друго</button>
-        <button class="tablinks" id="leave" onclick="">Излез от акаунт!</button>
     </div>
 
     <div class="tabcontent" id="Info">
@@ -157,6 +155,7 @@ require 'sqlconn.php';
                 </label>
                
                 <input type="submit" value="Запази" id="savebtn" class="normformb" name="formmsub">
+                <a href="logout.php">Logout</a>
 
             </form>
             <?php

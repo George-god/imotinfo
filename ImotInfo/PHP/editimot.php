@@ -18,6 +18,8 @@
 	$pod = $_POST['pod'];
 	$steni = $_POST['steni'];
 	$terasa = $_POST['terasa'];
+	$naem = $_POST['naem'];
+	$dogdata = $_POST['dogdata'];
 
 	$sqlse = "SELECT id FROM imoti WHERE name='$name'";
     $resultse = $conn->query($sqlse);
@@ -31,7 +33,7 @@
 	$sqlr = "UPDATE imoti SET name='$name', saleprice='$cena', rent='$renta', status='$status' WHERE name='$name'";
 	$result = $conn->query($sqlr);
 
-	$sqlrh = "UPDATE imot_harakter SET imottype='$type', water='$water', gas='$gas', electricity='$tok', kvadrat='$kvadratura', gasprice='$cenagas', waterprice='$cenavoda', electricityprice='$cenatok', obzaveden='$obzav', dograma='$dogram', banqsitu='$banq', poda='$pod', steni='$steni', terasa='$terasa' WHERE imot_id='$uid'";
+	$sqlrh = "UPDATE imot_harakter SET imottype='$type', water='$water', gas='$gas', electricity='$tok', kvadrat='$kvadratura', gasprice='$cenagas', waterprice='$cenavoda', electricityprice='$cenatok', obzaveden='$obzav', dograma='$dogram', banqsitu='$banq', poda='$pod', steni='$steni', terasa='$terasa',vid_naem='$naem', srok_dogovor='$dogdata' WHERE imot_id='$uid'";
 	$resulth = $conn->query($sqlrh);
 
 	if($result and $resulth){

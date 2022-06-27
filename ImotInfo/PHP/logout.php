@@ -1,8 +1,6 @@
 <?php
-require 'sqlconn.php';
-require 'functions.php';
-
-logout();
-
-
+	session_start();
+	session_destroy();
+	header('Location: login.php');
+	exit;
 ?>

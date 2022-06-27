@@ -33,13 +33,13 @@ require 'mailsend.php';
   <a href="finance.php" id="blog">Финанси</a>
   <a href="market.php" id="projects">Пазар</a>
   <a href="profile.php" id="profile">Профил</a>
-  <a href="Csontact.php" id="contact">Контакт</a>
+  <a href="Csontact.php" id="contact">Докладвай</a>
 </div>
 
 <div class="container">
   <div style="text-align:center">
-    <h2>Свържи се с нас</h2>
-    <p>Мини при нас и ни купи кафе:</p>
+    <h2>Докладвай нередост</h2>
+    <p>При проблеми с грешен или откраднат имот пишете:</p>
   </div>
   <div class="row">
     <div class="column">
@@ -48,9 +48,9 @@ require 'mailsend.php';
     <div class="column">
       <form action="" method="post">
         <input type="text" id="mail" name="mail" value="<?php echo $user;?>" hidden>
-        <label for="fname">Потребителско име или цяло име:</label>
+        <label for="fname">Име на нередния потребител:</label>
         <input type="text" id="name" name="name" placeholder="Username or Fullname.." maxlength="30">
-        <label for="lname">Тема:</label>
+        <label for="lname">Име на имот:</label>
         <input type="text" id="subject" name="subject" placeholder="Subject.." maxlength="10">
         <label for="subject" >Доп. инфо</label>
         <textarea id="subject" name="problem" placeholder="Write something.." style="height:170px" maxlength="500"></textarea>

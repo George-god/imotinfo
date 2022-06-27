@@ -38,7 +38,7 @@ require 'sqlconn.php';
   <a href="finance.php" id="blog">Финанси</a>
   <a href="market.php" id="projects">Пазар</a>
   <a href="profile.php" id="profile">Профил</a>
-  <a href="Contact.php" id="contact">Контакт</a>
+  <a href="Contact.php" id="contact">Докладвай</a>
 </div>
 
 
