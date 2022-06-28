@@ -100,10 +100,9 @@ require 'sqlconn.php';
                 $nowdate = new Datetime($date1);
                 $expdate = new Datetime($rowpic['srok_dogovor']);
                 $close = date_diff($nowdate,$expdate);
-                //echo $close->format("%R%a days");
 
             ?>
-            <label >Статус договор -> </label>
+
             <?php 
                 if($close->format("%R%a") > 15) {
                  echo "<div style='color:black;' class='warning' ><span class='warningtext' >Далече</span>&#9888;</div> " ;

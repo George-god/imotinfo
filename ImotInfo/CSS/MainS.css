@@ -473,7 +473,8 @@ a {
     float:right;
     color: black;
     position: relative;
-  display: inline-block;
+    display: inline-block;
+
 
 }
  

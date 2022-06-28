@@ -56,6 +56,11 @@ $imoterID = $_SESSION['userIm'];
                     $dogram = $rower['dograma'];
                     $naem = $rower['vid_naem'];
                     $dogov = $rower['srok_dogovor'];
+
+                    $date1 = date("Y-m-d");
+                    $nowdate = new Datetime($date1);
+                    $expdate = new Datetime($rower['srok_dogovor']);
+                    $close = date_diff($nowdate,$expdate);
                 ?>
                     <div class="right">
                         <div class="rightleft">
@@ -124,7 +129,16 @@ $imoterID = $_SESSION['userIm'];
                             <?php
                                 echo $dogov;
                             ?>
-                    </label> <br>              
+                    </label> <br>
+
+                    <?php 
+                        if($close->format("%R%a") == 0) {
+                            echo "<label style='color:red;' >Нужно преподписване на договор!</label>";
+                        }
+                        elseif($close->format("%R%a") > 0 and $close->format("%R%a") < 15) {
+                            echo "<label style='color:orange;'>Наближава преподписване на договор!</label>";
+                        } 
+                    ?>              
                         </div>
                         <div class="rightright">
                             <label for="cenatok">Цена Ток:<?php echo $rower['electricityprice']; ?>.00 €</label>

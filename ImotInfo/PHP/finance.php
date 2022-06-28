@@ -19,12 +19,20 @@ require 'sqlconn.php';
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 <script type="module" src="../JS/js.cookie.mjs"></script>
 <script nomodule defer src="../JS/js.cookie.js"></script>
 <script src="../JS/cookie.js"></script>
-<script src="../JS/formfilt.js"></script>
-<script src="../JS/table.js"></script>
+<script src="../JS/backgrafa.js"></script>
+<script src="../JS/parigraf.js"></script>
+<script src="../JS/grafishow.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+google.charts.setOnLoadCallback(drawChart2); 
+</script>
+
 </head>
 
 <body>
@@ -80,6 +88,8 @@ require 'sqlconn.php';
 
             <div class="fin finsub">
                 <input type="submit" id="Filterbtn" name="submit">
+                <button type="button" class="grafi" id="dohod"  onclick="dohod()">Главни доходи</button>
+                <button type="button" class="grafi" id="backmesec" onclick="back()">Предишни месеци</button>
             </div>
         </div>
 
@@ -184,6 +194,10 @@ require 'sqlconn.php';
         }
         ?>
     </div>
+
+
+    <div id="backchart" class="grafireal1"></div>
+    <div id="pchart" class="grafireal2"></div>
     
 
    

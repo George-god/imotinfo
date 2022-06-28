@@ -1,6 +1,6 @@
 <?php require 'sqlconn.php'; 
 	session_start();
-	$name = $_POST['Imotname'];
+	$name = $_POST['imotname'];
 	$cena = $_POST['cena'];
 	$renta = $_POST['renta'];
 	$status = $_POST['status'];

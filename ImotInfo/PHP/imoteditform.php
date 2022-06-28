@@ -38,14 +38,14 @@ $imoterID = $_SESSION['userIm'];
                     $imid=$row['id'];
                     
                 ?>
-                <label for="Imotname">Име на Имота:</label>
-                <input type="text" id="Imotname" name="Imotname" class="inptextmod1" value="<?php echo $row ['name']; ?>" placeholder="The name.." maxlength="50">
+                <label for="imotname">Име на Имота:</label>
+                <input type="text" id="imotname" name="imotname" class="inptextmod1" value="<?php echo $row ['name']; ?>" placeholder="Името на имота.." maxlength="50">
 
                 <label for="cena">Цена на Имота:</label>
-                <input type="number" id="cena" name="cena" class="inptextmod1" value="<?php echo $row ['saleprice']; ?>" placeholder="Zadai cenata.." maxlength="11">
+                <input type="number" id="cena" name="cena" class="inptextmod1" value="<?php echo $row ['saleprice']; ?>" placeholder="Цена на имота.." maxlength="11">
 
                 <label for="renta">Рента на Имота:</label>
-                <input type="number" id="renta" name="renta" class="inptextmod1" value="<?php echo $row ['rent']; ?>" placeholder="Zadai rentata.." maxlength="5">
+                <input type="number" id="renta" name="renta" class="inptextmod1" value="<?php echo $row ['rent']; ?>" placeholder="Рента на имота.." maxlength="5">
 
                 <label for="status" >Статус:</label>
                 <select id="status" name="status" class="inptextmod1">
@@ -73,6 +73,12 @@ $imoterID = $_SESSION['userIm'];
                     $steni = $rower['steni'];
                     $tera = $rower['terasa'];
                     $dogov=$rower['vid_naem'];
+
+                     $date1 = date("Y-m-d");
+                    $nowdate = new Datetime($date1);
+                    $expdate = new Datetime($rower['srok_dogovor']);
+                    $close = date_diff($nowdate,$expdate);
+
                 ?>
 
                     <label for="type">Тип на Имота:</label>
@@ -165,6 +171,7 @@ $imoterID = $_SESSION['userIm'];
                         <select id="naem" name="naem" class="inptextmod1">
                             <option value="Безсрочен лизинг" <?php if($dogov=="Безсрочен лизинг") echo 'selected="selected"'; ?> >Безсрочен лизинг</option>
                             <option value="Временен наем" <?php if($dogov=="Временен наем") echo 'selected="selected"'; ?> >Временен наем</option>
+                            <option value="Няма" <?php if($dogov=="Няма") echo 'selected="selected"'; ?> >Няма</option>
                         </select>
 
                         <label for="dogdata">Срок на договор(Ако има):</label>
@@ -176,6 +183,14 @@ $imoterID = $_SESSION['userIm'];
                            echo $rower['srok_dogovor']; 
                         }
                          ?>">
+
+                         <?php 
+                        if($close->format("%R%a") == 0) {
+                            echo "<label style='color:red;'>Нужно преподписване на договор!</label>";
+                        }
+                        elseif($close->format("%R%a") > 0 and $close->format("%R%a") < 15) {
+                            echo "<label style='color:orange;'>Наближава преподписване на договор!</label>";
+                        } ?>
 
                      </div>
                     </div> 
