@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Verdana, sans-serif;
 }
 
 body::after {
@@ -34,6 +34,7 @@ input[type=text], select, textarea {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
+  font-family: Verdana, sans-serif;
 }
 
 input[type=submit] {
@@ -42,6 +43,7 @@ input[type=submit] {
   padding: 12px 20px;
   border: none;
   cursor: pointer;
+  font-family: Verdana, sans-serif;
 }
 
 input[type=submit]:hover {
@@ -62,6 +64,7 @@ input[type=submit]:hover {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 28px;
+  font-family: Verdana, sans-serif;
 }
 
 /* Create two columns that float next to eachother */
@@ -70,6 +73,7 @@ input[type=submit]:hover {
   width: 50%;
   margin-top: 6px;
   padding: 20px;
+  font-family: Verdana, sans-serif;
 }
 
 /* Clear floats after the columns */

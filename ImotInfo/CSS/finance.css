@@ -96,6 +96,7 @@ select {
   margin-right: auto;
   width: auto;
   height: 100px;
+  font-family: Verdana, sans-serif;
 }
 
 .FinanceMain {
@@ -106,6 +107,7 @@ select {
     transition: margin-left .5s;
     padding: 20px;
     border-radius: 50px;
+    font-family: Verdana, sans-serif;
 
 }
 
@@ -131,6 +133,7 @@ select {
     margin: auto;
     border-bottom: 5px solid blue;
     border-radius: 10px;
+
 }
 
 .resultshow {
@@ -173,9 +176,10 @@ select {
   padding: 15px; /* 15px padding */
   width: 100px; /* Set a specific width */
   text-decoration: none; /* Remove underline */
-  font-size: 20px; /* Increase font size */
+  font-size: 18px; /* Increase font size */
   color: white; /* White text color */
   border-radius: 5px 0 0 5px; /* Rounded corners on the top right and bottom right side */
+  font-family: Verdana, sans-serif;
 }
 
 #mySidenav a:hover {
@@ -225,6 +229,7 @@ select {
   float: left;
   top: 23%;
   left: 31%;
+  font-family: Verdana, sans-serif;
 }
 
 .grafi {
@@ -284,7 +289,7 @@ select {
 }
 
 #imotiinfo {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Verdana, sans-serif;
   border-collapse: collapse;
   width: 70%;
   margin-left: auto;
@@ -309,9 +314,9 @@ select {
 }
 
 #imotifinan {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Verdana, sans-serif;
   border-collapse: collapse;
-  width: 50%;
+  width: 55%;
   position: relative;
   margin-left: auto;
   margin-right: auto;

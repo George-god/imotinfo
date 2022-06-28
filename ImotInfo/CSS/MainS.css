@@ -2,13 +2,14 @@
 html{
     max-width: 100%;
     overflow-x: hidden;
+    font-family: Verdana, sans-serif;
 }
  
 body {
     background-color: red;
     padding: 20px;
     height: 100%;
-    font-family: Arial;
+    font-family: Verdana, sans-serif;
     max-width: 100%;
     overflow-x: hidden;
     overflow: auto;
@@ -58,9 +59,11 @@ a {
   }
 
 .wordCarousel {
-    font-size: 36px;
+    font-size: 34px;
     font-weight: 100;
     color: black;
+    font-family: Verdana, sans-serif;
+
 }
 
 .wordCarousel div{
@@ -74,7 +77,6 @@ a {
 }
 
 .wordCarousel li {
-    font-family: Serif;
         color: black;
         font-weight: 700;
         padding: 0 10px;
@@ -133,6 +135,7 @@ a {
     transition: margin-left .5s;
     padding: 20px;
     border-radius: 50px;
+    font-family: Verdana, sans-serif;
 
 }
 
@@ -250,6 +253,7 @@ a {
 
 .modal {
   display: none; /* Hidden by default */
+  font-family: Verdana, sans-serif;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
@@ -266,6 +270,7 @@ a {
 /* Modal Content */
 .modal-content {
   position: relative;
+  font-family: Verdana, sans-serif;
   background-color: #fefefe;
   margin: auto;
   padding: 0;
@@ -347,6 +352,7 @@ a {
     padding: 2px 12px;
     max-height: calc(100vh - 210px);
     overflow-y: auto;
+    font-family: Verdana, sans-serif;
 }
 
 
@@ -380,6 +386,7 @@ a {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-family: Verdana, sans-serif;
 }
 
 .inpsubmod1:hover {
@@ -511,8 +518,9 @@ a {
   max-height: 45%;
   padding-top: 20px;
   background-color: lightgray;
-  background-image: url("../Pictures/card.jpg");
+  background-image: url("../Pictures/card2.jpg");
   background-size: cover;
+  font-family: Verdana, sans-serif;
 
 }
 
@@ -607,9 +615,10 @@ a {
   right: -80px; /* Position them outside of the screen */
   transition: 0.3s; /* Add transition on hover */
   padding: 15px; /* 15px padding */
-  width: 100px; /* Set a specific width */
+  width: 110px; /* Set a specific width */
   text-decoration: none; /* Remove underline */
-  font-size: 20px; /* Increase font size */
+  font-size: 17px; /* Increase font size */
+  font-family: Verdana, sans-serif;
   color: white; /* White text color */
   border-radius: 5px 0 0 5px; /* Rounded corners on the top right and bottom right side */
 }
@@ -658,6 +667,7 @@ a {
   width: 100px; /* Set a specific width */
   text-decoration: none; /* Remove underline */
   font-size: 20px; /* Increase font size */
+  font-family: Verdana, sans-serif;
   color: white; /* White text color */
   border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
 }

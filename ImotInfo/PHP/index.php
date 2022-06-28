@@ -60,7 +60,7 @@ require 'sqlconn.php';
 
 <div class="MainI">
 <h2 class="wordCarousel">
-    <span><b>Това са вашите:<b></span>
+    <span><b>Това са вашите:&nbsp;&nbsp; <b></span>
     <div>
         <!-- Use classes 2,3, or 4 to match the number of words -->
         <ul class="flip4">
@@ -119,10 +119,22 @@ require 'sqlconn.php';
             <img src="../Pictures/<?php echo $rowpic['icon'] ?>" alt="Avatar" style="width:100%" id="iimg">
             <div class="icontainer">
                 <form method="post" action="viewimto.php">
-                    <label class="cenlab uno"><?php echo 'Име:'.$row['name'] ?> </label><br>
+                    <label class="cenlab uno"><?php echo 'Име:&nbsp;'.$row['name'] ?> </label><br>
                     <input type="hidden" name="imotnamecard" value="<?php echo $row['name'] ?>">
-                    <label class="cenlab dos"><?php echo 'Статус:'.$row['status'] ?></label><br>
-                    <label class="cenlab tres"><?php echo 'Тип:'.$rowpic['type'] ?></label><br>
+                    <label class="cenlab dos">
+                    <?php 
+                    if($row['status'] == "rented") {
+                        echo 'Статус:&nbsp;Под наем'; 
+                    }
+                    elseif($row['status'] == "not_rented"){
+                        echo 'Статус:&nbsp;Не е под наем';
+                    }
+                    elseif($row['status'] == "for_sale"){
+                        echo 'Статус:&nbsp;За продажба';
+                    } 
+                    
+                    ?></label><br>
+                    <label class="cenlab tres"><?php echo 'Тип:&nbsp;'.$rowpic['type'] ?></label><br>
                     
                     <input type="submit" value="Разгледай" id="viewbtn" onclick="">
                 </form>

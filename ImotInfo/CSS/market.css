@@ -47,6 +47,7 @@ footer {
 
 h1,h2 {
         text-align: center;
+        font-family: Verdana, sans-serif;
      }
 a {
     color: black;
@@ -62,6 +63,7 @@ input[type=text], select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  font-family: Verdana, sans-serif;
 }
 
 /* Style the submit button */
@@ -123,6 +125,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   right: 10px;
   width: 200px;
   z-index:8
+  font-family: Verdana, sans-serif;
 }
 
 /* The popup form - hidden by default */
@@ -133,6 +136,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   right: 14px;
   border: 3px solid #f1f1f1;
   z-index: 9;
+  font-family: Verdana, sans-serif;
 }
 
 /* Add styles to the form container */
@@ -140,6 +144,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   max-width: 300px;
   padding: 10px;
   background-color: white;
+  font-family: Verdana, sans-serif;
 }
 
 /* Full-width input fields */
@@ -149,6 +154,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   margin: 5px 0 22px 0;
   border: none;
   background: #f1f1f1;
+  font-family: Verdana, sans-serif;
 }
 
 /* When the inputs get focus, do something */
@@ -196,6 +202,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     transition: margin-left .5s;
     padding: 20px;
     border-radius: 50px;
+    font-family: Verdana, sans-serif;
 
 }
 
@@ -209,6 +216,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     text-align: center;
     flex-direction: column;
     overflow: auto;
+    font-family: Verdana, sans-serif;
 }
 
 .LeftCol > div{
@@ -335,9 +343,10 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   padding: 15px; /* 15px padding */
   width: 100px; /* Set a specific width */
   text-decoration: none; /* Remove underline */
-  font-size: 20px; /* Increase font size */
+  font-size: 18px; /* Increase font size */
   color: white; /* White text color */
   border-radius: 5px 0 0 5px; /* Rounded corners on the top right and bottom right side */
+  font-family: Verdana, sans-serif;
 }
 
 #mySidenav a:hover {

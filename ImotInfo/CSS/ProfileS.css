@@ -41,10 +41,12 @@ footer {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+
 }
 
 h1,h2 {
         text-align: center;
+        font-family: Verdana, sans-serif;
      }
 a {
     color: black;
@@ -56,14 +58,17 @@ a {
 input[readonly] {
     background-color: lightgray;
     cursor: not-allowed;
+    font-family: Verdana, sans-serif;
 
 }
 
 input[type=submit][disabled] {
     background-color: #037c50;
+    font-family: Verdana, sans-serif;
 }
 input[type=submit][disabled]:hover {
     background-color: #2e6b31;
+    font-family: Verdana, sans-serif;
 }
 
 
@@ -72,6 +77,7 @@ input[type=submit][disabled]:hover {
     background-color: #66d9ff;
     border-style: inset;
     float: right;
+    font-family: Verdana, sans-serif;
     }
 .nav a {
     float: left;
@@ -81,6 +87,7 @@ input[type=submit][disabled]:hover {
     padding: 12px 85px;
     text-decoration: none;
     font-size: 12px;
+
 }
 
 .nav a:hover {
@@ -113,6 +120,7 @@ input[type=submit][disabled]:hover {
     transition: margin-left .5s;
     padding: 20px;
     border-radius: 50px;
+    font-family: Verdana, sans-serif;
 
 }  
 
@@ -120,6 +128,7 @@ input[type=submit][disabled]:hover {
     background-color: gray;
     float: left;
     width: 100%;
+    font-family: Verdana, sans-serif;
 
 }
 
@@ -128,6 +137,7 @@ input[type=submit][disabled]:hover {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #009999;
+  font-family: Verdana, sans-serif;
   position: relative;
   float: center;
   z-index:7
@@ -165,6 +175,7 @@ input[type=submit][disabled]:hover {
   padding: 6px 12px;
   border-top: none;
   animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  font-family: Verdana, sans-serif;
 }
 
 .imoterinfo {
@@ -175,6 +186,7 @@ input[type=submit][disabled]:hover {
     border-radius: 10px;
     border: 2px solid;
     display: none;
+    font-family: Verdana, sans-serif;
 
 }
 
@@ -204,6 +216,7 @@ input[type=submit][disabled]:hover {
   box-sizing: border-box; /* Make sure that padding and width stays in place */
   margin-top: 6px; /* Add a top margin */
   margin-bottom: 16px; /* Bottom margin */
+  font-family: Verdana, sans-serif;
 }
 
 .hidform {
@@ -214,6 +227,7 @@ input[type=submit][disabled]:hover {
     border: 1px solid #ccc; /* Gray border */
   border-radius: 4px; /* Rounded borders */
   resize: vertical;
+  font-family: Verdana, sans-serif;
 }
 
 .normformb {
@@ -278,6 +292,7 @@ input[type=submit][disabled]:hover {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  font-family: Verdana, sans-serif;
 }
 
 /* Modal Content/Box */
@@ -287,6 +302,7 @@ input[type=submit][disabled]:hover {
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
+  font-family: Verdana, sans-serif;
 }
 
 /* The Close Button */
@@ -317,6 +333,7 @@ input[type=submit][disabled]:hover {
   background-color: #eee;
   border-radius: 5px;
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  font-family: Verdana, sans-serif;
 }
 
 @-webkit-keyframes animatetop {
@@ -385,9 +402,10 @@ input[type=submit][disabled]:hover {
   padding: 15px; /* 15px padding */
   width: 100px; /* Set a specific width */
   text-decoration: none; /* Remove underline */
-  font-size: 20px; /* Increase font size */
+  font-size: 18px; /* Increase font size */
   color: white; /* White text color */
   border-radius: 5px 0 0 5px; /* Rounded corners on the top right and bottom right side */
+  font-family: Verdana, sans-serif;
 }
 
 #mySidenav a:hover {
