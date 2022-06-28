@@ -469,6 +469,38 @@ a {
   transform: translateY(4px);
 }
 
+.warning {
+    float:right;
+    color: black;
+    position: relative;
+  display: inline-block;
+
+}
+ 
+.warning .warningtext {
+    white-space: nowrap;
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+
+
+.warning:hover .warningtext {
+    visibility: visible;
+  opacity: 1;
+}
+
 .icard {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);

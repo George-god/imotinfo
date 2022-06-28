@@ -168,7 +168,14 @@ $imoterID = $_SESSION['userIm'];
                         </select>
 
                         <label for="dogdata">Срок на договор(Ако има):</label>
-                        <input type="date" name="dogdata" value="<?php echo $rower['srok_dogovor']; ?>">
+                        <input type="date" name="dogdata" value="<?php 
+                        if($rower['srok_dogovor'] == 1900-01-01){
+                            echo "1900-01-01";
+                        }
+                        else {
+                           echo $rower['srok_dogovor']; 
+                        }
+                         ?>">
 
                      </div>
                     </div> 

@@ -92,11 +92,31 @@ require 'sqlconn.php';
         <div class="icard" id="edit">
 
             <?php 
-                $stpic = "SELECT imot_harakter.imottype,imottype.typeid,imottype.icon,imottype.type From imottype INNER JOIN imot_harakter on imot_harakter.imottype = imottype.typeid WHERE imot_id='$imotid' ";
+                $stpic = "SELECT imot_harakter.imottype,imottype.typeid,imottype.icon,imottype.type,imot_harakter.srok_dogovor From imottype INNER JOIN imot_harakter on imot_harakter.imottype = imottype.typeid WHERE imot_id='$imotid' ";
                 $respic = $conn -> query($stpic);
                 $rowpic = mysqli_fetch_array($respic,MYSQLI_BOTH);
-            ?>
 
+                $date1 = date("Y-m-d");
+                $nowdate = new Datetime($date1);
+                $expdate = new Datetime($rowpic['srok_dogovor']);
+                $close = date_diff($nowdate,$expdate);
+                //echo $close->format("%R%a days");
+
+            ?>
+            <label >Статус договор -> </label>
+            <?php 
+                if($close->format("%R%a") > 15) {
+                 echo "<div style='color:black;' class='warning' ><span class='warningtext' >Далече</span>&#9888;</div> " ;
+                }
+                elseif($close->format("%R%a") < 0) {
+                 echo "<div style='color:black;' class='warning' ><span class='warningtext'>Няма</span>&#9888;</div>";
+                }
+                elseif($close->format("%R%a") == 0) {
+                 echo "<div style='color:red;' class='warning' ><span class='warningtext' >Край</span>&#9888;</div>";
+                }
+                elseif($close->format("%R%a") < 15) {
+                 echo "<div style='color:orange;' class='warning' ><span class='warningtext'>Наближава</span>&#9888;</div>";
+                } ?>
             <img src="../Pictures/<?php echo $rowpic['icon'] ?>" alt="Avatar" style="width:100%" id="iimg">
             <div class="icontainer">
                 <form method="post" action="viewimto.php">
