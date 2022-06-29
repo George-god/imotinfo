@@ -54,12 +54,20 @@ require 'sqlconn.php';
      
 
      while ($row = $resultc->fetch_assoc()) {
-       
+       $id=$row['imoter_id'];
     ?>  
         <div class="icard" id="edit">
+            <span title="REPORT"><a href="Contact.php">&#9872;</a></span>
             <div class="icontainer">
+
             <img src="../Pictures/<?php echo $row['icon'] ?>" alt="Avatar" style="width:50%" id="iimg"><br>
-            <label>Име на Държател:</label><label>Ivanov</label><br>
+            <?php
+                $staten = "SELECT imoter_name FROM imoters WHERE id='$id' ";
+                $resultn = $conn -> query($staten);
+                while ($rown = $resultn->fetch_assoc()) {
+            ?>
+            <label>Име на Държател:</label><label><?php echo $rown['imoter_name']?></label><br>
+            <?php } ?>
             </div>
             <div class="icontainer">
                 <label>Име на имота:</label><label><?php echo $row['name']?></label><br>
@@ -90,7 +98,14 @@ require 'sqlconn.php';
                         else {echo '<img src="../Pictures/remove.png">'; }
                     ?> 
                 </label><br>
+                <?php
+                $statet = "SELECT PhoneNumber FROM imoters WHERE id='$id' ";
+                $resultt = $conn -> query($statet);
+                while ($rowt = $resultt->fetch_assoc()) {
+                ?>
 
+                <label>Тел за връзка:</label><label><?php echo $rowt['PhoneNumber']?></label>
+                <?php } ?>
             </div>
         </div>        
     <?php

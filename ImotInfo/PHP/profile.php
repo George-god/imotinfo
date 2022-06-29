@@ -104,10 +104,10 @@ require 'sqlconn.php';
                     $resultpic = $conn->query($sqlpic);
                     if($resultpic){
                         $rowpic = mysqli_fetch_array($resultpic,MYSQLI_BOTH);?>
-                        <img src="../Pictures/uploads/<?php echo $rowpic['profpic'] ?> " alt="Italian Trulli" id="primg">  <?php
+                        <img src="../Pictures/uploads/<?php echo $rowpic['profpic'] ?> " alt="Italian Trulli1" id="primg">  <?php
                     }
                     else {?>
-                        <img src="../Pictures/img_avatar.png" alt="Italian Trulli" id="primg"><?php
+                        <img src="../Pictures/img_avatar.png" alt="Italian Trulli2" id="primg"><?php
                     }
             ?>
             

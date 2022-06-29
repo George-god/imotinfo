@@ -254,7 +254,7 @@ require 'sqlconn.php';
 
     <div class="RightCol">
         <?php
-        $statemark = "SELECT * FROM imoti,imot_harakter LEFT JOIN imottype ON imot_harakter.imottype=imottype.typeid WHERE imot_harakter.imot_id=imoti.id AND status='for_sale' LIMIT 5";
+        $statemark = "SELECT * FROM imoti,imot_harakter LEFT JOIN imottype ON imot_harakter.imottype=imottype.typeid WHERE imot_harakter.imot_id=imoti.id LIMIT 5";
         $resultmark = $conn -> query($statemark);
         while ($rowmark = $resultmark->fetch_assoc()) {
         ?>  
