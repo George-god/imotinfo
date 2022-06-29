@@ -87,7 +87,7 @@ google.charts.setOnLoadCallback(drawChart2);
             </div>
 
             <div class="fin finsub">
-                <input type="submit" id="Filterbtn" name="submit">
+                <input type="submit" id="Filterbtn" name="submit" value="Cмятане">
                 <button type="button" class="grafi" id="dohod"  onclick="dohod()">Главни доходи</button>
                 <button type="button" class="grafi" id="backmesec" onclick="back()">Предишни месеци</button>
             </div>
