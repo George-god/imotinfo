@@ -42,10 +42,10 @@ $imoterID = $_SESSION['userIm'];
                 <input type="text" id="imotname" name="imotname" class="inptextmod1" value="<?php echo $row ['name']; ?>" placeholder="Името на имота.." maxlength="50">
 
                 <label for="cena">Цена на Имота:</label>
-                <input type="number" id="cena" name="cena" class="inptextmod1" value="<?php echo $row ['saleprice']; ?>" placeholder="Цена на имота.." maxlength="11">
+                <input type="text" id="cena" name="cena" class="inptextmod1" value="<?php echo $row ['saleprice']; ?>" placeholder="Цена.." pattern="\d*" maxlength="15">
 
                 <label for="renta">Рента на Имота:</label>
-                <input type="number" id="renta" name="renta" class="inptextmod1" value="<?php echo $row ['rent']; ?>" placeholder="Рента на имота.." maxlength="5">
+                <input type="text" id="renta" name="renta" class="inptextmod1" value="<?php echo $row ['rent']; ?>" placeholder="Рента.." pattern="\d*" maxlength="6">
 
                 <label for="status" >Статус:</label>
                 <select id="status" name="status" class="inptextmod1">
@@ -99,7 +99,7 @@ $imoterID = $_SESSION['userIm'];
                     </select>
 
                     <label for="cenavoda">Цена на водата:</label>
-                    <input type="number" id="cenavoda" name="cenavoda" class="inptextmod1" value="<?php echo $rower['waterprice']; ?>" placeholder="Задай цена на водата.." maxlength="10">
+                    <input type="text" id="cenavoda" name="cenavoda" class="inptextmod1" value="<?php echo $rower['waterprice']; ?>" placeholder="Задай цена на водата.." pattern="\d*" maxlength="10">
 
                     <label for="gas">Газ:</label>
                     <select id="gas" name="gas" class="inptextmod1">
@@ -108,7 +108,7 @@ $imoterID = $_SESSION['userIm'];
                     </select>
 
                     <label for="cenagas">Цена на газ:</label>
-                    <input type="number" id="cenagas" name="cenagas" class="inptextmod1" value="<?php echo $rower['gasprice']; ?>" placeholder="Задай цена на газта.." maxlength="10">
+                    <input type="text" id="cenagas" name="cenagas" class="inptextmod1" value="<?php echo $rower['gasprice']; ?>" placeholder="Задай цена на газта.." pattern="\d*" maxlength="10">
 
                     <label for="tok">Ток:</label>
                     <select id="tok" name="tok" class="inptextmod1">
@@ -117,10 +117,10 @@ $imoterID = $_SESSION['userIm'];
                     </select>
 
                     <label for="cenatok">Цена на тока:</label>
-                    <input type="number" id="cenatok" name="cenatok" class="inptextmod1" value="<?php echo $rower['electricityprice']; ?>" placeholder="Задай цена на тока.." maxlength="10">
+                    <input type="text" id="cenatok" name="cenatok" class="inptextmod1" value="<?php echo $rower['electricityprice']; ?>" placeholder="Задай цена на тока.." pattern="\d*" maxlength="10">
 
                     <label for="kvadratura">Квадратура:</label>
-                    <input type="number" id="kvadratura" name="kvadratura" class="inptextmod1" value="<?php echo $rower['kvadrat']; ?>" placeholder="Задай квадратура.." maxlength="10">
+                    <input type="text" id="kvadratura" name="kvadratura" class="inptextmod1" value="<?php echo $rower['kvadrat']; ?>" placeholder="Задай квадратура.." pattern="\d*" maxlength="10">
                     </div>
                     <div class="har2">
                         <label for="obzav">Обзаведен:</label>

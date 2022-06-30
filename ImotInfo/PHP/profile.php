@@ -135,7 +135,7 @@ require 'sqlconn.php';
                 <label for="mail">Мейл:</label>
                 <input type="mail" id="mail" name="mail" value="<?php echo $row ['email']; ?>" class="normform" maxlength="30">
 
-                <label for="pnumber">Пощенски код</label>
+                <label for="pnumber">Пощенски код:<span class="star">&#42;</span></label>
                 <input type="number" id="pnumber" name="pnumber" value="<?php echo $row ['town_code']; ?>" class="normform" maxlength="7">
 
                 <label>Собственик на Имоти ли си?:</label>

@@ -112,6 +112,10 @@ input[type=submit][disabled]:hover {
   height: 100px;
 }
 
+.star {
+    color: red;
+}
+
 .MainI {
     background-color: #ccf2ff;
     height: 11in;

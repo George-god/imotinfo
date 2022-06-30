@@ -1,7 +1,7 @@
 function drawChart2() {
         var data = google.visualization.arrayToDataTable([
           ['Имоти', 'Доходи'],
-          ['Kushta na planina',     750],
+          ['Apartament Drujba',     1350],
           ['Hotel Albena',      24000],
           ['Magazin Igrachki',  4500]
         ]);

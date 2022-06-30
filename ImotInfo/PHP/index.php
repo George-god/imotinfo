@@ -158,17 +158,17 @@ require 'sqlconn.php';
                         </div>
                         <div class="modal-body">
                             <form action="addimot.php" method="post">
-                                <label for="Imotname">Име на Имота:</label>
-                                <input type="text" id="Imotname" name="Imotname" class="inptextmod1" placeholder="Име.." maxlength="50">
+                                <label for="Imotname">Име на Имота:<span class="star">&#42;</span></label>
+                                <input type="text" id="Imotname" name="Imotname" class="inptextmod1" placeholder="Име.." maxlength="50" required>
 
                                 <label for="cena">Цена на Имота:</label>
-                                <input type="number" id="cena" name="cena" class="inptextmod1" placeholder="Цена.." maxlength="11">
+                                <input type="text" id="cena" name="cena" class="inptextmod1" placeholder="Цена.." pattern="\d*" maxlength="15">
 
                                 <label for="renta">Рента на Имота:</label>
-                                <input type="number" id="renta" name="renta" class="inptextmod1" placeholder="Рента.." maxlength="5">
+                                <input type="text" id="renta" name="renta" class="inptextmod1" placeholder="Рента.." pattern="\d*" maxlength="6">
 
-                                <label for="status">Статус:</label>
-                                <select id="status" name="status" class="inptextmod1">
+                                <label for="status">Статус:<span class="star">&#42;</span></label>
+                                <select id="status" name="status" class="inptextmod1" required>
                                     <option disabled selected>-- Избери статус --</option>
                                     <option value="rented">Под наем</option>
                                     <option value="not_rented">Не под наем</option>

@@ -127,6 +127,10 @@ a {
   height: 100px;
 }
 
+.star {
+    color: red;
+}
+
 .MainI {
     background: rgba(153, 255, 255,0.5);
     height: 10.5in;
