@@ -1,9 +1,9 @@
 function drawChart2() {
         var data = google.visualization.arrayToDataTable([
           ['Имоти', 'Доходи'],
-          ['Apartament Drujba',     1350],
-          ['Hotel Albena',      24000],
-          ['Magazin Igrachki',  4500]
+          ['Апартамент Дружба',     1350],
+          ['Хотел Албена',      24000],
+          ['Магазин Играчки',  4500]
         ]);
 
         var options = {

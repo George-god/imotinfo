@@ -150,7 +150,7 @@ require 'sqlconn.php';
                 </label>
                
                 <input type="submit" value="Запази" id="savebtn" class="normformb" name="formmsub">
-                <a href="logout.php">Logout</a>
+                <a href="logout.php" style="float:right; font-size: 20px;">Излизане от Системата</a>
 
             </form>
             <?php
